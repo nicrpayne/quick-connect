@@ -26,3 +26,36 @@ VALUES ('Hotel California', 'Santa Barbara', 'US/Pacific'),
 ('The Heartbreak Hotel', 'Graceland', 'US/Central'),
 ('The Prancing Pony', 'Bree', 'US/Central'),
 ('The Fawlty Towers', 'Torquay', 'US/Eastern');
+
+CREATE TABLE "guests"(
+	"guests_id" serial PRIMARY KEY,
+	"first_name" VARCHAR (1000) NOT NULL,
+	"last_name" VARCHAR (1000) NOT NULL,
+	"reservation_id" integer REFERENCES reservation
+);
+
+INSERT INTO "guests"("first_name", "last_name")
+VALUES ('Candy', 'Pace'),
+('Morgan', 'Porter'),
+('Bridgett', 'Richard'),
+('Melissa', 'Preston'),
+('Latoya', 'Herrera'),
+('Hewitt', 'Hopper');
+
+CREATE TABLE "reservation"(
+	"reservation_id" serial Primary Key, 
+	"room_number" int default 0, 
+	"start_time_stamp" int default 0,
+	"end_time_stamp" int default 0,
+	"guests_id" integer REFERENCES guests
+);
+
+INSERT INTO "reservation"("room_number", "start_time_stamp", "end_time_stamp")
+VALUES ('529', '1486654792', '1486852373'),
+('385', '1486612719', '1486694720'),
+('141', '1486520344', '1486769616'),
+('417', '14886614763', '1486832543'),
+('194', '1486605110', '1486785126'),
+('349', '1486660637', '1486788273');
+
+
