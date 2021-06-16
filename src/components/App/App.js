@@ -10,6 +10,7 @@ import { connect } from 'react-redux';
 
 import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
+import QKNewTemplate from '../QKNewTemplate/QKNewTemplate'
 
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
@@ -29,6 +30,7 @@ class App extends Component {
 
   render() {
     return (
+      <>
       <Router>
         <div>
           <Nav />
@@ -99,6 +101,10 @@ class App extends Component {
           <Footer />
         </div>
       </Router>
+      <div>
+        <QKNewTemplate />
+      </div>
+      </>
     );
   }
 }
