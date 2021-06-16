@@ -31,7 +31,7 @@ class QKNewTemplate extends Component {
     event.preventDefault()
     try {
       await this.props.dispatch({
-        type: 'TEST',
+        type: 'NEW_TEMPLATE',
         payload: this.state.newName
       })
       alert('New Template Added!')
@@ -56,7 +56,7 @@ class QKNewTemplate extends Component {
               onChange={this.handleInputChangeFor('templateName')}
               
             ></input>
-            {JSON.stringify(this.state.newTemplateReducer)}
+            {/* {JSON.stringify(this.state.newTemplateReducer)} */}
             <button
               // className={this.props.classes.submitButton}
               onClick={this.handleClick}

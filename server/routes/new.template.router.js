@@ -9,7 +9,6 @@ const router = express.Router();
   const queryText = `SELECT * FROM "templates"`
   pool.query(queryText)
       .then(result => {
-          console.log(result.rows)
           res.send(result.rows)
       }).catch(error => {
           console.log('error in contacts GET', error)
@@ -21,12 +20,12 @@ const router = express.Router();
  * This route *should* add a custom template for logged in users
  */
 router.post('/', (req, res) => {
-  console.log('in template router post', req.body, req.user)
+  console.log('in template router post', req.body)
   const queryText = `INSERT INTO "templates" ("template_content")
   VALUES ($1);`
 
   pool.query(queryText,
-    [req.body.template_content])
+    [req.body.templateName])
     .then((response) => {
       res.sendStatus(200)
     }).catch(error => {

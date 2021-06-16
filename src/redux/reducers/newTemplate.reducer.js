@@ -1,11 +1,12 @@
 const newTemplateReducer = (state = {}, action) => {
-    switch (action.type) {
-      case 'TEST_REDUCER':
+  console.log('in newTemplateReducer', action.payload)  
+  switch (action.type) {
+      case 'NEW_TEMP_REDUCER':
         return action.payload;
       default:
         return state;
-    }
-  };   console.log('in reducer bro!');
+    };
+  };   
   
   // template will be on the redux state at:
   // state.template

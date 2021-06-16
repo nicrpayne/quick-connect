@@ -18,6 +18,10 @@ router.get('/', rejectUnauthenticated, (req, res) => {
 // The only thing different from this and every other post we've seen
 // is that the password gets encrypted before being inserted
 router.post('/register', (req, res, next) => {
+  // console.log('/register Post Route')
+  // console.log(req.body);
+  // console.log('is authenticated', req.isAuthenticated());
+  // console.log('user', req.user);
   const username = req.body.username;
   const password = encryptLib.encryptPassword(req.body.password);
 
