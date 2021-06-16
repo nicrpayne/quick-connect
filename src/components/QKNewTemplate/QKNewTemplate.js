@@ -11,7 +11,10 @@ class QKNewTemplate extends Component {
     newName: "",
   };
 
-  componentDidMount() {
+  async componentDidMount() {
+    this.props.dispatch({
+      type: 'GET_TEMPLATES'
+    })
     // this.props.dispatch({type: '', payload: this.props.reduxStore.placeholder
     //could get existing templates? Like existing organizations
     // })

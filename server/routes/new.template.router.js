@@ -10,6 +10,7 @@ const router = express.Router();
   pool.query(queryText)
       .then(result => {
           res.send(result.rows)
+          console.log(result.rows);
       }).catch(error => {
           console.log('error in contacts GET', error)
           res.sendStatus(500);
