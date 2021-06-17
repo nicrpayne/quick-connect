@@ -1,7 +1,7 @@
 const allTemplatesReducer = (state = {}, action) => {
-//   console.log('in DISPLAY_TEMPLATES', action.payload)  
+  console.log('in SET_TEMPLATES', action.payload)  
   switch (action.type) {
-      case 'DISPLAY_TEMPLATES':
+      case 'SET_TEMPLATES':
         return action.payload;
       default:
         return state;

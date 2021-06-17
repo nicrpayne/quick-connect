@@ -4,22 +4,21 @@ const pool = require('../modules/pool');
 const router = express.Router();
 
 /**
- * This route *should* add a custom template for logged in users
+ * This route *should* get all existing custom templates
  */
-router.post('/', (req, res) => {
-  console.log('in template router post', req.body)
-  const queryText = `INSERT INTO "templates" ("template_content")
-  VALUES ($1);`
+ router.get('/', (req, res) => {
+  const queryText = `SELECT * FROM "templates";`
+  console.log('in get templates router.get')
+  pool.query(queryText)
+      .then(response => {
+          res.send(response.rows)
+          console.log('broooo!', response.rows);
+      }).catch(error => {
+          console.log('error in contacts GET', error)
+          res.sendStatus(500);
+      })
+})
 
-  pool.query(queryText,
-    [req.body.templateName])
-    .then((response) => {
-      res.sendStatus(200)
-    }).catch(error => {
-      console.log('error in newTemplate POST', error)
-      res.sendStatus(500);
-    })
-});
 
 /**
  * Get all of the items on the shelf
