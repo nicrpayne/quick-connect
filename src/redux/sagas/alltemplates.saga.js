@@ -2,11 +2,10 @@ import { put, takeLatest } from 'redux-saga/effects';
 import axios from 'axios';
 
 
-function* getAllTemplates(action) {
+function* getAllTemplates() {
   try {
-    let response =  axios.get('/api/allTemplates', action.payload);
+    const response = yield axios.get('/api/allTemplates');
     yield put({ type: 'SET_TEMPLATES', payload: response.data });
-    console.log('broooo!', action.payload)
   } catch (error) {
     console.log('Error displaying templates:', error);
   }

@@ -59,7 +59,9 @@ class QKNewTemplate extends Component {
               onChange={this.handleInputChangeFor('templateName')}
               
             ></input>
-            {JSON.stringify(this.state.allTemplatesReducer)}
+            hello
+            {JSON.stringify(this.props.store.templates)}
+            {/* map over this array to display */}
             <button
               // className={this.props.classes.submitButton}
               onClick={this.handleClick}

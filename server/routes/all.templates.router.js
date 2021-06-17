@@ -8,11 +8,10 @@ const router = express.Router();
  */
  router.get('/', (req, res) => {
   const queryText = `SELECT * FROM "templates";`
-  console.log('in get templates router.get')
   pool.query(queryText)
       .then(response => {
           res.send(response.rows)
-          console.log('broooo!', response.rows);
+          console.log('broooo! Response:', response.rows);
       }).catch(error => {
           console.log('error in contacts GET', error)
           res.sendStatus(500);

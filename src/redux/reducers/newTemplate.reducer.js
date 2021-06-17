@@ -1,5 +1,5 @@
 const newTemplatesReducer = (state = {}, action) => {
-    console.log('in DISPLAY_TEMPLATES', action.payload)  
+    // console.log('in NEW_TEMP_REDUCER', action.payload)  
     switch (action.type) {
         case 'NEW_TEMP_REDUCER':
           return action.payload;
