@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import mapStoreToProps from "../../redux/mapStoreToProps";
+// import TemplatesList from "../TemplateList/TemplateList";
 
 // Basic class component structure for React with default state
 // value setup. When making a new component be sure to replace
@@ -13,34 +14,29 @@ class QKNewTemplate extends Component {
 
   async componentDidMount() {
     this.props.dispatch({
-      type: 'GET_TEMPLATES'
-    })
-    // this.props.dispatch({type: '', payload: this.props.reduxStore.placeholder
-    //could get existing templates? Like existing organizations
-    // })
+      type: "GET_TEMPLATES",
+    });
   }
 
   handleInputChangeFor = (templateName) => (event) => {
     this.setState({
-      newName:{
+      newName: {
         ...this.state.newName,
-        [templateName]: event.target.value
-      }
+        [templateName]: event.target.value,
+      },
     });
     console.log(templateName, "made it to handle input change!");
   };
 
   handleClick = async (event) => {
-    event.preventDefault()
+    event.preventDefault();
     try {
       await this.props.dispatch({
-        type: 'NEW_TEMPLATE',
-        payload: this.state.newName
-      })
-      alert('New Template Added!')
-    } catch{
-
-    }
+        type: "NEW_TEMPLATE",
+        payload: this.state.newName,
+      });
+      alert("New Template Added!");
+    } catch {}
   };
 
   render() {
@@ -56,12 +52,9 @@ class QKNewTemplate extends Component {
               name="templateName"
               value={this.state.templatename}
               // onChange={(event) => this.handleInputChangeFor(event, 'templateName')}
-              onChange={this.handleInputChangeFor('templateName')}
-              
+              onChange={this.handleInputChangeFor("templateName")}
             ></input>
             hello
-            {JSON.stringify(this.props.store.templates)}
-            {/* map over this array to display */}
             <button
               // className={this.props.classes.submitButton}
               onClick={this.handleClick}
@@ -70,7 +63,10 @@ class QKNewTemplate extends Component {
             >
               Add
             </button>
+            {/* <TemplatesList list={this.props.store.templates}/> */}
+            {/* {JSON.stringify(this.props.store.templates)} */}
           </div>
+          
         </form>
       </>
     );

@@ -11,6 +11,7 @@ import { connect } from 'react-redux';
 import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
 import QKNewTemplate from '../QKNewTemplate/QKNewTemplate'
+import TemplatesList from '../TemplateList/TemplateList'
 
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
@@ -103,6 +104,7 @@ class App extends Component {
       </Router>
       <div>
         <QKNewTemplate />
+        <TemplatesList />
       </div>
       </>
     );

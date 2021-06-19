@@ -1,4 +1,4 @@
-const allTemplatesReducer = (state = {}, action) => {
+const allTemplatesReducer = (state = [], action) => {
   // console.log('in SET_TEMPLATES!!!!', action.payload)  
   switch (action.type) {
       case 'SET_TEMPLATES':
