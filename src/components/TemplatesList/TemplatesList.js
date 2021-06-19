@@ -2,7 +2,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import mapStoreToProps from "../../redux/mapStoreToProps";
-// import TemplateListItem from "../TemplateListItem/TemplateListItem";
+import TemplateListItem from "../TemplateListItem/TemplateListItem";
 
 class TemplatesList extends Component {
   render() {
@@ -20,7 +20,7 @@ class TemplatesList extends Component {
     //     <TemplateListItem key={template.id} template={template}/>
     // )};
     const templateItem = this.props.list.map((item, index) => {
-            return<li key={index}>{item.template_id}</li>
+            return <TemplateListItem key={index} item={item}/>
     });
     console.log('Broooo', this.props.list);
     return (
