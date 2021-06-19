@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import mapStoreToProps from "../../redux/mapStoreToProps";
-// import TemplatesList from "../TemplateList/TemplateList";
+import TemplatesList from "../TemplatesList/TemplatesList";
 
 // Basic class component structure for React with default state
 // value setup. When making a new component be sure to replace
@@ -63,10 +63,9 @@ class QKNewTemplate extends Component {
             >
               Add
             </button>
-            {/* <TemplatesList list={this.props.store.templates}/> */}
-            {/* {JSON.stringify(this.props.store.templates)} */}
+            <TemplatesList list={this.props.store.templates} />
+            {/* {JSON.stringify(this.list)} */}
           </div>
-          
         </form>
       </>
     );
