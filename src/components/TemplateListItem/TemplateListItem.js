@@ -14,7 +14,7 @@ class TemplateListItem extends Component {
         <ul>
           {/* <li key={template.index} id={template.template_id}></li> */}
           {/* <li key={template.template_content}></li> */}
-          <li key={template.id}> {template.template_id}</li>
+          <li key={template.id}> {template.template_id}, {template.template_content}</li>
         </ul>
         {/* <h1 key={template.template_content}>Template Content</h1> */}
       </div>
