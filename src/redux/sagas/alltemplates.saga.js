@@ -5,8 +5,9 @@ import axios from 'axios';
 function* getAllTemplates() {
   try {
     const response = yield axios.get('/api/allTemplates');
+    
     yield put({ type: 'SET_TEMPLATES', payload: response.data });
-
+    // console.log('allTemplatesSaga response.data:', response.data);
   } catch (error) {
     console.log('Error displaying templates:', error);
   }

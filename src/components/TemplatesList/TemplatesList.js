@@ -22,7 +22,7 @@ class TemplatesList extends Component {
     const templateItem = this.props.list.map((item, index) => {
             return <TemplateListItem key={index} item={item}/>
     });
-    console.log('Broooo', this.props.list);
+    console.log('TemplatesList contains:', this.props.list);
     return (
       <div> 
         <ul>
