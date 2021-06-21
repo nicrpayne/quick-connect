@@ -41,13 +41,6 @@ module.exports = function(template, greeting, hotel, guest, room) {
 
   //Replace each place holder
   
-  
-
-
-
-
-
-
   return template; //Returns template with placeholders replaced by values.
 }
 

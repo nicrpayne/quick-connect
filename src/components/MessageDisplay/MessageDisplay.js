@@ -2,22 +2,13 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import mapStoreToProps from "../../redux/mapStoreToProps";
 
-// This is one of our simplest components
-// It doesn't have local state, so it can be a function component.
-// It doesn't dispatch any redux actions or display any part of redux state
-// or even care what the redux state is, so it doesn't need 'connect()'
-
-// const messageDisplay = () => (
-//   <div>
-//     <p>Info Page</p>
-//   </div>
-// );
-
-// If you needed to add local state or other things,
-// you can make it a class component like:
 
 
-class messageDisplay extends React.Component {
+//(GENERATE MESSAGE)
+
+
+
+class MessageDisplay extends React.Component {
 
   render() {
     return (
@@ -28,4 +19,20 @@ class messageDisplay extends React.Component {
   }
 }
 
-export default connect(mapStoreToProps)(messageDisplay);
+export default connect(mapStoreToProps)(MessageDisplay);
+
+// var fs = require('fs');
+// var fillTemplate = require('./fillTemplate');
+// var getGreeting = require('./getGreeting');
+// module.exports = function(templateID, guestID, hotelID) {
+
+//   var greeting = getGreeting(); //Pick a greeting
+//   var hotel = JSON.parse(fs.readFileSync('./data/Companies.json'))[hotelID - 1].company;  //Get Hotel Name from ID
+//   var guest = JSON.parse(fs.readFileSync('./data/Guests.json'))[guestID - 1].firstName;  //Get Guest Name from ID
+//   var template = JSON.parse(fs.readFileSync('./data/templates.json'))[templateID - 1].body;  //Get Template from ID
+//   var room = JSON.parse(fs.readFileSync('./data/Guests.json'))[guestID - 1].reservation.roomNumber;  //Get Room number from Guest details
+//   var timeZone = JSON.parse(fs.readFileSync('./data/Guests.json')) [hotelID - 1].timeZone; //Get TimeZone from Hotel details
+
+//   return fillTemplate(template, greeting, hotel, guest, room);
+
+// }
