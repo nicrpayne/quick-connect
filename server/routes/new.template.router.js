@@ -6,20 +6,42 @@ const router = express.Router();
 /**
  * This route *should* add a custom template for logged in users
  */
-router.post('/', (req, res) => {
-  console.log('in template router post', req.body)
-  const queryText = `INSERT INTO "templates" ("template_content")
-  VALUES ($1);`
+router.post('/', async (req, res) => {
+  const newTemplate = req.body
+  
+  console.log('in template router post', newTemplate)
 
-  pool.query(queryText,
-    [req.body.templateName])
-    .then((response) => {
-      res.sendStatus(200)
-    }).catch(error => {
-      console.log('error in newTemplate POST', error)
-      res.sendStatus(500);
-    })
+  const connection = await pool.connect()
+
+  try {
+        await connection.query('BEGIN');
+        const sqlAddTemplate = `INSERT INTO "templates" 
+                                ("template_name", "template_body")
+                                VALUES ($1, $2)
+                                RETURNING id;`
+        const newTemplateQueryValues = [
+              newTemplate.name,
+              newTemplate.body
+        ];
+         // Save the result so we can get the returned value
+         const result = await connection.query(sqlAddTemplate, newTemplateQueryValues);
+         // Get the id from the result - will have 1 row with the id 
+         const newTemplateId = result.rows[0].id;
+
+         await connection.query('COMMIT');
+         res.sendStatus(200);
+     } catch (error) {
+         await connection.query('ROLLBACK');
+         console.log(`Transaction Error - Rolling back new account`, error);
+         res.sendStatus(500);
+     } finally {
+         connection.release()
+     }
 });
+
+
+
+  
 
 /**
  * Get all of the items on the shelf

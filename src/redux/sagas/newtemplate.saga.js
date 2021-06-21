@@ -13,7 +13,7 @@ function* addTemplate(action) {
 
 
 function* newTemplateSaga() {
-  yield takeLatest('NEW_TEMPLATE', addTemplate);
+  yield takeLatest('POST_NEW_TEMPLATE', addTemplate);
 }
 
 export default newTemplateSaga;
