@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import mapStoreToProps from "../../redux/mapStoreToProps";
-import TemplateList from "../TemplatesList/TemplatesList"
+import TemplateList from "../TemplateList/TemplateList";
 
 // Basic class component structure for React with default state
 // value setup. When making a new component be sure to replace
@@ -16,7 +16,7 @@ class NewTemplate extends Component {
     }
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     this.props.dispatch({
       type: "GET_TEMPLATES",
     });

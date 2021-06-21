@@ -37,9 +37,9 @@ const Nav = (props) => {
            {/* <Link className="nav-link" to="/message">
              Message
            </Link> */}
-           <Link className="nav-link" to="/TemplateListPage">
+           {/* <Link className="nav-link" to="/TemplateList">
              Templates List
-           </Link>
+           </Link> */}
            <Link className="nav-link" to="/newtemplate">
              New Template
            </Link>

@@ -19,7 +19,7 @@ import RegisterPage from "../RegisterPage/RegisterPage";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
 import NewTemplate from "../NewTemplate/NewTemplate";
-import TemplateList from '../TemplatesList/TemplatesList'
+import TemplateList from '../TemplateList/TemplateList'
 import MessageDisplay from "../MessageDisplay/MessageDisplay";
 import NewMessage from "../NewMessage/NewMessage";
 import NewGuest from "../NewGuest/NewGuest";
@@ -61,12 +61,12 @@ class App extends Component {
                 component={UserPage}
               />
 
-              <ProtectedRoute
+              {/* <ProtectedRoute
                 // logged in shows Message Page else shows LoginPage
                 exact
                 path="/templatelistpage"
                 component={TemplateList}
-              />
+              /> */}
 
               <ProtectedRoute
                 // logged in shows New Template Page else shows LoginPage

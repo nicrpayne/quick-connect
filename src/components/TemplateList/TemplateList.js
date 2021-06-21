@@ -5,6 +5,8 @@ import mapStoreToProps from "../../redux/mapStoreToProps";
 import TemplateListItem from "../TemplateListItem/TemplateListItem";
 
 class TemplateList extends Component {
+
+
   render() {
       
     //   console.log(Array.isArray(this.props.list))
