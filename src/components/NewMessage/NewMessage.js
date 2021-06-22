@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import mapStoreToProps from "../../redux/mapStoreToProps";
+import GuestList from "../GuestList/GuestList";
+import HotelList from "../HotelList/HotelList";
+// import NewTemplate from "../NewTemplate/NewTemplate";
+import TemplateList from "../TemplateList/TemplateList";
 
 //LIKE INDEX>JS. all inputs through here
 class NewMessage extends Component {
@@ -65,25 +69,25 @@ class NewMessage extends Component {
     });
   };
 
-  // setGuestID = (event, type) => {
-  //   // This updates state with the details submitted
-  //   this.setState({
-  //       guest: {
-  //           ...this.state.guest,
-  //           [type]: event.target.value
-  //       }
-  //   })
-  // }
+  setGuestID = (event, type) => {
+    // This updates state with the details submitted
+    this.setState({
+        guest: {
+            ...this.state.guest,
+            [type]: event.target.value
+        }
+    })
+  }
 
-  // setHotelID = (event, type) => {
-  //   // This updates state with the details submitted
-  //   this.setState({
-  //       hotel: {
-  //           ...this.state.hotel,
-  //           [type]: event.target.value
-  //       }
-  //   })
-  // }
+  setHotelID = (event, type) => {
+    // This updates state with the details submitted
+    this.setState({
+        hotel: {
+            ...this.state.hotel,
+            [type]: event.target.value
+        }
+    })
+  }
 
   // saveOrg = () => {
   //   this.props.dispatch({
@@ -109,14 +113,14 @@ class NewMessage extends Component {
             <div>
               Select Template
               <select
-                className=""
+                // className=""
                 type="text"
                 name="select template"
-                // label="Template Name"
+                label="Template Name"
                 value={newMessage.template.id}
-                // onChange={(event) => this.setTemplateID(event, 'id')}
+                onChange={(event) => this.setTemplateID(event, 'id')}
               >
-                {/* {this.props.store.templates.map((template) => (
+                {/* {this.props.store.allTemplatesReducer.companies.map((template) => (
                   <option value={template.id}>{template.template_name}</option>
                 ))} */}
               </select>
@@ -147,8 +151,12 @@ class NewMessage extends Component {
               >
                 Generate Message
               </button>
-              {/* <TemplateList list={this.props.store.templates} /> */}
+              <GuestList guestList={this.props.store.allGuestsReducer} />
+              <HotelList hotelList={this.props.store.allHotelsreducer} />
+              <TemplateList templateList={this.props.store.templates} />
               {/* {JSON.stringify(this.props.store.templates)} */}
+              <NewTemplate />
+              {/* <TemplateList list={this.props.store.allTemplatesReducer} /> */}
             </div>
           </form>
         </div>

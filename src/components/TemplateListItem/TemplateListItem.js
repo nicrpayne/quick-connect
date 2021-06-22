@@ -6,8 +6,8 @@ import mapStoreToProps from "../../redux/mapStoreToProps";
 class TemplateListItem extends Component {
   render() {
 
-    let template = this.props.item;
-
+    let template = this.props.template;
+    // console.log('props template', template)
     return (
       <>
         <div>

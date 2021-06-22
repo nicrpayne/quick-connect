@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import mapStoreToProps from "../../redux/mapStoreToProps";
 import TemplateList from "../TemplateList/TemplateList";
 
+
+
 // Basic class component structure for React with default state
 // value setup. When making a new component be sure to replace
 // the component name TemplateClass with the name for the new
@@ -83,7 +85,7 @@ class NewTemplate extends Component {
             >
               Add
             </button>
-            <TemplateList list={this.props.store.templates} />
+            <TemplateList templateList={this.props.store.templates} />
             {/* {JSON.stringify(this.props.store.templates)} */}
           </div>
         </form>

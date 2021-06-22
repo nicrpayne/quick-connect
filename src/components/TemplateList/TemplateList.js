@@ -21,8 +21,8 @@ class TemplateList extends Component {
     // {this.props.store.templates.map(template =>
     //     <TemplateListItem key={template.id} template={template}/>
     // )};
-    const templateItem = this.props.list.map((item, index) => {
-            return <TemplateListItem key={index} item={item}/>
+    const templateItem = this.props.templateList.map((template, index) => {
+            return <TemplateListItem key={index} template={template}/>
     });
     // console.log('TemplatesList contains:', this.props.list);
     return (
