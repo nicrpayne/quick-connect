@@ -19,7 +19,7 @@ import RegisterPage from "../RegisterPage/RegisterPage";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
 import NewTemplate from "../NewTemplate/NewTemplate";
-import TemplateList from '../TemplateList/TemplateList'
+// import TemplateList from '../TemplateList/TemplateList'
 import MessageDisplay from "../MessageDisplay/MessageDisplay";
 import NewMessage from "../NewMessage/NewMessage";
 import NewGuest from "../NewGuest/NewGuest";

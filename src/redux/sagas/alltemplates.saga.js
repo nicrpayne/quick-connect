@@ -16,6 +16,7 @@ function* getAllTemplates() {
 
 function* allTemplatesSaga() {
   yield takeLatest('GET_TEMPLATES', getAllTemplates);
+  yield takeLatest('GET_TEMPLATES_GUESTS_HOTELS', getAllTemplates);
 }
 
 export default allTemplatesSaga;

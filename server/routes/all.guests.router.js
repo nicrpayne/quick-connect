@@ -7,14 +7,14 @@ const router = express.Router();
  * This route *should* get all existing custom templates
  */
  router.get('/', (req, res) => {
-  const queryText = `SELECT * FROM "templates" ORDER BY "templates"."id";`
+  const queryText = `SELECT * FROM "guests" ORDER BY "guests"."id";`
 
   pool.query(queryText)
       .then(response => {
           res.send(response.rows)
-        //   console.log('broooo TEMPLATES! Response:', response.rows);
+        //   console.log('BROOOO GUESTS', response.rows);
       }).catch(error => {
-          console.log('error in contacts GET', error)
+          console.log('error in guests GET', error)
           res.sendStatus(500);
       })
 })

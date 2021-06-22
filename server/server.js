@@ -10,8 +10,11 @@ const passport = require('./strategies/user.strategy');
 
 // Route includes
 const userRouter = require('./routes/user.router');
-const newTemplateRouter = require('./routes/new.template.router')
-const allTemplatesRouter = require('./routes/all.templates.router')
+const newTemplateRouter = require('./routes/new.template.router');
+const allTemplatesRouter = require('./routes/all.templates.router');
+const selectedTemplateRouter = require('./routes/selected.template.router');
+const allGuestsRouter = require('./routes/all.guests.router');
+const allHotelsRouter = require('./routes/all.hotels.router');
 
 
 // Body parser middleware
@@ -28,7 +31,10 @@ app.use(passport.session());
 /* Routes */
 app.use('/api/user', userRouter);
 app.use('/api/newTemplate', newTemplateRouter);
-app.use('/api/allTemplates', allTemplatesRouter)
+app.use('/api/allTemplates', allTemplatesRouter);
+app.use('/api/selectedTemplate', selectedTemplateRouter);
+app.use('/api/allGuests/', allGuestsRouter);
+app.use('/api/allHotels/', allHotelsRouter);
 
 // Serve static files
 app.use(express.static('build'));

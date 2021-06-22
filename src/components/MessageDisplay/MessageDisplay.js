@@ -4,11 +4,11 @@ import mapStoreToProps from "../../redux/mapStoreToProps";
 
 
 
-//(GENERATE MESSAGE)
+//(GENERATE MESSAGE) will display query results of selections from NewMessage, GetGreeting, and fillTemplate
 
 
 
-class MessageDisplay extends React.Component {
+class MessageDisplay extends Component {
 
   render() {
     return (

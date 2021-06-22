@@ -59,6 +59,7 @@ class NewTemplate extends Component {
             <input
               type="text"
               name="templateName"
+              placeholder ="New Template Name"
               // label="Template Name"
               value={template.name}
               onChange={(event) => this.handleInputChangeFor(event, 'name')}
@@ -67,6 +68,7 @@ class NewTemplate extends Component {
             <input
               type="text"
               name="body"
+              placeholder ="New Template Message"
               // label="Template Body"
               value={template.body}
               onChange={(event) => this.handleInputChangeFor(event, 'body')}

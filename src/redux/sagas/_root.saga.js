@@ -4,6 +4,9 @@ import registrationSaga from './registration.saga';
 import userSaga from './user.saga';
 import newTemplateSaga from './newtemplate.saga';
 import allTemplatesSaga from './alltemplates.saga';
+import selectedTemplateSaga from './selectedtemplate.saga';
+import allGuestsSaga from './allguests.saga';
+import allHotelsSaga from './allhotels.saga';
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -18,6 +21,9 @@ export default function* rootSaga() {
     registrationSaga(),
     userSaga(),
     newTemplateSaga(),
-    allTemplatesSaga()
+    allTemplatesSaga(),
+    selectedTemplateSaga(),
+    allGuestsSaga(),
+    allHotelsSaga(),
   ]);
 }
