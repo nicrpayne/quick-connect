@@ -8,6 +8,7 @@ class NewGuestListItem extends Component {
 
     let newGuest = this.props.newGuest;
     // console.log('props newGuest', newGuest)
+    // console.log(`hi, I'm ${newGuest.first_name}`)
     return (
       <>
         <div>
@@ -23,6 +24,7 @@ class NewGuestListItem extends Component {
           <br></br>
           Reservation Number:{newGuest.reservation_id}</li>
         </ul>
+        
       </div>
         <div>
 

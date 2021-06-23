@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import mapStoreToProps from "../../redux/mapStoreToProps";
-// import NewGuestList from "../NewGuestList/NewGuestList";
-// import HotelList from "../HotelList/HotelList";
-// // import NewTemplate from "../NewTemplate/NewTemplate";
-// import TemplateList from "../NewTemplateList/NewTemplateList";
+// import NewGuestListItem from "../NewGuestListItem/NewGuestListItem";
+// import HotelListItem from "../HotelListItem/HotelListItem";
+// import TemplateListItem from "../NewTemplateListItem/NewTemplateListItem";
 
 //LIKE INDEX>JS. all inputs through here
 class NewMessage extends Component {
@@ -14,10 +13,11 @@ class NewMessage extends Component {
         id: "",
       },
       guest: {
-        id: "",
+        id: "Candy",
+        room_number: "529"
       },
       hotel: {
-        id: "",
+        id: "Hotel California",
       },
     },
   };
@@ -105,15 +105,31 @@ class NewMessage extends Component {
 
   render() {
     let newMessage = this.state.newMessage
+    
+    const greeting = 'Hello';
+    const who = 'World';
+    const timeOfDay = 'Morning';
+    const name = this.state.newMessage.guest.id
+    const hotel = this.state.newMessage.hotel.id
+    const room = this.state.newMessage.guest.room_number
+
+    const message = `Good ${timeOfDay}, ${name}, and welcome to ${hotel}! Room ${room} is now ready for you. Enjoy your stay, and let us know if you need anything.`;
+
+   
+
+
+
+
 
     return (
+      
       <>
+      {message}
         <div>
           <h2>Create a New Message</h2>
           <form>
             <div>
               Select Template
-              
               <select
                 // className=""
                 type="text"
@@ -126,7 +142,7 @@ class NewMessage extends Component {
                     )}
               </select>
               <br></br>
-              Select Guest
+              Select Guest 
               <select
               // className=""
                 type="text"
@@ -153,21 +169,13 @@ class NewMessage extends Component {
               </select>
               <br></br>
               <button
-              // className={this.props.classes.submitButton}
-              // onClick={this.handleClick}
-              // size={"large"}
-              // variant={"outlined"}
               >
                 Generate Message
               </button>
-              {/* {templateItem} */}
-              {/* <GuestList guestList={this.props.store.allGuestsReducer} /> */}
-              {/* <HotelList hotelList={this.props.store.allHotelsReducer} /> */}
-              {/* <TemplateList templateList={this.props.store.allTemplatesReducer} /> */}
+              <br></br>
+                    {/* <title>${this.props.store.templates}</title> */}
               {/* {JSON.stringify(this.props.store.templates)} */}
               
-              {/* <NewTemplate /> */}
-              {/* <TemplateList list={this.props.store.allTemplatesReducer} /> */}
             </div>
           </form>
         </div>
