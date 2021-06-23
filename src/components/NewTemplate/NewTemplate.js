@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import mapStoreToProps from "../../redux/mapStoreToProps";
-import TemplateList from "../TemplateList/TemplateList";
+import NewTemplateList from "../NewTemplateList/NewTemplateList";
 import NewMessage from "../NewMessage/NewMessage";
-
-
 
 // Basic class component structure for React with default state
 // value setup. When making a new component be sure to replace
@@ -13,11 +11,10 @@ import NewMessage from "../NewMessage/NewMessage";
 class NewTemplate extends Component {
   state = {
     newTemplate: {
-      name: '',
-      body: ''
-
-    }
-  }
+      name: "",
+      body: "",
+    },
+  };
 
   async componentDidMount() {
     this.props.dispatch({
@@ -27,30 +24,29 @@ class NewTemplate extends Component {
 
   handleInputChangeFor = (event, propertyName) => {
     this.setState({
-        newTemplate: {
-            ...this.state.newTemplate,
-            [propertyName]: event.target.value
-        }
-    })
-}
-    // console.log(templateName, "made it to handle input change!");
-  
+      newTemplate: {
+        ...this.state.newTemplate,
+        [propertyName]: event.target.value,
+      },
+    });
+  };
+  // console.log(templateName, "made it to handle input change!");
 
   handleClick = async (event) => {
     event.preventDefault();
     try {
       await this.props.dispatch({
         type: "POST_NEW_TEMPLATE",
-        payload: this.state.newTemplate
+        payload: this.state.newTemplate,
       });
       alert("New Template Added!");
 
       //this.props.history.push('/messageDisplayPage')
     } catch {}
-  }
+  };
 
   render() {
-    let template = this.state.newTemplate
+    let template = this.state.newTemplate;
     // console.log('brooooo!', template);
     return (
       <>
@@ -60,23 +56,23 @@ class NewTemplate extends Component {
         <form>
           <div>
             <input
-            // className=""
+              // className=""
               type="text"
               name="templateName"
-              placeholder ="New Template Name"
+              placeholder="New Template Name"
               // label="Template Name"
               value={template.name}
-              onChange={(event) => this.handleInputChangeFor(event, 'name')}
+              onChange={(event) => this.handleInputChangeFor(event, "name")}
               // onChange={this.handleInputChangeFor("templateName")}
             ></input>
             <input
-            // className=""
+              // className=""
               type="text"
               name="body"
-              placeholder ="New Template Message"
+              placeholder="New Template Message"
               // label="Template Body"
               value={template.body}
-              onChange={(event) => this.handleInputChangeFor(event, 'body')}
+              onChange={(event) => this.handleInputChangeFor(event, "body")}
               // onChange={this.handleInputChangeFor("templateName")}
             ></input>
             hello
@@ -88,9 +84,8 @@ class NewTemplate extends Component {
             >
               Add
             </button>
-            
-            <TemplateList templateList={this.props.store.templates} />
-
+            <NewTemplateList newTemplateList={this.props.store.templates} />
+            {/* {JSON.stringify(this.props.store.templates)} */}
           </div>
         </form>
       </>
@@ -98,8 +93,5 @@ class NewTemplate extends Component {
   }
 }
 
-// const mapStoreToProps = (reduxStore) => ({
-//   reduxStore
-// })
 
 export default connect(mapStoreToProps)(NewTemplate);

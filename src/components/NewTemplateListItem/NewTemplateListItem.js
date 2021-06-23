@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import mapStoreToProps from "../../redux/mapStoreToProps";
 
 
-class TemplateListItem extends Component {
+class NewTemplateListItem extends Component {
   render() {
 
     let template = this.props.template;
@@ -24,4 +24,4 @@ class TemplateListItem extends Component {
   }
 }
 
-export default connect(mapStoreToProps)(TemplateListItem);
+export default connect(mapStoreToProps)(NewTemplateListItem);

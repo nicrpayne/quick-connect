@@ -7,7 +7,10 @@ const router = express.Router();
  * This route *should* get all existing custom templates
  */
  router.get('/', (req, res) => {
-  const queryText = `SELECT * FROM "guests" ORDER BY "guests"."id";`
+  const queryText = `SELECT * FROM "guests"
+                    JOIN "reservation" ON "guests".id = 
+                    "reservation".guest_id 
+                    ORDER BY "guests"."id";`
 
   pool.query(queryText)
       .then(response => {

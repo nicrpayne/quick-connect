@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import mapStoreToProps from "../../redux/mapStoreToProps";
-import GuestList from "../GuestList/GuestList";
-import HotelList from "../HotelList/HotelList";
-// import NewTemplate from "../NewTemplate/NewTemplate";
-import TemplateList from "../TemplateList/TemplateList";
+// import NewGuestList from "../NewGuestList/NewGuestList";
+// import HotelList from "../HotelList/HotelList";
+// // import NewTemplate from "../NewTemplate/NewTemplate";
+// import TemplateList from "../NewTemplateList/NewTemplateList";
 
 //LIKE INDEX>JS. all inputs through here
 class NewMessage extends Component {
