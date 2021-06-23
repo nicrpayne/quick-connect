@@ -19,10 +19,11 @@ import RegisterPage from "../RegisterPage/RegisterPage";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
 import NewTemplate from "../NewTemplate/NewTemplate";
-import MessageDisplay from "../MessageDisplay/MessageDisplay";
+// import MessageDisplay from "../MessageDisplay/MessageDisplay";
 import NewMessage from "../NewMessage/NewMessage";
 import NewGuest from "../NewGuest/NewGuest";
 import NewHotel from "../NewHotel/NewHotel";
+import GetGreeting from "../GetGreeting/GetGreeting";
 
 import "./App.css";
 
@@ -93,12 +94,12 @@ class App extends Component {
                 path="/newhotel"
                 component={NewHotel}
               />
-              <ProtectedRoute
+              {/* <ProtectedRoute
                 // logged in shows InfoPage else shows LoginPage
                 exact
                 path="/messagedisplay"
                 component={MessageDisplay}
-              />
+              /> */}
 
               {/* When a value is supplied for the authRedirect prop the user will
             be redirected to the path supplied when logged in, otherwise they will
@@ -134,6 +135,7 @@ class App extends Component {
               {/* If none of the other routes matched, we will show a 404. */}
               <Route render={() => <h1>404</h1>} />
             </Switch>
+            <GetGreeting />
             <Footer />
           </div>
         </Router>

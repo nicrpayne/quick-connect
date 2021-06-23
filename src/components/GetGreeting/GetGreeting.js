@@ -1,21 +1,25 @@
-// var dateTime = require('node-datetime');  //Need for Greeting
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import mapStoreToProps from "../../redux/mapStoreToProps";
+import moment from "moment";
 
-// module.exports = function (){
+class GetGreeting extends Component {
+  state = {
+    currentTime: new Date().toLocaleString(),
+  };
 
-//   var dt = dateTime.create();
-//   //Generate Current time
-//   var currentHour = dt.format('H');
+  render() {
+    const currentHour = moment(this.state.currentTime).format("H");
 
-//   //Generate greeting according to current time
-//   if((currentHour >= 0 && currentHour <= 3) || (currentHour >= 18)) {
-//     greeting = "Good evening";
-//   }
-//   else if(currentHour >= 4 && currentHour <= 11) {
-//     greeting = "Good morning";
-//   }
-//   else if(currentHour >=12 && currentHour <= 17) {
-//     greeting = "Good afteroon";
-//   }
-
-//   return greeting;
-// }
+    let greeting;
+    if ((currentHour >= 0 && currentHour <= 3) || currentHour >= 18) {
+      greeting = "Good evening";
+    } else if (currentHour >= 4 && currentHour <= 11) {
+      greeting = "Good morning";
+    } else if (currentHour >= 12 && currentHour <= 17) {
+      greeting = "Good afteroon";
+    }
+    return <div>{greeting}</div>;
+  }
+}
+export default connect(mapStoreToProps)(GetGreeting);

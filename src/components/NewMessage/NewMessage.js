@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import mapStoreToProps from "../../redux/mapStoreToProps";
-// import NewGuestListItem from "../NewGuestListItem/NewGuestListItem";
-// import HotelListItem from "../HotelListItem/HotelListItem";
-// import TemplateListItem from "../NewTemplateListItem/NewTemplateListItem";
+// import GenerateMessage from '../GenerateMessage/GenerateMessage';
+import GetGreeting from '../GetGreeting/GetGreeting';
 
 //LIKE INDEX>JS. all inputs through here
 class NewMessage extends Component {
@@ -175,7 +174,8 @@ class NewMessage extends Component {
               <br></br>
                     {/* <title>${this.props.store.templates}</title> */}
               {/* {JSON.stringify(this.props.store.templates)} */}
-              
+              {/* <GenerateMessage /> */}
+              <GetGreeting />
             </div>
           </form>
         </div>
