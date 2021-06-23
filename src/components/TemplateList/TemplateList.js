@@ -8,19 +8,7 @@ class TemplateList extends Component {
 
 
   render() {
-      
-    //   console.log(Array.isArray(this.props.list))
-    // const templates = this.props.list.map((item, index) => {
-    //     return <li key={index}>{item.id}</li>
-    //     // console.log(item)
-    // });
-    //    for (const [key, value] in Object.entries(this.props.list)) {
-    // let parse = (this.props.list[template]);
-    // console.log(`${key}: ${value}`);
-
-    // {this.props.store.templates.map(template =>
-    //     <TemplateListItem key={template.id} template={template}/>
-    // )};
+ 
     const templateItem = this.props.templateList.map((template, index) => {
             return <TemplateListItem key={index} template={template}/>
     });

@@ -105,6 +105,7 @@ class NewMessage extends Component {
 
   render() {
     let newMessage = this.state.newMessage
+
     return (
       <>
         <div>
@@ -112,36 +113,44 @@ class NewMessage extends Component {
           <form>
             <div>
               Select Template
+              
               <select
                 // className=""
                 type="text"
                 name="select template"
                 label="Template Name"
                 value={newMessage.template.id}
-                onChange={(event) => this.setTemplateID(event, 'id')}
-              >
-                {/* {this.props.store.allTemplatesReducer.companies.map((template) => (
-                  <option value={template.id}>{template.template_name}</option>
-                ))} */}
+                onChange={(event) => this.setTemplateID(event, 'id')}>
+                {this.props.store.templates.map(template =>
+                    <option key={template.id} value={template.id}>{template.template_name}</option>
+                    )}
               </select>
               <br></br>
               Select Guest
               <select
+              // className=""
                 type="text"
                 name="select guest"
                 // label="Guest"
                 value={newMessage.guest.id}
-                // onChange={(event) => this.setGuestId(event, 'id')}
-              ></select>
+                onChange={(event) => this.setGuestId(event, 'id')}>
+                {this.props.store.allGuestsReducer.map(guest =>
+                  <option key={guest.id} value={guest.id}>{guest.first_name}{guest.last_name}</option>
+                  )}
+              </select>
               <br></br>
               Select Hotel
               <select
+              // className=""
                 type="text"
                 name="select hotel"
                 // label="Hotel"
                 value={newMessage.hotel.id}
-                // onChange={(event) => this.setHotelID(event, 'id')}
-              ></select>
+                onChange={(event) => this.setHotelID(event, 'id')}>
+                  {this.props.store.allHotelsReducer.map(company =>
+                  <option key={company.id} value={company.id}>{company.company_name}</option>
+                  )}
+              </select>
               <br></br>
               <button
               // className={this.props.classes.submitButton}
@@ -151,11 +160,13 @@ class NewMessage extends Component {
               >
                 Generate Message
               </button>
-              <GuestList guestList={this.props.store.allGuestsReducer} />
-              <HotelList hotelList={this.props.store.allHotelsreducer} />
-              <TemplateList templateList={this.props.store.templates} />
+              {/* {templateItem} */}
+              {/* <GuestList guestList={this.props.store.allGuestsReducer} /> */}
+              {/* <HotelList hotelList={this.props.store.allHotelsReducer} /> */}
+              {/* <TemplateList templateList={this.props.store.allTemplatesReducer} /> */}
               {/* {JSON.stringify(this.props.store.templates)} */}
-              <NewTemplate />
+              
+              {/* <NewTemplate /> */}
               {/* <TemplateList list={this.props.store.allTemplatesReducer} /> */}
             </div>
           </form>

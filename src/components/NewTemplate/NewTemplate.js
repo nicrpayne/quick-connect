@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import mapStoreToProps from "../../redux/mapStoreToProps";
 import TemplateList from "../TemplateList/TemplateList";
+import NewMessage from "../NewMessage/NewMessage";
 
 
 
@@ -50,7 +51,7 @@ class NewTemplate extends Component {
 
   render() {
     let template = this.state.newTemplate
-    console.log('brooooo!', template);
+    // console.log('brooooo!', template);
     return (
       <>
         <div>
@@ -59,6 +60,7 @@ class NewTemplate extends Component {
         <form>
           <div>
             <input
+            // className=""
               type="text"
               name="templateName"
               placeholder ="New Template Name"
@@ -68,6 +70,7 @@ class NewTemplate extends Component {
               // onChange={this.handleInputChangeFor("templateName")}
             ></input>
             <input
+            // className=""
               type="text"
               name="body"
               placeholder ="New Template Message"
@@ -78,15 +81,16 @@ class NewTemplate extends Component {
             ></input>
             hello
             <button
-              // className={this.props.classes.submitButton}
+              // className=""
               onClick={this.handleClick}
               size={"large"}
               variant={"outlined"}
             >
               Add
             </button>
+            
             <TemplateList templateList={this.props.store.templates} />
-            {/* {JSON.stringify(this.props.store.templates)} */}
+
           </div>
         </form>
       </>
