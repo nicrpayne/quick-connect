@@ -34,13 +34,13 @@ class NewMessage extends Component {
   //         }
   //     })
   // }
-  // console.log(templateName, "made it to handle input change!");
+  // console.log(newMessage, "made it to handle input change!");
 
   handleClick = async (event) => {
     event.preventDefault();
     try {
       await this.props.dispatch({
-        type: "SELECTED_TEMPLATE",
+        type: "NEW_MESSAGE",
         payload: this.state.newMessage,
       });
       alert("New Template Added!");

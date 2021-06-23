@@ -17,6 +17,7 @@ const allGuestsRouter = require('./routes/all.guests.router');
 const allHotelsRouter = require('./routes/all.hotels.router');
 
 
+
 // Body parser middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -35,6 +36,7 @@ app.use('/api/allTemplates', allTemplatesRouter);
 app.use('/api/selectedTemplate', selectedTemplateRouter);
 app.use('/api/allGuests/', allGuestsRouter);
 app.use('/api/allHotels/', allHotelsRouter);
+
 
 // Serve static files
 app.use(express.static('build'));
