@@ -22,7 +22,7 @@ import NewTemplate from "../NewTemplate/NewTemplate";
 import MessageDisplay from "../MessageDisplay/MessageDisplay";
 import NewMessage from "../NewMessage/NewMessage";
 import NewGuest from "../NewGuest/NewGuest";
-import NewCompany from "../NewCompany/NewCompany";
+import NewHotel from "../NewHotel/NewHotel";
 
 import "./App.css";
 
@@ -90,8 +90,8 @@ class App extends Component {
               <ProtectedRoute
                 // logged in shows InfoPage else shows LoginPage
                 exact
-                path="/newcompany"
-                component={NewCompany}
+                path="/newhotel"
+                component={NewHotel}
               />
               <ProtectedRoute
                 // logged in shows InfoPage else shows LoginPage

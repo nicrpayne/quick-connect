@@ -49,7 +49,7 @@ const Nav = (props) => {
            <Link className="nav-link" to="/newguest">
              Add a Guest
            </Link>
-           <Link className="nav-link" to="/newcompany">
+           <Link className="nav-link" to="/newhotel">
              Add a Company
            </Link>
            <LogOutButton className="nav-link" />
