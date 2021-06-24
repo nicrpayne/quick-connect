@@ -13,7 +13,7 @@ class NewTemplateListItem extends Component {
         <div>
         <ul>
 
-          <li key={template.id}> {template.id}, {template.template_name}, {template.template_body}</li>
+          <li key={template.template_id}> {template.template_id}, {template.template_name}, {template.template_body}</li>
           
         </ul>
         {/* <p>hello, my name is {this.props.template.template_name}</p> */}

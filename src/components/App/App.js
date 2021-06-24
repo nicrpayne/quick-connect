@@ -23,7 +23,7 @@ import NewTemplate from "../NewTemplate/NewTemplate";
 import NewMessage from "../NewMessage/NewMessage";
 import NewGuest from "../NewGuest/NewGuest";
 import NewHotel from "../NewHotel/NewHotel";
-import GetGreeting from "../GetGreeting/GetGreeting";
+// import GetGreeting from "../GetGreeting/GetGreeting";
 
 import "./App.css";
 
@@ -135,7 +135,7 @@ class App extends Component {
               {/* If none of the other routes matched, we will show a 404. */}
               <Route render={() => <h1>404</h1>} />
             </Switch>
-            <GetGreeting />
+            {/* <GetGreeting /> */}
             <Footer />
           </div>
         </Router>

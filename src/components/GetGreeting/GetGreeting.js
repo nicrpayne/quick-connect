@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import mapStoreToProps from "../../redux/mapStoreToProps";
 import moment from "moment";
 
+
 class GetGreeting extends Component {
   state = {
     currentTime: new Date().toLocaleString(),
@@ -20,6 +21,9 @@ class GetGreeting extends Component {
       greeting = "Good afteroon";
     }
     return <div>{greeting}</div>;
+
   }
 }
+
+
 export default connect(mapStoreToProps)(GetGreeting);

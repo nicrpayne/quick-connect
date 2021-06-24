@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import mapStoreToProps from "../../redux/mapStoreToProps";
 import NewTemplateList from "../NewTemplateList/NewTemplateList";
-import NewMessage from "../NewMessage/NewMessage";
+// import NewMessage from "../NewMessage/NewMessage";
 
 // Basic class component structure for React with default state
 // value setup. When making a new component be sure to replace

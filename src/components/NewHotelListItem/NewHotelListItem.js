@@ -13,7 +13,7 @@ class NewHotelListItem extends Component {
         <div>
         <ul>
 
-          <li key={hotel.id}> Hotel Name:{hotel.company_name}, 
+          <li key={hotel.company_id}> Hotel Name:{hotel.company_name}, 
           <br></br>
           Hotel City:{hotel.company_city},
           <br></br> 

@@ -18,7 +18,7 @@ router.post('/', async (req, res) => {
         const sqlAddTemplate = `INSERT INTO "templates" 
                                 ("template_name", "template_body")
                                 VALUES ($1, $2)
-                                RETURNING id;`
+                                RETURNING templates_id;`
         const newTemplateQueryValues = [
               newTemplate.name,
               newTemplate.body

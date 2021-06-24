@@ -14,7 +14,7 @@ class NewGuestListItem extends Component {
         <div>
         <ul>
 
-          <li key={newGuest.id}> Guest:{newGuest.first_name}, {newGuest.last_name}, 
+          <li key={newGuest.guest_id}> Guest:{newGuest.first_name}, {newGuest.last_name}, 
           <br></br>
           Room Number:{newGuest.room_number}, 
           <br></br>
