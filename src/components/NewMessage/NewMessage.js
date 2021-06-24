@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import mapStoreToProps from "../../redux/mapStoreToProps";
-// import GenerateMessage from '../GenerateMessage/GenerateMessage';
-import GetGreeting from '../GetGreeting/GetGreeting';
+import FillMessage from '../FillMessage/FillMessage';
 
 //LIKE INDEX>JS. all inputs through here
 class NewMessage extends Component {
@@ -19,14 +18,6 @@ class NewMessage extends Component {
     this.props.dispatch({type: 'GET_TEMPLATES_GUESTS_HOTELS'});
   }
 
-//   handleChangeFor = (event, propertyName) => {
-//     this.setState({
-//         newMessage: {
-//             ...this.state.newMessage,
-//             [propertyName]: event.target.value
-//         }
-//     })
-// }
 
   handleClick = async (event) => {
     event.preventDefault();
@@ -35,7 +26,7 @@ class NewMessage extends Component {
         type: "NEW_MESSAGE",
         payload: this.state.newMessage,
       });
-      alert("New Template Added!");
+      // alert("New Template Added!");
 
       //this.props.history.push('/messageDisplayPage')
     } catch {}
@@ -84,7 +75,7 @@ class NewMessage extends Component {
 
   render() {
     let newMessage = this.state.newMessage
-    console.log('this is new message', newMessage)
+    // console.log('this is new message', newMessage)
     // // const greeting = 'Hello';
     // // const who = 'World';
     // const timeOfDay = '';
@@ -155,11 +146,17 @@ class NewMessage extends Component {
                 Generate Message
               </button>
               <br></br>
-              <GetGreeting />
+              <textarea>
+              
+              </textarea>
+              <FillMessage variables={this.state.newMessage}/>
             </div>
           </form>
+          
         </div>
+        
       </>
+      
     );
   }
 }

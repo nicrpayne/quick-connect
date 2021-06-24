@@ -11,7 +11,6 @@ const router = express.Router();
   pool.query(queryText)
       .then(response => {
           res.send(response.rows)
-        //   console.log('broooo HOTELS! Response:', response.rows);
       }).catch(error => {
           console.log('error in contacts GET', error)
           res.sendStatus(500);

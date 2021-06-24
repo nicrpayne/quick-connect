@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import mapStoreToProps from "../../redux/mapStoreToProps";
 // // import fillTemplate from "../";
-import GetGreeting from "../GetGreeting/GetGreeting";
+
 
 // //(GENERATE MESSAGE) will display query results of selections from NewMessage, GetGreeting, and fillTemplate
 
-class GenerateMessage extends Component {
+class FillMessage extends Component {
 
 //   state = {
 //     newMessage: {
@@ -15,7 +15,7 @@ class GenerateMessage extends Component {
 //   }
   render() {
       const variables = this.props.variables
-    //   console.log('in GenMsg', variables);
+      console.log('in FillMsg', variables);
 
     
     // let newMessage = this.state.newMessage
@@ -41,30 +41,11 @@ class GenerateMessage extends Component {
       <>
       
       <div>
-        {/* <GetGreeting timeGreeting = GetGreeting/> */}
-        {/* <p>Generate New Message</p> */}
-        <GetGreeting />
+
       </div>
       </>
     );
   }
 }
 
-export default connect(mapStoreToProps)(GenerateMessage);
-
-// // import fillTemplate from "../";
-// // import getGreeting from "../";
-// // module.exports =
-
-// // function(templateID, guestID, hotelID) {
-
-// //   var greeting = getGreeting(); //Pick a greeting
-// //   var hotel = JSON.parse(fs.readFileSync('./data/Companies.json'))[hotelID - 1].company;  //Get Hotel Name from ID
-// //   var guest = JSON.parse(fs.readFileSync('./data/Guests.json'))[guestID - 1].firstName;  //Get Guest Name from ID
-// //   var template = JSON.parse(fs.readFileSync('./data/templates.json'))[templateID - 1].body;  //Get Template from ID
-// //   var room = JSON.parse(fs.readFileSync('./data/Guests.json'))[guestID - 1].reservation.roomNumber;  //Get Room number from Guest details
-// //   var timeZone = JSON.parse(fs.readFileSync('./data/Guests.json')) [hotelID - 1].timeZone; //Get TimeZone from Hotel details
-
-// //   return fillTemplate(template, greeting, hotel, guest, room);
-
-// // }
+export default connect(mapStoreToProps)(FillMessage);
