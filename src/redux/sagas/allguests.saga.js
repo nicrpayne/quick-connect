@@ -12,9 +12,19 @@ function* getGuests() {
     }
 }
 
+function* addGuest(action) {
+    console.log('in addGuestsaga', action.payload)
+    try {  
+        yield axios.post('/api/allGuests/', action.payload)
+    }   catch (error) {
+        console.log('Error in postEntry saga: ', error);
+    }
+}
+
 
 function* allGuestsSaga() {
   yield takeLatest('GET_GUESTS', getGuests);
+  yield takeLatest('POST_NEW_GUEST', addGuest);
   yield takeLatest('GET_TEMPLATES_GUESTS_HOTELS', getGuests);
 }
 

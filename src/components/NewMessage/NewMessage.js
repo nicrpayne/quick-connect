@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import mapStoreToProps from "../../redux/mapStoreToProps";
 import GenerateMessage from "../GenerateMessage/GenerateMessage";
+import GetGreeting from "../GetGreeting/GetGreeting";
+// import NewMessageList from "../NewMessageList/NewMessageList";
 
 
 class NewMessage extends Component {
@@ -39,10 +41,11 @@ class NewMessage extends Component {
   };
 
   render() {
+    
     const newMessage = this.state.newMessage;
     console.log(this.state);
     // const greeting = props or redux from get greeting
-    const name = this.state.newMessage.guest_id;
+    // const name = this.state.newMessage.guest_id;
     // console.log('brooooo!', this.props.store)
     return (
       <>
@@ -60,7 +63,7 @@ class NewMessage extends Component {
               >
                 {this.props.store.templates.map((template) => (
                   <option key={template.id} value={template.id}>
-                    {template.template_name}, {template.id}
+                    {template.template_name}
                   </option>
                 ))}
               </select>
@@ -99,10 +102,11 @@ class NewMessage extends Component {
               <button onClick={this.handleClick}>Generate Message</button>
               <br></br>
               <br></br>
-              Your Message: Good Morning 
-              <GenerateMessage />
+              Your Message: 
+              {/* <GenerateMessage />  */}
+              {/* <GetGreeting /> <div>{this.state.newMessage.templateId}</div> */}
               <br></br>
-              {JSON.stringify(this.props.store.messageReducer)}
+              {/* {JSON.stringify(this.state.newMessage.templateId)} */}
               <button>Send Message</button>
             </div>
           </form>

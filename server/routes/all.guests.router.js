@@ -21,6 +21,48 @@ const router = express.Router();
           res.sendStatus(500);
       })
 })
+
+
+router.post('/', async (req, res) => {
+  const newGuest = req.body
+  
+  console.log('in guests router post', newGuest)
+
+  const connection = await pool.connect()
+
+  try {
+        await connection.query('BEGIN');
+        const sqlAddGuest = `INSERT INTO "guests" 
+                                ("first_name", "last_name", "mobile", "email")
+                                VALUES ($1, $2, $3, $4)
+                                RETURNING guests.id;`
+        const newGuestQueryValues = [
+              newGuest.firstName,
+              newGuest.lastName,
+              newGuest.mobile,
+              newGuest.email
+        ];
+         // Save the result so we can get the returned value
+         const result = await connection.query(sqlAddGuest, newGuestQueryValues);
+         // Get the id from the result - will have 1 row with the id 
+         const newGuestId = result.rows[0].id;
+
+         await connection.query('COMMIT');
+         res.sendStatus(200);
+     } catch (error) {
+         await connection.query('ROLLBACK');
+         console.log(`Transaction Error - Rolling back new account`, error);
+         res.sendStatus(500);
+     } finally {
+         connection.release()
+     }
+});
+
+
+
+
+
+
 module.exports = router;
 
 

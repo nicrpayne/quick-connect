@@ -662,9 +662,9 @@ module.exports = router;
 
 
 
-return () {
+<!-- return () {
     <div>
       <SomeComponent key={`some-${someVariable}`} />
       <AnotherComponent />
     </div>
-}
+} -->

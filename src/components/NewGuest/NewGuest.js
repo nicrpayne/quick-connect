@@ -6,11 +6,11 @@ import NewGuestList from "../NewGuestList/NewGuestList";
 class NewGuest extends Component {
   state = {
     newGuest: {
-      first_name: "",
-      last_name: "",
+      firstName: "",
+      lastName: "",
       mobile: "",
       email: "",
-      reservation_number: "",
+      reservationNumber: "",
     },
   };
 
@@ -32,12 +32,13 @@ class NewGuest extends Component {
 
   handleClick = async (event) => {
     event.preventDefault();
+    // console.log('yo', this.state.newGuest)
     try {
       await this.props.dispatch({
-        type: "POST_NEW_GUEST",
-        payload: this.state.newGUEST,
+        type: 'POST_NEW_GUEST',
+        payload: this.state.newGuest,
       });
-      alert("New Guest Added!");
+      // alert("New Guest Added!");
 
       //this.props.history.push('/messageDisplayPage')
     } catch {}
@@ -45,7 +46,7 @@ class NewGuest extends Component {
 
   render() {
     let guest = this.state.newGuest;
-    // console.log('brooooo! guest variable:', guest)
+    console.log('brooooo! guest variable:', guest)
     return (
       <>
         <div>
@@ -91,7 +92,7 @@ class NewGuest extends Component {
               value={guest.email}
               onChange={(event) => this.handleInputChangeFor(event, "email")}
             ></input>
-            <input
+            {/* <input
               // className=""
               type="text"
               name="guestReservation"
@@ -99,9 +100,9 @@ class NewGuest extends Component {
               // label="Guest Email"
               value={guest.email}
               onChange={(event) =>
-                this.handleInputChangeFor(event, "reservation_number")
+                this.handleInputChangeFor(event, "reservationNumber")
               }
-            ></input>
+            ></input> */}
             hello
             <button
               // className=""

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
+import GetGreeting from '../GetGreeting/GetGreeting';
 
 
 
@@ -16,22 +17,33 @@ class GenerateMessage extends Component {
   }
 
 
-
+  
 
   render() {
-    const guest = this.props.store.allGuestsReducer
-    const template = this.props.store.templates 
-    const hotel = this.props.store.allHotelsReducer
-    const message = this.props.store.messageReducer
-console.log('in generatemessage store=', template, guest, hotel, message);
+
+//     const GuestListguest = this.props.allGuestReducer.map(Guest => {
+//       return <GenerateMessageList key={Guest.id} newGuest={Guest}/>
+      
+// });
+    // const guest = this.props.store.allGuestsReducer
+    // const template = this.props.store.templates 
+    // const hotel = this.props.store.allHotelsReducer
+    // const message = this.props.store.messageReducer.id
+    // const greeting = this.props.greeting
+    // let test = 'This is a test'
+// console.log('in generatemessage store=', template, guest, hotel, message, greeting);
 
     return (
 <>
+
 <div>
-  
+<div>{test} {JSON.stringify()}</div>
 </div>
 
       <div>
+
+        {/* <GenerateMessageList messageList =  */}
+        <div></div>
         {/* <h2>{this.state.heading}</h2> */}
         {/* {this.props.getGreeting}  */}
         {/* {this.props.store.allGuestsReducer} */}

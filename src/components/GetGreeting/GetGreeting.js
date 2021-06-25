@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-// import { connect } from "react-redux";
+import { connect } from "react-redux";
 import mapStoreToProps from "../../redux/mapStoreToProps";
 import moment from "moment";
-import GenerateMessage from "../GenerateMessage/GenerateMessage";
+// import GenerateMessage from "../GenerateMessage/GenerateMessage"
 
 class GetGreeting extends Component {
   state = {
@@ -18,13 +18,9 @@ class GetGreeting extends Component {
     } else if (currentHour >= 4 && currentHour <= 11) {
       greeting = "Good morning";
     } else if (currentHour >= 12 && currentHour <= 17) {
-      greeting = "Good afteroon";
+      greeting = "Good afternoon";
     }
-    return (
-      <>
-      <GenerageMessage greeting = {this.props.} />
-      </>
-    );
+    return <div>{greeting}</div>;
   }
 }
 

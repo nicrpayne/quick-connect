@@ -3,9 +3,6 @@ import { connect } from "react-redux";
 import mapStoreToProps from "../../redux/mapStoreToProps";
 
 class NewGuestListItem extends Component {
-  
-
-
   handleClick = (guest) => {
     // console.log('guest clicked with id: ', emotion);
 
@@ -22,20 +19,21 @@ class NewGuestListItem extends Component {
 
   render() {
     // Define "guest" as param passed from NewGuestList
-    let guest = this.props.guest;
+    let guest = this.props.newGuest;
+
     return (
       <>
         <div>
           <div key={guest.id}>
             <div id={guest.id} key={guest.id}>
-              <button
+              {/* <button
                 onClick={() => {
                   this.handleClick(guest);
                 }}
                 aria-label={guest.first_name(guest.last_name)}
               >
                 {(guest.first_name, guest.last_name)}
-              </button>
+              </button> */}
             </div>
           </div>
         </div>

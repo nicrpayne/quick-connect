@@ -8,12 +8,12 @@ class NewGuestList extends Component {
 
   render() {
     // const newGuestListItem = this.props.newGuestList
-    const GuestListItem = this.props.newGuestList.map(Guest => {
-            return <NewGuestListItem key={Guest.id} newGuest={Guest}/>
+    const GuestListItem = this.props.newGuestList.map(guest => {
+            return <NewGuestListItem key={guest.id} newGuest={guest}/>
             
     });
 
-    // console.log('new guest list! newGuestList contains:', this.props.newGuestList);
+    console.log('new guest list! newGuestList contains:', this.props.newGuestList);
     // {JSON.stringify(this.props)}
     return (
       <div> 
