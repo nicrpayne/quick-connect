@@ -9,18 +9,32 @@ class GenerateMessage extends Component {
     heading: 'Class Component',
   };
 
+  async componentDidMount() {
+    this.props.dispatch({
+      type: 'GET_TEMPLATES_GUESTS_HOTELS',
+    });
+  }
+
+
+
+
   render() {
-    let guest = this.props.store.allGuestsReducer
-console.log('in generatemessage props=', guest);
+    const guest = this.props.store.allGuestsReducer
+    const template = this.props.store.templates 
+    const hotel = this.props.store.allHotelsReducer
+    const message = this.props.store.messageReducer
+console.log('in generatemessage store=', template, guest, hotel, message);
 
     return (
 <>
-<div></div>
+<div>
+  
+</div>
 
       <div>
         {/* <h2>{this.state.heading}</h2> */}
         {/* {this.props.getGreeting}  */}
-        {this.props.store.allGuestsRecucer}, 
+        {/* {this.props.store.allGuestsReducer} */}
         {/* and welcome to {this.props.store.hotel.company_name}.  */}
         {/* Room {props.props.store.reservationtable.roomNumber}  */}
 {/* //       is now ready for you. Enjoy your stay, and let us know if you need anything.

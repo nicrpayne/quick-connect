@@ -7,10 +7,10 @@ import GenerateMessage from "../GenerateMessage/GenerateMessage";
 class NewMessage extends Component {
   state = {
     newMessage: {
-      templateId: '',
-      guestId: '',
-      companyId: ''
-    }
+      templateId: "",
+      guestId: "",
+      companyId: "",
+    },
   };
 
   componentDidMount() {
@@ -19,30 +19,30 @@ class NewMessage extends Component {
 
   handleChangeFor = (event, propertyValue) => {
     this.setState({
-        newMessage: {
-            ...this.state.newMessage,
-            [propertyValue]: event.target.value
-        }
-    })
-}
-
-handleClick = async (event) => {
-  event.preventDefault();
-  try {
-    await this.props.dispatch({
-      type: "NEW_MESSAGE",
-      payload: this.state.newMessage,
+      newMessage: {
+        ...this.state.newMessage,
+        [propertyValue]: event.target.value,
+      },
     });
+  };
 
-    //this.props.history.push('/messageDisplayPage')
-  } catch {}
-};
+  handleClick = async (event) => {
+    event.preventDefault();
+    try {
+      await this.props.dispatch({
+        type: 'NEW_MESSAGE',
+        payload: this.state.newMessage,
+      });
+
+      //this.props.history.push('/messageDisplayPage')
+    } catch {}
+  };
 
   render() {
     const newMessage = this.state.newMessage;
-    console.log(this.state)
+    console.log(this.state);
     // const greeting = props or redux from get greeting
-    const name = this.state.newMessage.guest_id
+    const name = this.state.newMessage.guest_id;
     // console.log('brooooo!', this.props.store)
     return (
       <>
@@ -95,13 +95,14 @@ handleClick = async (event) => {
               </select>
               <br></br>
               <br></br>
+              
               <button onClick={this.handleClick}>Generate Message</button>
               <br></br>
               <br></br>
-              Your Message:
-              Good Morning
-              {/* <GenerateMessage /> */}
+              Your Message: Good Morning 
+              <GenerateMessage />
               <br></br>
+              {JSON.stringify(this.props.store.messageReducer)}
               <button>Send Message</button>
             </div>
           </form>
