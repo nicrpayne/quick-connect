@@ -75,7 +75,7 @@ class NewTemplate extends Component {
               onChange={(event) => this.handleInputChangeFor(event, "body")}
               // onChange={this.handleInputChangeFor("templateName")}
             ></input>
-            hello
+            hello 
             <button
               // className=""
               onClick={this.handleClick}

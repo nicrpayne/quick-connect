@@ -1,15 +1,21 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import mapStoreToProps from "../../redux/mapStoreToProps";
-import NewGuestListItem from "../NewGuestListItem/NewGuestListItem";
+import NewMessageListItem from "../NewMessageListItem/NewMessageListItem";
 
-class NewGuestList extends Component {
+class NewMessageList extends Component {
 
 
+    //gets list of all guests on page load
+    componentDidMount() {
+        // console.log('in NewMessageList - ComponentDidMount');
+
+        // this.props.dispatch({ type: 'GET_GUESTS' })
+    };
   render() {
-    // const newGuestListItem = this.props.newGuestList
+
     const GuestListItem = this.props.newGuestList.map(Guest => {
-            return <NewGuestListItem key={Guest.id} newGuest={Guest}/>
+            return <NewMessageListItem key={Guest.id} newGuest={Guest}/>
             
     });
 
@@ -18,6 +24,7 @@ class NewGuestList extends Component {
     return (
       <div> 
         <ul>
+            
             {GuestListItem}
         </ul>
       </div>
@@ -25,4 +32,4 @@ class NewGuestList extends Component {
   }
 }
 
-export default connect(mapStoreToProps)(NewGuestList);
+export default connect(mapStoreToProps)(NewMessageList);

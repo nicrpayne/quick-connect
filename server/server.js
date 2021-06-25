@@ -15,6 +15,7 @@ const allTemplatesRouter = require('./routes/all.templates.router');
 const selectedTemplateRouter = require('./routes/selected.template.router');
 const allGuestsRouter = require('./routes/all.guests.router');
 const allHotelsRouter = require('./routes/all.hotels.router');
+const generateMessageRouter = require('./routes/generate.message.router')
 
 
 
@@ -36,6 +37,7 @@ app.use('/api/allTemplates', allTemplatesRouter);
 app.use('/api/selectedTemplate', selectedTemplateRouter);
 app.use('/api/allGuests/', allGuestsRouter);
 app.use('/api/allHotels/', allHotelsRouter);
+app.use('/api/message', generateMessageRouter);
 
 
 // Serve static files

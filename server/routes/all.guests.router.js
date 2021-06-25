@@ -8,9 +8,9 @@ const router = express.Router();
  */
  router.get('/', (req, res) => {
   const queryText = `SELECT * FROM "guests"
-                    JOIN "reservation" ON "guests".guest_id = 
+                    JOIN "reservation" ON "guests".id = 
                     "reservation".guest_id 
-                    ORDER BY "guests"."guest_id";`
+                    ORDER BY "guests"."id";`
 
   pool.query(queryText)
       .then(response => {

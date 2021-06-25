@@ -8,7 +8,7 @@ const router = express.Router();
  */
  router.get('/', (req, res) => {
   const queryText = `SELECT * FROM "templates" 
-                    ORDER BY "template_id";`
+                    ORDER BY "id";`
 
   pool.query(queryText)
       .then(response => {

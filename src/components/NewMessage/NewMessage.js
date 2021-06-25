@@ -1,162 +1,112 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import mapStoreToProps from "../../redux/mapStoreToProps";
-import FillMessage from '../FillMessage/FillMessage';
+import GenerateMessage from "../GenerateMessage/GenerateMessage";
 
-//LIKE INDEX>JS. all inputs through here
+
 class NewMessage extends Component {
   state = {
     newMessage: {
-      template_id: '',
-      guest_id: '',
-      company_id: ''
+      templateId: '',
+      guestId: '',
+      companyId: ''
     }
-    // currentTime: new Date().toLocaleString(),
   };
-  //get all templates, guests, hotels on pageload
+
   componentDidMount() {
-    this.props.dispatch({type: 'GET_TEMPLATES_GUESTS_HOTELS'});
+    this.props.dispatch({ type: "GET_TEMPLATES_GUESTS_HOTELS" });
   }
 
-
-  handleClick = async (event) => {
-    event.preventDefault();
-    try {
-      await this.props.dispatch({
-        type: "NEW_MESSAGE",
-        payload: this.state.newMessage,
-      });
-      // alert("New Template Added!");
-
-      //this.props.history.push('/messageDisplayPage')
-    } catch {}
-  };
-
-  //   saveMessage = () => {
-  //     this.props.dispatch({
-  //         type: 'GENERATE_MESSAGE',
-  //         payload: {
-  //             address: this.state.newMessage.,
-  //             demographics: this.state.demographics
-  //         }
-  //     })
-  // }
-
-  setTemplateId = (event, propertyName) => {
-    // This updates state with the details submitted
+  handleChangeFor = (event, propertyValue) => {
     this.setState({
-      newMessage: {
-        ...this.state.newMessage,
-        [propertyName]: event.target.value,
-      },
+        newMessage: {
+            ...this.state.newMessage,
+            [propertyValue]: event.target.value
+        }
+    })
+}
+
+handleClick = async (event) => {
+  event.preventDefault();
+  try {
+    await this.props.dispatch({
+      type: "NEW_MESSAGE",
+      payload: this.state.newMessage,
     });
-  };
 
-  setGuestId = (event, propertyName) => {
-    // This updates state with the details submitted
-    this.setState({
-      newMessage: {
-            ...this.state.newMessage,
-            [propertyName]: event.target.value
-        }
-    })
-  }
-
-  setCompanyId = (event, propertyName) => {
-    // This updates state with the details submitted
-    this.setState({
-      newMessage: {
-            ...this.state.newMessage,
-            [propertyName]: event.target.value
-        }
-    })
-  }
-
+    //this.props.history.push('/messageDisplayPage')
+  } catch {}
+};
 
   render() {
-    let newMessage = this.state.newMessage
-    // console.log('this is new message', newMessage)
-    // // const greeting = 'Hello';
-    // // const who = 'World';
-    // const timeOfDay = '';
-    // const name = this.state.newMessage.guest.id
-    // const hotel = this.state.newMessage.hotel.id
-    // const room = this.state.newMessage.guest.room_number
-
-    // const message = `Good ${timeOfDay}, ${name}, and welcome to ${hotel}! Room ${room} is now ready for you. Enjoy your stay, and let us know if you need anything.`;
-
-//     //MOVE FROM NEW MESSAGE TO IT'S OWN COMPONENT
-//     //CONNECT VARIABLES TO DATA BASE (INPUT[onChange(handleInput)], STATE[dispatch BIG_DISPATCH],
-//     //  REDUX[saga-to-router-to-pg-saga-reduxstore], GENERATEMESSAGE pulls it off the store  ${})
-//     //ONE GET QUERY WITH EVERYTHING, THIS COMPONENT DRILLS DOWN INTO EACH THINGZ
-//     //GET TIME OF DAY FOR FIRST VARIABLE FROM GET GREETING
-
-    
-
-
+    const newMessage = this.state.newMessage;
+    console.log(this.state)
+    // const greeting = props or redux from get greeting
+    const name = this.state.newMessage.guest_id
+    // console.log('brooooo!', this.props.store)
     return (
-      
       <>
-      {/* {message} */}
         <div>
           <h2>Create a New Message</h2>
           <form>
             <div>
               Select Template
               <select
-                // className=""
-                type="text"
-                name="select template"
-                label="Template Name"
-                value={newMessage.template_id}
-                onChange={(event) => this.setTemplateId(event, 'template_id')}>
-                {this.props.store.templates.map(template =>
-                    <option key={template.id} value={template.id}>{template.template_name}, {template.template_id}</option>
-                    )}
+                // type="text"
+                // name="select template"
+                // label="Template Name"
+                value={newMessage.templateId}
+                onChange={(event) => this.handleChangeFor(event, "templateId")}
+              >
+                {this.props.store.templates.map((template) => (
+                  <option key={template.id} value={template.id}>
+                    {template.template_name}, {template.id}
+                  </option>
+                ))}
               </select>
               <br></br>
-              Select Guest 
+              Select Guest
               <select
-              // className=""
                 type="text"
                 name="select guest"
-                // label="Guest"
-                value={newMessage.guest_id}
-                onChange={(event) => this.setGuestId(event, 'guest_id')}>
-                {this.props.store.allGuestsReducer.map(guest =>
-                  <option key={guest.id} value={guest.id}>{guest.first_name}{guest.last_name},{guest.guest_id}</option>
-                  )}
+                value={newMessage.guestId}
+                onChange={(event) => this.handleChangeFor(event, "guestId")}
+              >
+                {this.props.store.allGuestsReducer.map((guest) => (
+                  <option key={guest.id} value={guest.id}>
+                    {guest.first_name}
+                    {guest.last_name},{guest.id}
+                  </option>
+                ))}
               </select>
               <br></br>
               Select Hotel
               <select
-              // className=""
                 type="text"
                 name="select hotel"
-                // label="Hotel"
-                value={newMessage.company_id}
-                onChange={(event) => this.setCompanyId(event, 'company_id')}>
-                  {this.props.store.allHotelsReducer.map(company =>
-                  <option key={company.id} value={company.id}>{company.company_name}, {company.company_id}</option>
-                  )}
+                value={newMessage.companyId}
+                onChange={(event) => this.handleChangeFor(event, "companyId")}
+              >
+                {this.props.store.allHotelsReducer.map((company) => (
+                  <option key={company.id} value={company.id}>
+                    {company.company_name}, {company.id}
+                  </option>
+                ))}
               </select>
               <br></br>
-              <button
-                onClick={this.handleClick}>
-                Generate Message
-              </button>
               <br></br>
-              <textarea>
-              
-              </textarea>
-              <FillMessage variables={this.state.newMessage}/>
+              <button onClick={this.handleClick}>Generate Message</button>
+              <br></br>
+              <br></br>
+              Your Message:
+              Good Morning
+              {/* <GenerateMessage /> */}
+              <br></br>
+              <button>Send Message</button>
             </div>
           </form>
-          
         </div>
-        
       </>
-      
     );
   }
 }
@@ -279,7 +229,7 @@ export default connect(mapStoreToProps)(NewMessage);
 // }
 
 // {
-  /* <FormControl >
+/* <FormControl >
 <Select
     defaultValue={this.Companies}
     native className={this.props.classes.dropdownItem}
