@@ -5,7 +5,7 @@ import axios from 'axios';
 function* getGuests() {
     try {
         const response = yield axios.get('/api/allGuests/');
-        console.log('getGuestsSaga response.data', response.data);
+        // console.log('getGuestsSaga response.data', response.data);
         yield put({ type: 'SET_ALL_GUESTS', payload: response.data });
     } catch (error) {
         console.log('Error in getGuests', error);

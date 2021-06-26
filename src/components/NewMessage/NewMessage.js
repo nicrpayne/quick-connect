@@ -103,7 +103,10 @@ class NewMessage extends Component {
               <br></br>
               <br></br>
               Your Message: 
-              {/* <GenerateMessage />  */}
+              <GenerateMessage /> 
+              Date: 
+              {/* {JSON.stringify(this.props.store.allGuestsReducer)} */}
+              <p>{this.props.store.allGuestsReducer.start_time_stamp}</p>
               {/* <GetGreeting /> <div>{this.state.newMessage.templateId}</div> */}
               <br></br>
               {/* {JSON.stringify(this.state.newMessage.templateId)} */}

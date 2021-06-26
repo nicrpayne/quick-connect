@@ -11,8 +11,8 @@ class NewGuestList extends Component {
     // const newGuestListItem = this.props.newGuestList
     const GuestListItem = this.props.newGuestList.map(guest => {
             return <NewGuestListItem key={guest.id} newGuest={guest}/>
-            
     });
+
 //     const NewHotelItem = this.props.newHotelList.map(newHotel => {
 //       return <NewHotelListItem key={newHotel.id} newHotel={newHotel}/>
 // });

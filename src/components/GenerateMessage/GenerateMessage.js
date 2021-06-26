@@ -35,11 +35,11 @@ class GenerateMessage extends Component {
 
     return (
 <>
-
+      <GetGreeting />
 <div>
-<div>{test} {JSON.stringify()}</div>
+{/* <div>{test} {JSON.stringify()}</div> */}
 </div>
-
+{/* {JSON.stringify(this.props.store.allGuestsReducer.start_time_stamp)} */}
       <div>
 
         {/* <GenerateMessageList messageList =  */}

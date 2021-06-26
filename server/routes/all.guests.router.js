@@ -26,7 +26,7 @@ const router = express.Router();
 router.post('/', async (req, res) => {
   const newGuest = req.body
   
-  console.log('in guests router post', newGuest)
+//   console.log('in guests router post', newGuest)
 
   const connection = await pool.connect()
 
@@ -48,16 +48,16 @@ router.post('/', async (req, res) => {
          const newGuestId = result.rows[0].id;
 
          const sqlAddReservation = `INSERT INTO "reservation" 
-         ("room_number", "start_time_stamp", "end_time_stamp", "guest_id",
-         "company_id")
-         VALUES ($1, $2, $3, $4, $5);`;
+                                    ("room_number", "start_time_stamp", "end_time_stamp", "guest_id", "company_id")
+                                    VALUES ($1, $2, $3, $4, $5);`;
 const reservationQueryValues = [
 newGuest.room_number,
 newGuest.start_time_stamp,
 newGuest.end_time_stamp,
 newGuestId,
 newGuest.company_id
-]
+];
+console.log('in guests Post', reservationQueryValues)
 await connection.query(sqlAddReservation, reservationQueryValues);
 
 

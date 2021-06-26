@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import mapStoreToProps from "../../redux/mapStoreToProps";
 import NewGuestList from "../NewGuestList/NewGuestList";
-import NewHotelList from "../NewHotelList/NewHotelList"
+import NewHotelList from "../NewHotelList/NewHotelList";
 
 class NewGuest extends Component {
   state = {
@@ -11,13 +11,13 @@ class NewGuest extends Component {
       lastName: "",
       mobile: "",
       email: "",
-      company: "",
+      companyId: "",
     },
   };
 
   async componentDidMount() {
     this.props.dispatch({
-      type: 'GET_GUESTS',
+      type: "GET_TEMPLATES_GUESTS_HOTELS",
     });
   }
 
@@ -36,7 +36,7 @@ class NewGuest extends Component {
     // console.log('yo', this.state.newGuest)
     try {
       await this.props.dispatch({
-        type: 'POST_NEW_GUEST',
+        type: "POST_NEW_GUEST",
         payload: this.state.newGuest,
       });
       // alert("New Guest Added!");
@@ -47,7 +47,7 @@ class NewGuest extends Component {
 
   render() {
     let guest = this.state.newGuest;
-    console.log('brooooo! guest variable:', guest)
+    console.log("brooooo! guest variable:", guest);
     return (
       <>
         <div>
@@ -93,20 +93,22 @@ class NewGuest extends Component {
               value={guest.email}
               onChange={(event) => this.handleInputChangeFor(event, "email")}
             ></input>
-              Select Hotel
-              <select
-                type="text"
-                name="select hotel"
-                value={guest.companyId}
-                onChange={(event) => this.handleChangeFor(event, "companyId")}
-              >
-                {this.props.store.allHotelsReducer.map((company) => (
-                  <option key={company.id} value={company.id}>
-                    {company.company_name}, {company.id}
-                  </option>
-                ))}
-              </select>
-            hello
+            <select
+              type="text"
+              name="select hotel"
+              placeholder="Select Hotel"
+              value={guest.companyId}
+              onChange={(event) =>
+                this.handleInputChangeFor(event, "companyId")
+              }
+            >
+              {this.props.store.allHotelsReducer.map((company) => (
+                <option key={company.id} value={company.id}>
+                  {company.company_name}, {company.id}
+                </option>
+              ))}
+            </select>
+            <br></br>
             <button
               // className=""
               onClick={this.handleClick}
@@ -116,7 +118,7 @@ class NewGuest extends Component {
               Add
             </button>
             <NewGuestList newGuestList={this.props.store.allGuestsReducer} />
-            {JSON.stringify(this.props.store.allGuestsReducer)}
+            <div></div>
           </div>
         </form>
       </>
