@@ -2,28 +2,24 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import mapStoreToProps from "../../redux/mapStoreToProps";
 
-
 class NewHotelListItem extends Component {
   render() {
-
     let hotel = this.props.newHotel;
-    console.log('props hotel', hotel)
+    console.log("props hotel", hotel);
     return (
       <>
         <div>
-        <ul>
-
-          <li key={hotel.id}> Hotel Name:{hotel.company_name}, 
-          <br></br>
-          Hotel City:{hotel.company_city},
-          <br></br> 
-          Company ID:{hotel.company_id}
-          Hotel Timezone:{hotel.company_timezone}</li>
-        </ul>
-      </div>
-        <div>
-
+          <ul>
+            <li key={hotel.id}>
+              {" "}
+              Hotel Name:{hotel.company_name},<br></br>
+              Hotel City:{hotel.company_city},<br></br>
+              Company ID:{hotel.company_id}
+              Hotel Timezone:{hotel.company_timezone}
+            </li>
+          </ul>
         </div>
+        <div></div>
       </>
     );
   }

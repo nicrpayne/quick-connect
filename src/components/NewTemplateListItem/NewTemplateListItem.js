@@ -12,9 +12,7 @@ class NewTemplateListItem extends Component {
       <>
         <div>
         <ul>
-
           <li key={template.id}> {template.template_id}, {template.template_name}, {template.template_body}</li>
-          
         </ul>
       </div>
       </>
