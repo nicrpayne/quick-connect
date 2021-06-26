@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import mapStoreToProps from "../../redux/mapStoreToProps";
 import NewGuestListItem from "../NewGuestListItem/NewGuestListItem";
 
+
 class NewGuestList extends Component {
 
 
@@ -12,6 +13,9 @@ class NewGuestList extends Component {
             return <NewGuestListItem key={guest.id} newGuest={guest}/>
             
     });
+//     const NewHotelItem = this.props.newHotelList.map(newHotel => {
+//       return <NewHotelListItem key={newHotel.id} newHotel={newHotel}/>
+// });
 
     console.log('new guest list! newGuestList contains:', this.props.newGuestList);
     // {JSON.stringify(this.props)}
@@ -19,6 +23,7 @@ class NewGuestList extends Component {
       <div> 
         <ul>
             {GuestListItem}
+            {/* {NewHotelItem} */}
         </ul>
       </div>
     );

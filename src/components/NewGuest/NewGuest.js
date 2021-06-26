@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import mapStoreToProps from "../../redux/mapStoreToProps";
 import NewGuestList from "../NewGuestList/NewGuestList";
+import NewHotelList from "../NewHotelList/NewHotelList"
 
 class NewGuest extends Component {
   state = {
@@ -10,13 +11,13 @@ class NewGuest extends Component {
       lastName: "",
       mobile: "",
       email: "",
-      reservationNumber: "",
+      company: "",
     },
   };
 
   async componentDidMount() {
     this.props.dispatch({
-      type: "GET_GUESTS",
+      type: 'GET_GUESTS',
     });
   }
 
@@ -92,17 +93,19 @@ class NewGuest extends Component {
               value={guest.email}
               onChange={(event) => this.handleInputChangeFor(event, "email")}
             ></input>
-            {/* <input
-              // className=""
-              type="text"
-              name="guestReservation"
-              placeholder="Reservation #"
-              // label="Guest Email"
-              value={guest.email}
-              onChange={(event) =>
-                this.handleInputChangeFor(event, "reservationNumber")
-              }
-            ></input> */}
+              Select Hotel
+              <select
+                type="text"
+                name="select hotel"
+                value={guest.companyId}
+                onChange={(event) => this.handleChangeFor(event, "companyId")}
+              >
+                {this.props.store.allHotelsReducer.map((company) => (
+                  <option key={company.id} value={company.id}>
+                    {company.company_name}, {company.id}
+                  </option>
+                ))}
+              </select>
             hello
             <button
               // className=""
@@ -113,7 +116,7 @@ class NewGuest extends Component {
               Add
             </button>
             <NewGuestList newGuestList={this.props.store.allGuestsReducer} />
-            {/* {JSON.stringify(this.props.store.allGuestsReducer)} */}
+            {JSON.stringify(this.props.store.allGuestsReducer)}
           </div>
         </form>
       </>

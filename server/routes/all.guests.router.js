@@ -10,12 +10,12 @@ const router = express.Router();
   const queryText = `SELECT * FROM "guests"
                     JOIN "reservation" ON "guests".id = 
                     "reservation".guest_id 
-                    ORDER BY "guests"."id";`
+                    ORDER BY "guests".id;`
 
   pool.query(queryText)
       .then(response => {
           res.send(response.rows)
-        //   console.log('BROOOO GUESTS', response.rows);
+          console.log('BROOOO GUESTS', response.rows);
       }).catch(error => {
           console.log('error in guests GET', error)
           res.sendStatus(500);
@@ -46,6 +46,20 @@ router.post('/', async (req, res) => {
          const result = await connection.query(sqlAddGuest, newGuestQueryValues);
          // Get the id from the result - will have 1 row with the id 
          const newGuestId = result.rows[0].id;
+
+         const sqlAddReservation = `INSERT INTO "reservation" 
+         ("room_number", "start_time_stamp", "end_time_stamp", "guest_id",
+         "company_id")
+         VALUES ($1, $2, $3, $4, $5);`;
+const reservationQueryValues = [
+newGuest.room_number,
+newGuest.start_time_stamp,
+newGuest.end_time_stamp,
+newGuestId,
+newGuest.company_id
+]
+await connection.query(sqlAddReservation, reservationQueryValues);
+
 
          await connection.query('COMMIT');
          res.sendStatus(200);

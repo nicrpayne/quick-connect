@@ -1,4 +1,3 @@
-// import { json } from "express";
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import mapStoreToProps from "../../redux/mapStoreToProps";
@@ -9,14 +8,14 @@ class NewHotelList extends Component {
 
   render() {
  
-    const newHotelItem = this.props.newHotelList.map((newHotel, index) => {
-            return <NewHotelListItem key={index} newHotel={newHotel}/>
-    });
+    const NewHotelItem = this.props.newHotelList.map(newHotel => {
+      return <NewHotelListItem key={newHotel.id} newHotel={newHotel}/>
+});
     
     return (
       <div> 
         <ul>
-            {newHotelItem}
+            {NewHotelItem}
         </ul>
       </div>
     );
