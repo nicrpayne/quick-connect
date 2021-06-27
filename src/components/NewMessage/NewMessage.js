@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import mapStoreToProps from "../../redux/mapStoreToProps";
 import GenerateMessage from "../GenerateMessage/GenerateMessage";
 import GetGreeting from "../GetGreeting/GetGreeting";
-// import NewMessageList from "../NewMessageList/NewMessageList";
+import NewMessageList from "../NewMessageList/NewMessageList";
 
 class NewMessage extends Component {
   state = {
@@ -11,14 +11,17 @@ class NewMessage extends Component {
       templateId: "",
       guestId: "",
       companyId: "",
+      roomNumber: "",
     },
   };
 
-  componentDidMount() {
+  async componentDidMount() {
+    console.log("in component didmount new message");
     this.props.dispatch({ type: "GET_TEMPLATES_GUESTS_HOTELS" });
   }
 
   handleChangeFor = (event, propertyValue) => {
+    // console.log('handlechangefor')
     this.setState({
       newMessage: {
         ...this.state.newMessage,
@@ -38,6 +41,16 @@ class NewMessage extends Component {
       //this.props.history.push('/messageDisplayPage')
     } catch {}
   };
+
+  getGuestNameById(id) {
+    let guestName = '';
+    this.props.store.allGuestsReducer.map((guest) => {
+      if (guest.id == id) {
+        guestName = guest.first_name + " " + guest.last_name;
+      }
+    });
+    return guestName;
+  } 
 
   render() {
     const newMessage = this.state.newMessage;
@@ -74,7 +87,7 @@ class NewMessage extends Component {
                 {this.props.store.allGuestsReducer.map((guest) => (
                   <option key={guest.id} value={guest.id}>
                     {guest.first_name}
-                    {guest.last_name},{guest.id}
+                    {guest.last_name}
                   </option>
                 ))}
               </select>
@@ -88,7 +101,7 @@ class NewMessage extends Component {
               >
                 {this.props.store.allHotelsReducer.map((company) => (
                   <option key={company.id} value={company.id}>
-                    {company.company_name}, {company.id}
+                    {company.company_name}
                   </option>
                 ))}
               </select>
@@ -98,9 +111,17 @@ class NewMessage extends Component {
               <br></br>
               <br></br>
               Your Message:
-              <GenerateMessage />
-              Date:
-              {JSON.stringify(this.props.store.allGuestsReducer)}
+              <NewMessageList
+                newMessageList={this.props.store.allGuestsReducer}
+              />
+              <p>
+                {" "}
+                "<GenerateMessage /> {this.getGuestNameById(this.state.newMessage.guestId)}, and welcome to{" "}
+                {this.state.newMessage.companyId}! Room # is now ready you.
+                Enjoy your stay, and let us know if you need anything."
+              </p>
+              // Date:
+              {/* {JSON.stringify(this.props.store.allGuestsReducer)} */}
               <br></br>
               <button>Send Message</button>
             </div>
