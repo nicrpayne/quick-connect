@@ -15,6 +15,7 @@ import UserPage from "../UserPage/UserPage";
 import LandingPage from "../LandingPage/LandingPage";
 import LoginPage from "../LoginPage/LoginPage";
 import RegisterPage from "../RegisterPage/RegisterPage";
+import Sidebar from "../Sidebar/Sidebar";
 
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
@@ -140,6 +141,7 @@ class App extends Component {
           </div>
         </Router>
         <div>
+          <Sidebar />
           {/* <QKNewTemplate /> */}
           {/* <MessageDisplay /> */}
         </div>

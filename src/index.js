@@ -7,6 +7,7 @@ import logger from 'redux-logger';
 
 import rootReducer from './redux/reducers/_root.reducer'; // imports ./redux/reducers/index.js
 import rootSaga from './redux/sagas/_root.saga'; // imports ./redux/sagas/index.js
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 import App from './components/App/App';
 
