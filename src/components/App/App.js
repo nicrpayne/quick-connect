@@ -15,17 +15,15 @@ import UserPage from "../UserPage/UserPage";
 import LandingPage from "../LandingPage/LandingPage";
 import LoginPage from "../LoginPage/LoginPage";
 import RegisterPage from "../RegisterPage/RegisterPage";
-import Sidebar from "../Sidebar/Sidebar";
 
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
 import NewTemplate from "../NewTemplate/NewTemplate";
-// import MessageDisplay from "../MessageDisplay/MessageDisplay";
 import NewMessage from "../NewMessage/NewMessage";
 import NewGuest from "../NewGuest/NewGuest";
 import NewHotel from "../NewHotel/NewHotel";
-// import GetGreeting from "../GetGreeting/GetGreeting";
 
+import "@notus-pro/react/tailwind.min.css";
 import "./App.css";
 
 class App extends Component {
@@ -34,8 +32,10 @@ class App extends Component {
   }
 
   render() {
+    
     return (
       <>
+      {/* <Example /> */}
         <Router>
           <div>
             <Nav />
@@ -141,9 +141,6 @@ class App extends Component {
           </div>
         </Router>
         <div>
-          <Sidebar />
-          {/* <QKNewTemplate /> */}
-          {/* <MessageDisplay /> */}
         </div>
       </>
     );

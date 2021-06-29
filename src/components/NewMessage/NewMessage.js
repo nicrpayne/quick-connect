@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import mapStoreToProps from "../../redux/mapStoreToProps";
 import moment from "moment";
+// import Sidebar from "@notus-pro/react/Sidebar"
 
 class NewMessage extends Component {
   state = {
@@ -92,6 +93,8 @@ class NewMessage extends Component {
   //       console.log(momentFormattedTime);
   // })
 
+
+
   render() {
     const newMessage = this.state.newMessage;
     console.log(this.state);
@@ -167,5 +170,7 @@ class NewMessage extends Component {
     );
   }
 }
+
+
 
 export default connect(mapStoreToProps)(NewMessage);
