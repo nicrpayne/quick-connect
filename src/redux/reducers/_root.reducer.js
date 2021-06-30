@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 import errors from './errors.reducer';
 import user from './user.reducer';
+import loginMode from './loginMode.reducer';
 import templates from './allTemplates.reducer';
 import newTemplate from './newTemplate.reducer';
 import selectedTemplateReducer from './selectedTemplate.reducer';
@@ -16,6 +17,7 @@ import messageReducer from './message.reducer';
 // This is what we get when we use 'state' inside of 'mapStateToProps'
 const rootReducer = combineReducers({
   errors, // contains registrationMessage and loginMessage
+  loginMode, // will have a value of 'login' or 'registration' to control which screen is shown
   user, // will have an id and username if someone is logged in
   templates,
   newTemplate,
