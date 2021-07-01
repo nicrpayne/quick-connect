@@ -2,8 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import LogOutButton from "../LogOutButton/LogOutButton";
-// import "./Nav.css";
+// import {Menu} from "semantic-ui-react";
 import mapStoreToProps from "../../redux/mapStoreToProps";
+import "./Nav.css";
 
 const Nav = (props) => {
   let loginLinkData = {
@@ -18,9 +19,9 @@ const Nav = (props) => {
 
   return (
     <>
-      <div>
+      <div >
         <a href="/home">
-          <img src="/Assets/ColorNoBackground.png" />
+          {/* <img src="/Assets/ColorNoBackground.png" /> */}
         </a>
         <Link to="/home"></Link>
         <div>
@@ -60,3 +61,4 @@ const Nav = (props) => {
 };
 
 export default connect(mapStoreToProps)(Nav);
+{/* <div class="ui inverted vertical menu"><a class="active item">Home</a><a class="item">Messages</a><a class="item">Friends</a></div> */}
