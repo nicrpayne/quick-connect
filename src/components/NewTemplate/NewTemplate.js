@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import mapStoreToProps from "../../redux/mapStoreToProps";
 import NewTemplateList from "../NewTemplateList/NewTemplateList";
+import Nav from "../Nav/Nav";
+import Header from "../Header/Header";
 // import NewMessage from "../NewMessage/NewMessage";
 
 // Basic class component structure for React with default state
@@ -50,6 +52,8 @@ class NewTemplate extends Component {
     // console.log('brooooo!', template);
     return (
       <>
+            <Header />
+      <Nav />
         <div>
           <h2>{this.state.heading}</h2>
         </div>

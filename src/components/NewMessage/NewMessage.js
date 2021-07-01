@@ -3,15 +3,17 @@ import { connect } from "react-redux";
 import mapStoreToProps from "../../redux/mapStoreToProps";
 import moment from "moment";
 import styled from 'styled-components';
+import Nav from "../Nav/Nav";
+import Header from "../Header/Header";
 
 
 
-const MessageWrapper = styled.div`
-  grid-column: 2;
-  grid-row: 1 / 4;
-  background-color: #67b231;
-  color: #958993;
-`;
+// const MessageWrapper = styled.div`
+//   grid-column: 2;
+//   grid-row: 1 / 4;
+//   background-color: #67b231;
+//   color: #958993;
+// `;
 
 
 
@@ -114,7 +116,9 @@ class NewMessage extends Component {
 
     return (
       <>
-      <MessageWrapper>
+      <Header />
+      <Nav />
+      {/* <MessageWrapper> */}
         <div>
           <h2>Create a New Message</h2>
           <form>
@@ -180,7 +184,7 @@ class NewMessage extends Component {
             </div>
           </form>
         </div>
-        </MessageWrapper>
+        {/* </MessageWrapper> */}
       </>
     );
   }

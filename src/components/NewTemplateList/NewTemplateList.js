@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import mapStoreToProps from "../../redux/mapStoreToProps";
 import NewTemplateListItem from "../NewTemplateListItem/NewTemplateListItem";
 
+
 class NewTemplateList extends Component {
   render() {
     const NewTemplateItem = this.props.newTemplateList.map(
@@ -13,9 +14,11 @@ class NewTemplateList extends Component {
     );
     console.log("NewTemplatesList contains:", this.props.newTemplateList);
     return (
+      
       <div>
         <ul>{NewTemplateItem}</ul>
       </div>
+    
     );
   }
 }

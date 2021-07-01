@@ -1,14 +1,17 @@
-.ui-inverted-vertical-menu .item .menu .active.item {
-  /* background: @invertedSubMenuActiveBackground; */
-  color: black;
-};
 
-
-
-
-
-
-
+.ui.inverted.vertical.menu {
+  margin-top: 0rem;
+  height: 100vh;
+  border-top-left-radius: 0rem;
+  border-top-right-radius: 0rem;
+  border-bottom-right-radius: 0rem;
+  border-bottom-left-radius: 0rem;
+  width: 12rem;
+}
+.ui.inverted.menu .menu{
+  /* background: @invertedItemBackground; */
+  background-color: #191c25;
+} 
 
 
 /*--------------
@@ -84,12 +87,12 @@
   background: @invertedActiveBackground;
   color: @invertedActiveColor !important;
 }
-.ui.inverted.vertical.menu .item .menu .active.item {
-  background: @invertedSubMenuActiveBackground;
-  color: @invertedSubMenuActiveColor;
-}
+/*  */
+/* .ui.inverted.vertical.menu  {
+  border-radius: "0rem" !important;
+} */
 
-
+/* 
 .ui.inverted.pointing.menu .active.item:after {
   background: @invertedArrowActiveColor !important;
   margin: 0em !important;
@@ -148,9 +151,6 @@
 .ui.inverted.text.menu .active.item {
   background-color: transparent !important;
 }; */
-
-
-
 
 /*--------------
     Inverted
@@ -300,18 +300,6 @@
   background-color: @invertedColoredActiveBackground !important;
 } */
 
-
-
-
-
-
-
-
-
-
-
-
-
 /* .nav-title {
     font-size: 24px;
     font-weight: 700;
@@ -343,9 +331,9 @@
   text-decoration: none;
   font-size: 15px; */
 
-  /* these last two make the logout button in
+/* these last two make the logout button in
   the nav bar look like another link */
-  /* border:none;
+/* border:none;
   cursor: pointer;
   outline:0;
 } */

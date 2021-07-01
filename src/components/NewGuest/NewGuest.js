@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import mapStoreToProps from "../../redux/mapStoreToProps";
 import NewGuestList from "../NewGuestList/NewGuestList";
 import NewHotelList from "../NewHotelList/NewHotelList";
+import Nav from "../Nav/Nav";
+import Header from "../Header/Header";
 
 class NewGuest extends Component {
   state = {
@@ -50,6 +52,8 @@ class NewGuest extends Component {
     console.log("brooooo! guest variable:", guest);
     return (
       <>
+      <Header />
+      <Nav />
         <div>
           <h2>{this.state.heading}</h2>
         </div>

@@ -9,7 +9,7 @@ import {
 import { connect } from "react-redux";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
-import Nav from "../Nav/Nav";
+
 import Footer from "../Footer/Footer";
 import AboutPage from "../AboutPage/AboutPage";
 import UserPage from "../UserPage/UserPage";
@@ -21,6 +21,9 @@ import NewMessage from "../NewMessage/NewMessage";
 import NewGuest from "../NewGuest/NewGuest";
 import NewHotel from "../NewHotel/NewHotel";
 
+
+import "semantic-ui-css/semantic.min.css"
+
 class App extends Component {
   componentDidMount() {
     this.props.dispatch({ type: "FETCH_USER" });
@@ -31,7 +34,8 @@ class App extends Component {
       <>
         <Router>
           <div>
-            <Nav />
+
+            {/* <Nav /> */}
             <Switch>
               {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
               <Redirect exact from="/" to="/home" />
@@ -54,13 +58,6 @@ class App extends Component {
                 path="/user"
                 component={UserPage}
               />
-
-              {/* <ProtectedRoute
-                // logged in shows Message Page else shows LoginPage
-                exact
-                path="/templatelistpage"
-                component={TemplateList}
-              /> */}
 
               <ProtectedRoute
                 // logged in shows New Template Page else shows LoginPage

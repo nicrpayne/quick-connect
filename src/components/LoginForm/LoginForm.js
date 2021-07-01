@@ -11,6 +11,8 @@ import {
   Message,
 } from "semantic-ui-react";
 
+import "./LoginForm.css";
+
 class LoginForm extends Component {
   state = {
     username: "",
@@ -41,58 +43,60 @@ class LoginForm extends Component {
 
   render() {
     return (
-      <Grid
-        textAlign="center"
-        style={{ height: "100vh" }}
-        verticalAlign="middle"
-      >
-        <Grid.Column style={{ maxWidth: 450 }}>
-          <Header as="h2" color="teal" textAlign="center">
-            <Image src="/assets/LogoCropped.png" /> Log-in to your account
-          </Header>
-          <Form size="large">
-            <Segment stacked>
-              {this.props.store.errors.loginMessage && (
-                <h3 className="alert" role="alert">
-                  {this.props.store.errors.loginMessage}
-                </h3>
-              )}
-              <Form.Input
-                fluid
-                icon="user"
-                iconPosition="left"
-                placeholder="username"
-                type="text"
-                name="username"
-                required
-                value={this.state.username}
-                onChange={this.handleInputChangeFor("username")}
-              />
-              <Form.Input
-                fluid
-                icon="lock"
-                iconPosition="left"
-                placeholder="Password"
-                type="password"
-                required
-                value={this.state.password}
-                onChange={this.handleInputChangeFor("password")}
-              />
+      <>
+        <div className="ui grid container">
+          <Grid
+            textAlign="left"
+            style={{ height: "100vh" }}
+            verticalAlign="middle"
+          >
+            <Grid.Column style={{ maxWidth: 450 }}>
+              <Header as="h2" color="teal" textAlign="center">
+                <Image src="/assets/WhiteBell.png" /> Welcome! Log in
+              </Header>
+              <Form size="large">
+                <Segment stacked>
+                  {this.props.store.errors.loginMessage && (
+                    <h3 className="alert" role="alert">
+                      {this.props.store.errors.loginMessage}
+                    </h3>
+                  )}
+                  <Form.Input
+                    fluid
+                    icon="user"
+                    iconPosition="left"
+                    placeholder="username"
+                    type="text"
+                    name="username"
+                    required
+                    value={this.state.username}
+                    onChange={this.handleInputChangeFor("username")}
+                  />
+                  <Form.Input
+                    fluid
+                    icon="lock"
+                    iconPosition="left"
+                    placeholder="Password"
+                    type="password"
+                    required
+                    value={this.state.password}
+                    onChange={this.handleInputChangeFor("password")}
+                  />
 
-              <Button
-              onClick={(event) => this.login(event)}
-                color="teal"
-                fluid
-                size="large"
-                type="submit"
-                name="submit"
-                className="btn"
-                value="Log In"
-              >
-                Login
-              </Button>
+                  <Button
+                    onClick={(event) => this.login(event)}
+                    color="teal"
+                    fluid
+                    size="large"
+                    type="submit"
+                    name="submit"
+                    className="btn"
+                    value="Log In"
+                  >
+                    Login
+                  </Button>
 
-              {/* <div>
+                  {/* <div>
                 <label htmlFor="username">
                   Username:
                   <input
@@ -104,7 +108,7 @@ class LoginForm extends Component {
                   />
                 </label>
               </div> */}
-              {/* <div>
+                  {/* <div>
                 <label htmlFor="password">
                   Password:
                   <input
@@ -116,7 +120,7 @@ class LoginForm extends Component {
                   />
                 </label>
               </div> */}
-              {/* <div>
+                  {/* <div>
                 <input
                   className="btn"
                   type="submit"
@@ -124,13 +128,15 @@ class LoginForm extends Component {
                   value="Log In"
                 />
               </div> */}
-            </Segment>
-          </Form>
-          <Message>
-            New to us? <a href="#">Sign Up</a>
-          </Message>
-        </Grid.Column>
-      </Grid>
+                </Segment>
+              </Form>
+              <Message style={{ textAlign: "center" }}>
+                New to us? <a href="#">Sign Up</a>
+              </Message>
+            </Grid.Column>
+          </Grid>
+        </div>
+      </>
     );
   }
 }

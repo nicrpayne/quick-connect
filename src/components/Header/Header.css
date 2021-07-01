@@ -1,0 +1,12 @@
+span.item.link.grey {
+    float: right;
+}
+
+.ui.top.inverted.attached.menu {
+    padding: 6px;
+    padding-left: 7px;
+}
+
+.header.container {
+    position:fixed !important;
+}
