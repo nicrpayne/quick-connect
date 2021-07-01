@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import mapStoreToProps from "../../redux/mapStoreToProps";
+
 import "./Header.css"
 
 function Header() {
@@ -14,6 +15,7 @@ function Header() {
         <img
           src="/Assets/whiteLogoNoBackground.png"
           className="ui medium image"
+          href="#/home"
         ></img>
       </div>
  

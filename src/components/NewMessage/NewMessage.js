@@ -2,22 +2,9 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import mapStoreToProps from "../../redux/mapStoreToProps";
 import moment from "moment";
-import styled from 'styled-components';
 import Nav from "../Nav/Nav";
 import Header from "../Header/Header";
-
-
-
-// const MessageWrapper = styled.div`
-//   grid-column: 2;
-//   grid-row: 1 / 4;
-//   background-color: #67b231;
-//   color: #958993;
-// `;
-
-
-
-
+import allHotelsReducer from "redux/reducers/allHotels.reducer";
 
 class NewMessage extends Component {
   state = {
@@ -108,23 +95,24 @@ class NewMessage extends Component {
   //       console.log(momentFormattedTime);
   // })
 
-
-
   render() {
     const newMessage = this.state.newMessage;
     console.log(this.state);
 
+
     return (
+
       <>
-      <Header />
-      <Nav />
-      {/* <MessageWrapper> */}
+        <Header />
+        <Nav />
+        {/* <MessageWrapper> */}
         <div>
           <h2>Create a New Message</h2>
           <form>
             <div>
               Select Template
               <select
+                className="ui dropdown"
                 value={newMessage.templateId}
                 onChange={(event) => this.handleChangeFor(event, "templateId")}
               >
@@ -134,24 +122,29 @@ class NewMessage extends Component {
                   </option>
                 ))}
               </select>
-              <br></br>
+
               Select Guest
+              
               <select
+                className="ui dropdown"
                 type="text"
                 name="select guest"
                 value={newMessage.guestId}
                 onChange={(event) => this.handleChangeFor(event, "guestId")}
               >
                 {this.props.store.allGuestsReducer.map((guest) => (
+                  
                   <option key={guest.id} value={guest.id}>
                     {guest.first_name}
                     {guest.last_name}
                   </option>
                 ))}
               </select>
-              <br></br>
+
               Select Hotel
               <select
+                defaultValue={{label: "Hotel"}}
+                className="ui dropdown"
                 type="text"
                 name="select hotel"
                 value={newMessage.companyId}
@@ -163,24 +156,24 @@ class NewMessage extends Component {
                   </option>
                 ))}
               </select>
-              <br></br>
-              <br></br>
+
               <button onClick={this.handleClick}>Generate Message</button>
               <br></br>
               <br></br>
               Your Message:
               <p>
-                "{this.getGreeting()}{' '}
+                "{this.getGreeting()}{" "}
                 {this.getGuestNameById(this.state.newMessage.guestId)} and
                 welcome to{this.getCompanyById(this.state.newMessage.companyId)}
-                ! Room number {' '}
+                ! Room number{" "}
                 {this.getRoomNumberByGuestId(this.state.newMessage.guestId)} is
                 now ready you. Enjoy your stay, and let us know if you need
                 anything."
               </p>
-              Date: 
+              Date:
               <br></br>
               <button>Send Message</button>
+
             </div>
           </form>
         </div>
@@ -189,7 +182,5 @@ class NewMessage extends Component {
     );
   }
 }
-
-
 
 export default connect(mapStoreToProps)(NewMessage);

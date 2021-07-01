@@ -4,6 +4,7 @@ import LogOutButton from '../LogOutButton/LogOutButton';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import Header from "../Header/Header";
 import Nav from "../Nav/Nav";
+import { Image } from "semantic-ui-react";
 
 
 class UserPage extends Component {
@@ -18,7 +19,7 @@ class UserPage extends Component {
         <p>Your ID is: {this.props.store.user.id}</p>
         <LogOutButton className="log-in" />
       </div>
-
+      
       </>
       
     );
