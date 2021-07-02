@@ -33,7 +33,8 @@ function Header() {
         <div className="container-item-link">
   
         {/* <span style={{float: 'right'}}className="item link grey" >Log Out</span> */}
-        <LogOutButton style={{float: 'right'}}className="item link grey"/>
+        {/* style={{marginRight: "1rem;"}} */}
+        <LogOutButton className="item link grey"/>
         
         
         </div>
