@@ -1,12 +1,35 @@
+*{
+    font-family: 'Lato', sans-serif !important;
+  font-weight: 300;
+  }
+  
+.header-container {
+    /* position:fixed !important; */
+    font-family: 'Lato', sans-serif;
+}
+
 span.item.link.grey {
-    float: right;
+
+}
+
+.container-item-link{
+    position: absolute;
+    right: 0px;
+    margin-top: 16px;
+    text-align: center;
+
+}
+
+.ui.vertical.divider:before{
+        position: fixed;
+    left: 1345px;
+    height: 92.52px;
+    margin-top: -170px;
+    /* z-index: 3 */
 }
 
 .ui.top.inverted.attached.menu {
     padding: 6px;
     padding-left: 7px;
-}
-
-.header.container {
-    position:fixed !important;
+    
 }

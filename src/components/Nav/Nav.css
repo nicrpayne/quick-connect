@@ -1,5 +1,11 @@
+*{
+  font-family: 'Lato', sans-serif !important;
+  font-weight: 300;
+}
 
 .ui.inverted.vertical.menu {
+  font-family: 'Lato', sans-serif !important;
+  font-weight: 300;
   margin-top: 0rem;
   height: 100vh;
   border-top-left-radius: 0rem;
@@ -11,8 +17,14 @@
 .ui.inverted.menu .menu{
   /* background: @invertedItemBackground; */
   background-color: #191c25;
+  font-family: 'Lato', sans-serif !important;
+  font-weight: 300;
+  
 } 
-
+.item{
+  font-family: 'Lato', sans-serif !important;
+  font-weight: 300;
+}
 
 /*--------------
     Inverted
@@ -322,21 +334,21 @@
   overflow: hidden;
 } */
 
-/* .nav-link {
+.nav-link {
   float: left;
   color: #f2f2f2;
-  background-color: #00acb0;
+  /* background-color: #00acb0; */
   text-align: center;
   padding: 24px 10px;
   text-decoration: none;
-  font-size: 15px; */
+  font-size: 15px; 
 
 /* these last two make the logout button in
-  the nav bar look like another link */
-/* border:none;
+  the nav bar look like another link  */
+border:none;
   cursor: pointer;
   outline:0;
-} */
+}
 
 /* .nav-link:hover {
   background-color: #008183;

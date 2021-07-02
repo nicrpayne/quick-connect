@@ -6,10 +6,6 @@ import mapStoreToProps from "../../redux/mapStoreToProps";
 import "./Nav.css";
 
 
-// const style=Object.style 
-
-
-//{borderRadius: "0rem"}, 
 
 const Nav = (props) => {
   let loginLinkData = {
@@ -60,7 +56,7 @@ const Nav = (props) => {
         </div>
       </div>
       </div>
-      <LogOutButton className="nav-link" />
+      <LogOutButton className="item link grey" />
     </>
   );
 };
