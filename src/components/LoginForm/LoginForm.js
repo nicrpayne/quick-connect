@@ -48,9 +48,10 @@ class LoginForm extends Component {
         <div className="login-section">
           <div className="login-form">
               <div>
-                <Header as="h2" color="teal" textAlign="center">
+                <Header as="h2" color="blue" textAlign="center">
                   <Image src="/assets/WhiteBell.png" /> Welcome! Log in
                 </Header>
+
                 <Form size="large">
                   <Segment stacked>
                     {this.props.store.errors.loginMessage && (
@@ -82,7 +83,7 @@ class LoginForm extends Component {
 
                     <Button
                       onClick={(event) => this.login(event)}
-                      color="teal"
+                      color="blue"
                       fluid
                       size="large"
                       type="submit"
@@ -105,7 +106,7 @@ class LoginForm extends Component {
           <div className="photo-section">
 
             <div className="hotel-image">
-              <h1>hotel picture</h1>
+              {/* <h1>hotel picture</h1> */}
             </div>
 
 
