@@ -21,6 +21,7 @@ import NewMessage from "../NewMessage/NewMessage";
 import NewGuest from "../NewGuest/NewGuest";
 import NewHotel from "../NewHotel/NewHotel";
 
+import './App.css';
 
 import "semantic-ui-css/semantic.min.css"
 

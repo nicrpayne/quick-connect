@@ -61,8 +61,8 @@ class LoginForm extends Component {
                     )}
                     <Form.Input
                       fluid
-                      icon="user"
-                      iconPosition="left"
+                      // icon="user"
+                      // iconPosition="left"
                       placeholder="username"
                       type="text"
                       name="username"
@@ -72,9 +72,9 @@ class LoginForm extends Component {
                     />
                     <Form.Input
                       fluid
-                      icon="lock"
-                      iconPosition="left"
-                      placeholder="Password"
+                      // icon="lock"
+                      // iconPosition="left"
+                      placeholder="password"
                       type="password"
                       required
                       value={this.state.password}

@@ -119,3 +119,27 @@ input {
   margin: 5px;
   margin-bottom: 10px;
 }
+
+
+
+/* --------------------------------------------------------------------------------
+New Message
+-------------------------------------------------------------------------------- */
+.select-container{
+  position: absolute;
+  left: 250px;
+  top: 350px;
+}
+
+
+.title-icon-container{
+  position: absolute;
+  left: 250px;
+  top: 100px;
+}
+.ui icon center aligned header {
+  color: white;
+}
+.content{
+  color:white;
+}

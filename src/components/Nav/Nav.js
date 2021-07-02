@@ -56,7 +56,6 @@ const Nav = (props) => {
         </div>
       </div>
       </div>
-      <LogOutButton className="item link grey" />
     </>
   );
 };

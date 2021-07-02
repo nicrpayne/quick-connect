@@ -4,7 +4,8 @@ import mapStoreToProps from "../../redux/mapStoreToProps";
 import moment from "moment";
 import Nav from "../Nav/Nav";
 import Header from "../Header/Header";
-import allHotelsReducer from "redux/reducers/allHotels.reducer";
+
+import "../App/App.css";
 
 class NewMessage extends Component {
   state = {
@@ -99,17 +100,25 @@ class NewMessage extends Component {
     const newMessage = this.state.newMessage;
     console.log(this.state);
 
-
     return (
-
       <>
         <Header />
         <Nav />
-        {/* <MessageWrapper> */}
+      {/* should these be cards? */}
         <div>
-          <h2>Create a New Message</h2>
+          <div className="title-icon-container">
+            <h2 class="ui icon center aligned header">
+              <i aria-hidden="true" class="users circular icon"></i>
+              <div class="content">New Message</div>
+            </h2>
+            <img
+              src="/images/wireframe/centered-paragraph.png"
+              class="ui large centered image"
+            />
+          </div>
+          ;
           <form>
-            <div>
+            <div className="select-container">
               Select Template
               <select
                 className="ui dropdown"
@@ -122,9 +131,7 @@ class NewMessage extends Component {
                   </option>
                 ))}
               </select>
-
               Select Guest
-              
               <select
                 className="ui dropdown"
                 type="text"
@@ -133,17 +140,15 @@ class NewMessage extends Component {
                 onChange={(event) => this.handleChangeFor(event, "guestId")}
               >
                 {this.props.store.allGuestsReducer.map((guest) => (
-                  
                   <option key={guest.id} value={guest.id}>
                     {guest.first_name}
                     {guest.last_name}
                   </option>
                 ))}
               </select>
-
               Select Hotel
               <select
-                defaultValue={{label: "Hotel"}}
+                defaultValue={{ label: "Hotel" }}
                 className="ui dropdown"
                 type="text"
                 name="select hotel"
@@ -156,7 +161,6 @@ class NewMessage extends Component {
                   </option>
                 ))}
               </select>
-
               <button onClick={this.handleClick}>Generate Message</button>
               <br></br>
               <br></br>
@@ -173,11 +177,9 @@ class NewMessage extends Component {
               Date:
               <br></br>
               <button>Send Message</button>
-
             </div>
           </form>
         </div>
-        {/* </MessageWrapper> */}
       </>
     );
   }
