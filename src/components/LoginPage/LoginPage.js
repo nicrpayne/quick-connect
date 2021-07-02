@@ -9,14 +9,7 @@ class LoginPage extends Component {
     return (
       <div>
         <LoginForm />
-        <Divider hidden />
-        <div className="hotelImageContainer">
-        <Image
-          className="ui massive right floated image"
-          src="/Assets/HotelSketch.png"
-          fluid
-        />
-        </div>
+        
       </div>
     );
   }

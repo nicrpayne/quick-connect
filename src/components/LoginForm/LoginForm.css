@@ -1,8 +1,73 @@
+* {
+    padding:0;
+    margin:0;
+  }
+  
+  body {
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  .login-form-container {
+    height:100vh;
+    display: flex;
+  }
+  .login-section:hover {
+    flex:1.25 !important;
+  }
+  .login-section {
+    height:100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important; 
+    flex:1 !important;
+    transition: all .5s !important;
 
-/* .ui.message{
-    text-align: center !important;
-} */
 
-.ui.grid.container {
-    padding-left: 0rem;
-}
+  }
+  .photo-section {
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex:1;
+    transition: all .5s;
+    background:url("/Assets/hotelUnsplashTest.jpeg");
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: multiply;
+  }
+    .photo-section:hover {
+    flex:1.25;
+  }
+
+  /*   
+  .login-form{
+    background:url('img/photographer.jpg') #ff0909;
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: multiply;
+  } */
+ 
+  /* .hotel-image{
+    background:url("/Assets/hotelUnsplashTest.jpeg") #ff0909;
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: multiply;
+  } */
+  
+
+  
+  /* section h1 {
+    background:rgba(0,0,0,0.6);
+    color:white;
+    padding: 12px 32px;
+  } */
+
+  
+/*   
+  .developer{
+    background:url('img/developer.jpg') #09ff78;
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: multiply;
+  } */

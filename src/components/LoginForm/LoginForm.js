@@ -44,101 +44,140 @@ class LoginForm extends Component {
   render() {
     return (
       <>
-        <div className="ui grid container">
-          <Grid
-            textAlign="left"
-            style={{ height: "100vh" }}
-            verticalAlign="middle"
-          >
-            <Grid.Column style={{ maxWidth: 450 }}>
-              <Header as="h2" color="teal" textAlign="center">
-                <Image src="/assets/WhiteBell.png" /> Welcome! Log in
-              </Header>
-              <Form size="large">
-                <Segment stacked>
-                  {this.props.store.errors.loginMessage && (
-                    <h3 className="alert" role="alert">
-                      {this.props.store.errors.loginMessage}
-                    </h3>
-                  )}
-                  <Form.Input
-                    fluid
-                    icon="user"
-                    iconPosition="left"
-                    placeholder="username"
-                    type="text"
-                    name="username"
-                    required
-                    value={this.state.username}
-                    onChange={this.handleInputChangeFor("username")}
-                  />
-                  <Form.Input
-                    fluid
-                    icon="lock"
-                    iconPosition="left"
-                    placeholder="Password"
-                    type="password"
-                    required
-                    value={this.state.password}
-                    onChange={this.handleInputChangeFor("password")}
-                  />
+      <div className="login-form-container">
+        <div className="login-section">
+          <div className="login-form">
+              <div>
+                <Header as="h2" color="teal" textAlign="center">
+                  <Image src="/assets/WhiteBell.png" /> Welcome! Log in
+                </Header>
+                <Form size="large">
+                  <Segment stacked>
+                    {this.props.store.errors.loginMessage && (
+                      <h3 className="alert" role="alert">
+                        {this.props.store.errors.loginMessage}
+                      </h3>
+                    )}
+                    <Form.Input
+                      fluid
+                      icon="user"
+                      iconPosition="left"
+                      placeholder="username"
+                      type="text"
+                      name="username"
+                      required
+                      value={this.state.username}
+                      onChange={this.handleInputChangeFor("username")}
+                    />
+                    <Form.Input
+                      fluid
+                      icon="lock"
+                      iconPosition="left"
+                      placeholder="Password"
+                      type="password"
+                      required
+                      value={this.state.password}
+                      onChange={this.handleInputChangeFor("password")}
+                    />
 
-                  <Button
-                    onClick={(event) => this.login(event)}
-                    color="teal"
-                    fluid
-                    size="large"
-                    type="submit"
-                    name="submit"
-                    className="btn"
-                    value="Log In"
-                  >
-                    Login
-                  </Button>
+                    <Button
+                      onClick={(event) => this.login(event)}
+                      color="teal"
+                      fluid
+                      size="large"
+                      type="submit"
+                      name="submit"
+                      className="btn"
+                      value="Log In"
+                    >
+                      Login
+                    </Button>
+                  </Segment>
+                </Form>
+                <Message style={{ textAlign: "center" }}>
+                  New to us? <a href="#">Sign Up</a>
+                </Message>
+              </div> 
+              </div>
+            
+          </div>
 
-                  {/* <div>
-                <label htmlFor="username">
-                  Username:
-                  <input
-                    type="text"
-                    name="username"
-                    required
-                    value={this.state.username}
-                    onChange={this.handleInputChangeFor("username")}
-                  />
-                </label>
-              </div> */}
-                  {/* <div>
-                <label htmlFor="password">
-                  Password:
-                  <input
-                    type="password"
-                    name="password"
-                    required
-                    value={this.state.password}
-                    onChange={this.handleInputChangeFor("password")}
-                  />
-                </label>
-              </div> */}
-                  {/* <div>
-                <input
-                  className="btn"
-                  type="submit"
-                  name="submit"
-                  value="Log In"
-                />
-              </div> */}
-                </Segment>
-              </Form>
-              <Message style={{ textAlign: "center" }}>
-                New to us? <a href="#">Sign Up</a>
-              </Message>
-            </Grid.Column>
-          </Grid>
+          <div className="photo-section">
+
+            <div className="hotel-image">
+              <h1>hotel picture</h1>
+            </div>
+
+
+
+
+
+          
         </div>
+      </div>
       </>
     );
   }
 }
 
 export default connect(mapStoreToProps)(LoginForm);
+
+            // <Grid
+            //   columns="two"
+            //   divided
+            //   textAlign="left"
+            //   style={{ height: "100vh" }}
+            //   verticalAlign="middle"
+            // >
+            //   <Grid.Column style={{ maxWidth: 450 }}>
+            //     <Header as="h2" color="teal" textAlign="center">
+            //       <Image src="/assets/WhiteBell.png" /> Welcome! Log in
+            //     </Header>
+            //     <Form size="large">
+            //       <Segment stacked>
+            //         {this.props.store.errors.loginMessage && (
+            //           <h3 className="alert" role="alert">
+            //             {this.props.store.errors.loginMessage}
+            //           </h3>
+            //         )}
+            //         <Form.Input
+            //           fluid
+            //           icon="user"
+            //           iconPosition="left"
+            //           placeholder="username"
+            //           type="text"
+            //           name="username"
+            //           required
+            //           value={this.state.username}
+            //           onChange={this.handleInputChangeFor("username")}
+            //         />
+            //         <Form.Input
+            //           fluid
+            //           icon="lock"
+            //           iconPosition="left"
+            //           placeholder="Password"
+            //           type="password"
+            //           required
+            //           value={this.state.password}
+            //           onChange={this.handleInputChangeFor("password")}
+            //         />
+
+            //         <Button
+            //           onClick={(event) => this.login(event)}
+            //           color="teal"
+            //           fluid
+            //           size="large"
+            //           type="submit"
+            //           name="submit"
+            //           className="btn"
+            //           value="Log In"
+            //         >
+            //           Login
+            //         </Button>
+            //       </Segment>
+            //     </Form>
+            //     <Message style={{ textAlign: "center" }}>
+            //       New to us? <a href="#">Sign Up</a>
+            //     </Message>
+            //   </Grid.Column> 
+
