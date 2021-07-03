@@ -104,19 +104,20 @@ class NewMessage extends Component {
       <>
         <Header />
         <Nav />
-      {/* should these be cards? */}
-        <div>
-          <div className="title-icon-container">
-            <h2 class="ui icon center aligned header">
-              <i aria-hidden="true" class="users circular icon"></i>
-              <div class="content">New Message</div>
-            </h2>
-            <img
-              src="/images/wireframe/centered-paragraph.png"
-              class="ui large centered image"
-            />
-          </div>
-          ;
+        {/* <h3 class="ui block header">Block Header</h3> */}
+        {/* should these be cards? */}
+        <div className="ui grid">
+
+            <div className="ten wide column"> 
+              <div className="title-icon-container">
+                <h2 class="ui center aligned header">
+                  <i aria-hidden="true" class="users circular icon"></i>
+                  <div class="content">New Message</div>
+                </h2>
+              </div>
+            </div>
+
+
           <form>
             <div className="select-container">
               Select Template

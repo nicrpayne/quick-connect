@@ -43,36 +43,27 @@
   }
     .photo-section:hover {
     flex:1.25;
+  };
+
+  .image-bell{
+    padding-bottom: 0px;
   }
-
-  /*   
-  .login-form{
-    background:url('img/photographer.jpg') #ff0909;
-    background-position: center;
-    background-size: cover;
-    background-blend-mode: multiply;
-  } */
- 
-  /* .hotel-image{
-    background:url("/Assets/hotelUnsplashTest.jpeg") #ff0909;
-    background-position: center;
-    background-size: cover;
-    background-blend-mode: multiply;
-  } */
-  
-
-  
-  /* section h1 {
-    background:rgba(0,0,0,0.6);
-    color:white;
-    padding: 12px 32px;
-  } */
-
-  
-/*   
-  .developer{
-    background:url('img/developer.jpg') #09ff78;
-    background-position: center;
-    background-size: cover;
-    background-blend-mode: multiply;
-  } */
+/* Twitter */
+.ui.twitter.button {
+  background-color: #cb598f;
+  margin-left: 5em;
+  /* text-align: center; */
+  /* text-shadow: @invertedTextShadow;
+  background-image: @coloredBackgroundImage;
+  box-shadow: @coloredBoxShadow;  */
+};
+.ui.twitter.button:hover {
+  background-color: #a94976;
+  color: #a94976;
+  /* text-shadow: @invertedTextShadow; */ 
+};
+.ui.twitter.button:active {
+  background-color: #a94976;
+  /* color: @invertedTextColor; */
+  /* text-shadow: @invertedTextShadow; */
+};

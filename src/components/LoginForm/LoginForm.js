@@ -48,8 +48,9 @@ class LoginForm extends Component {
         <div className="login-section">
           <div className="login-form">
               <div>
-                <Header as="h2" color="blue" textAlign="center">
-                  <Image src="/assets/WhiteBell.png" /> Welcome! Log in
+                <Header as="h2"  textAlign="center">
+                  <Image  src="/assets/WhiteBell.png" /> 
+                  <h1 style={{color: "#ea67a5"}}>welcome! check-in</h1>
                 </Header>
 
                 <Form size="large">
@@ -81,22 +82,22 @@ class LoginForm extends Component {
                       onChange={this.handleInputChangeFor("password")}
                     />
 
-                    <Button
+                    <button
                       onClick={(event) => this.login(event)}
                       color="blue"
                       fluid
                       size="large"
                       type="submit"
                       name="submit"
-                      className="btn"
+                      className="ui twitter button"
                       value="Log In"
                     >
-                      Login
-                    </Button>
+                      login
+                    </button>
                   </Segment>
                 </Form>
                 <Message style={{ textAlign: "center" }}>
-                  New to us? <a href="#">Sign Up</a>
+                  new to us? <a href="#">sign Up</a>
                 </Message>
               </div> 
               </div>

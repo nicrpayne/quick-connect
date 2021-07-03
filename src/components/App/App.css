@@ -3,17 +3,17 @@ body,
 #react-root {
   height: 100%;
 }
-*{
-  font-family: 'Lato', sans-serif !important;
-font-weight: 300;
+* {
+  font-family: "Lato", sans-serif !important;
+  font-weight: 300;
 }
 
 body {
-  font-family: 'Lato', sans-serif !important;
-font-weight: 300;
+  font-family: "Lato", sans-serif !important;
+  font-weight: 300;
   overflow-x: hidden;
-  font-size: .875rem;
-  font-family: 'Roboto', sans-serif;
+  font-size: 0.875rem;
+  font-family: "Roboto", sans-serif;
   background: black;
   color: #ffffff;
 }
@@ -120,26 +120,41 @@ input {
   margin-bottom: 10px;
 }
 
-
-
 /* --------------------------------------------------------------------------------
 New Message
 -------------------------------------------------------------------------------- */
-.select-container{
+.select-container {
   position: absolute;
   left: 250px;
   top: 350px;
 }
 
-
-.title-icon-container{
+.title-icon-container {
+  border-radius: 5px;
+  padding: 8px;
   position: absolute;
+  margin-right: 50px;
+  margin-top: 2em;
   left: 250px;
-  top: 100px;
+  /* top: 100px; */
+  bottom: 43em;
+  width: 100%;
+  padding-right: 10em;
+  background: rgb(145, 26, 108);
+  background: linear-gradient(
+    90deg,
+    rgba(145, 26, 108, 1) 0%,
+    rgba(211, 20, 89, 1) 100%
+  );
 }
-.ui icon center aligned header {
+.ui.center.aligned.header {
+  color: white;
+    text-align: left;
+}; 
+.content {
   color: white;
 }
-.content{
-  color:white;
-}
+
+/* .ui.block.header {
+
+} */
