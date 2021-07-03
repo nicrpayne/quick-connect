@@ -13,6 +13,12 @@ import {
 
 import "./LoginForm.css";
 
+const buttonStyle={
+  backgroundColor: "#e06da3",
+  color: "white",
+  position: "relative",
+  left: "4.75em"
+}
 class LoginForm extends Component {
   state = {
     username: "",
@@ -49,7 +55,7 @@ class LoginForm extends Component {
           <div className="login-form">
               <div>
                 <Header as="h2"  textAlign="center">
-                  <Image  src="/assets/WhiteBell.png" /> 
+                  <Image className="check-in-bell" src="/assets/WhiteBell.png" /> 
                   <h1 style={{color: "#ea67a5"}}>welcome! check-in</h1>
                 </Header>
 
@@ -84,20 +90,21 @@ class LoginForm extends Component {
 
                     <button
                       onClick={(event) => this.login(event)}
-                      color="blue"
                       fluid
                       size="large"
                       type="submit"
                       name="submit"
-                      className="ui twitter button"
+                      style={buttonStyle}
+                      className="ui button"
                       value="Log In"
                     >
                       login
                     </button>
+
                   </Segment>
                 </Form>
                 <Message style={{ textAlign: "center" }}>
-                  new to us? <a href="#">sign Up</a>
+                  new to us? <a style={{color: "#e06da3"}} href="#">sign Up</a>
                 </Message>
               </div> 
               </div>

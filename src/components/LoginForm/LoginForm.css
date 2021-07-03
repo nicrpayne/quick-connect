@@ -11,6 +11,18 @@
     font-family: 'Lato', sans-serif !important;
   font-weight: 300;
   }
+
+  img.ui.image.check-in-bell {
+    position: relative;
+    margin-left: 1.5em;
+    top: 1em;
+    left: 1em;
+    
+    /* padding-bottom: 0px; */
+    width: 125px !important;
+    height: auto;
+    
+  }
   
   .login-form-container {
     height:100vh;
@@ -45,25 +57,29 @@
     flex:1.25;
   };
 
-  .image-bell{
-    padding-bottom: 0px;
-  }
+
+/* .ui.button{
+  position: relative !important;
+  left: 4.25em !important;
+  color: white;
+} */
+
 /* Twitter */
-.ui.twitter.button {
-  background-color: #cb598f;
-  margin-left: 5em;
-  /* text-align: center; */
-  /* text-shadow: @invertedTextShadow;
-  background-image: @coloredBackgroundImage;
-  box-shadow: @coloredBoxShadow;  */
-};
+/* .ui.twitter.button {
+  background-color: #e06da3 !important;
+  color: #FFFFFF;
+  text-shadow: none;
+  background-image: none;
+  -webkit-box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+          box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+}
 .ui.twitter.button:hover {
-  background-color: #a94976;
-  color: #a94976;
-  /* text-shadow: @invertedTextShadow; */ 
-};
+  background-color: #35a2f4;
+  color: #FFFFFF;
+  text-shadow: none;
+}
 .ui.twitter.button:active {
-  background-color: #a94976;
-  /* color: @invertedTextColor; */
-  /* text-shadow: @invertedTextShadow; */
-};
+  background-color: #2795e9;
+  color: #FFFFFF;
+  text-shadow: none;
+} */

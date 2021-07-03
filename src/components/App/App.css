@@ -35,7 +35,7 @@ Container
 Button
 -------------------------------------------------------------------------------- */
 
-.btn {
+/* .btn {
   display: inline-block;
   padding: 10px 20px;
   border-color: #014041;
@@ -46,9 +46,9 @@ Button
   font-size: 1.1rem;
   outline: 0;
   cursor: pointer;
-}
+} */
 
-.btn_sizeMin {
+/* .btn_sizeMin {
   min-height: 50px;
   min-width: 100px;
 }
@@ -66,10 +66,10 @@ Button
 .btn:hover {
   background-color: #008183;
   text-decoration: none;
-}
+} */
 
 /* This line makes the "Register" and "Login" buttons look like links */
-.btn_asLink {
+/* .btn_asLink {
   padding: 0;
   border-width: 0;
   border-bottom: 1px solid #444;
@@ -83,7 +83,7 @@ Button
   background-color: transparent;
   border-color: #008183;
   color: #008183;
-}
+} */
 
 /* --------------------------------------------------------------------------------
 Alert
@@ -132,14 +132,14 @@ New Message
 .title-icon-container {
   border-radius: 5px;
   padding: 8px;
-  position: absolute;
+  position: relative;
   margin-right: 50px;
   margin-top: 2em;
   left: 250px;
   /* top: 100px; */
   bottom: 43em;
   width: 100%;
-  padding-right: 10em;
+  /* padding-right: 7em; */
   background: rgb(145, 26, 108);
   background: linear-gradient(
     90deg,
