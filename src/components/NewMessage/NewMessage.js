@@ -4,6 +4,7 @@ import mapStoreToProps from "../../redux/mapStoreToProps";
 import moment from "moment";
 import Nav from "../Nav/Nav";
 import Header from "../Header/Header";
+import { Card, Icon, Image} from 'semantic-ui-react';
 
 import "../App/App.css";
 
@@ -108,21 +109,23 @@ class NewMessage extends Component {
         {/* should these be cards? */}
         <div className="ui grid">
 
-            <div className="ten wide column"> 
+            <div className="twelve wide column"> 
               <div className="title-icon-container">
                 <h2 class="ui center aligned header">
                   <i aria-hidden="true" class="users circular icon"></i>
-                  <div class="content">New Message</div>
+                  <div class="content">send a message</div>
                 </h2>
               </div>
             </div>
 
 
           <form>
+            <div class="ui card">
             <div className="select-container">
               Select Template
               <select
-                className="ui dropdown"
+                className="ui selection dropdown"
+
                 value={newMessage.templateId}
                 onChange={(event) => this.handleChangeFor(event, "templateId")}
               >
@@ -132,6 +135,11 @@ class NewMessage extends Component {
                   </option>
                 ))}
               </select>
+              </div>
+
+
+
+
               Select Guest
               <select
                 className="ui dropdown"
