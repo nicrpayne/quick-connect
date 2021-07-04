@@ -4,7 +4,7 @@ import mapStoreToProps from "../../redux/mapStoreToProps";
 import moment from "moment";
 import Nav from "../Nav/Nav";
 import Header from "../Header/Header";
-import { Card, Icon, Image } from "semantic-ui-react";
+import { Card, Icon, Image, Grid, Column, Segment } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 
 import "../App/App.css";
@@ -118,33 +118,44 @@ class NewMessage extends Component {
                 </div>
               </div>
             </div>
-
             <form>
-              <div className="three column row">
-                <div className="column">
-                  <div className="ui cards">
-                  <div class="ui card">
-                    <div className="select container template">
-                      Select Template
-                      <select
-                        className="ui selection dropdown"
-                        value={newMessage.templateId}
-                        onChange={(event) =>
+          <Grid columns='equal'>
+            
+              <Grid.Column>
+                <Segment>1
+                  <Card>
+            {/* <div className="ui cards">
+                   <div className="ui card"> */}
+                     <div className="select container template">
+                       Select Template
+                       <select
+                         className="ui selection dropdown"
+                         value={newMessage.templateId}
+                         onChange={(event) =>
                           this.handleChangeFor(event, "templateId")
                         }
-                      >
+                       >
                         {this.props.store.templates.map((template) => (
                           <option key={template.id} value={template.id}>
                             {template.template_name}
                           </option>
                         ))}
-                      </select>
+                       </select>
                     </div>
-                  </div>
-                </div>
+                    {/* </div>
+                    </div> */}
+                    </Card>
+            </Segment>
+          </Grid.Column>
+    
 
-                <div className="column">
-                  <div class="ui card">
+
+                <Grid.Column>
+            <Segment>2
+            
+                {/* <div className="four wide column"> */}
+                <div className="ui cards">
+            <div className="ui card">
                     <div className="select container guest">
                       Select Guest
                       <select
@@ -165,10 +176,17 @@ class NewMessage extends Component {
                       </select>
                     </div>
                   </div>
-                </div>
+                  </div>
+                {/* </div> */}
+                </Segment>
+          </Grid.Column>
 
-                <div className="column">
-                  <div class="ui card">
+
+                <Grid.Column>
+            <Segment>3
+                {/* <div className="four wide column"> */}
+                <div className="ui cards">
+                  <div className="ui card">
                     <div className="select container company">
                       Select Hotel
                       <select
@@ -190,6 +208,8 @@ class NewMessage extends Component {
                     </div>
                   </div>
                 </div>
+                </Segment>
+          </Grid.Column>
               
 
               {/* <div className="one column row">
@@ -197,11 +217,32 @@ class NewMessage extends Component {
                   <button onClick={this.handleClick}>Generate Message</button>
                 </div>
               </div> */}
-              </div>
-              </div>
+              {/* </div>
+              </div> */}
+            
+            </Grid>
             </form>
           </div>
         </div>
+
+        {/* <Grid columns='equal'> */}
+          {/* <Grid.Column>
+            <Segment>1</Segment>
+          </Grid.Column>
+          <Grid.Column>
+            <Segment>2</Segment>
+          </Grid.Column>
+          <Grid.Column>
+            <Segment>3</Segment>
+          </Grid.Column>
+          <Grid.Column>
+            <Segment>4</Segment>
+          </Grid.Column> */}
+
+
+
+
+        {/* </Grid> */}
       </>
     );
   }
