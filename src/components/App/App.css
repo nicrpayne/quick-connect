@@ -123,43 +123,22 @@ input {
 /* --------------------------------------------------------------------------------
 New Message
 -------------------------------------------------------------------------------- */
-.select-container {
+.ui.grid {
+  left: 3.5rem;
+  padding: 10em;
+  /* z-index: -1; */
   position: absolute;
-  left: 250px;
-  top: 350px;
+  top: -1.5rem;
+  margin-right: -5rem;
 }
-
 .title-icon-container {
+  position: fixed;
   margin-left: -22px;
   padding-bottom: 10px;
 
-  /* border-radius: 5px;
-  padding: 8px;
-  position: relative; */
-  /* margin-right: 30px;
-  margin-left: -55px;
-  left: 250px;
-  top: 3rem; */
-
-  /* width: 100%; */
-  /* margin-bottom: 4rem;
-  margin-top: -46.75rem; */ 
-  /* background: rgb(145, 26, 108);
-  background: linear-gradient(
-    90deg,
-    rgba(145, 26, 108, 1) 0%,
-    rgba(211, 20, 89, 1) 100%
-  ); */
-}
-.ui.grid{
-  margin-top: -1rem;
-  margin-bottom: -1rem;
-  margin-left: -3.8rem;
-  margin-right: -1rem;
 }
 .ui.center.aligned.header {
-  padding: 5px;
-  margin-left: -23px;
+  padding: 3px;
   border-radius: 5px;
   color: white;
   text-align: left;
@@ -167,25 +146,29 @@ New Message
   background: linear-gradient(
     90deg,
     rgba(145, 26, 108, 1) 0%,
-    rgba(211, 20, 89, 1) 100%)
+    rgba(211, 20, 89, 1) 100%
+  );
 }
+.ui.card{
+  border-radius: 1px;
+  width: 75%;
+}
+.ui.botton{
+  margin-left: 10rem;
+}
+.three.row.column{
+  margin-left: 4.5em;
+  margin-top: -22px;
+  padding: 3px;
+  margin-right: 3.5rem;
+}
+
+.select-container {
+  position: absolute;
+  left: 250px;
+  top: 350px;
+}
+
 .content {
   color: white;
-}
-.ui.three.column.row{
-  /* margin-right: 30px;
-  margin-left: -55px;
-  left: 250px;
-  top: 3rem;
-  margin-bottom: 4rem;
-  margin-top: -46.75rem; */
-}
-/* .ui.block.header {
-
-} */
-
-.ui.container{
-
-  position: relative;
-  bottom: 39rem;
 }

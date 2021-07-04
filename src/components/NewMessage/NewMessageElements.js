@@ -1,51 +1,36 @@
-<div class="ui cards">
-  <div class="ui card">
-    <div class="content">
-      <img src="https://react.semantic-ui.com/images/avatar/large/steve.jpg" class="ui mini right floated image"/>
-      <div class="header">Steve Sanders</div>
-      <div class="meta">Friends of Elliot</div>
-      <div class="description">Steve wants to add you to the group <strong>best friends</strong></div>
+<div class="ui three column grid">
+  <div class="column">
+    <div class="ui fluid card">
+      <div class="image">
+        <img src="/images/avatar/large/daniel.jpg">
       </div>
-      <div class="extra content">
-        <div class="ui two buttons">
-          <button class="ui green basic button">Approve</button>
-          <button class="ui red basic button">Decline</button>
-          </div>
-          </div>
-          </div>
-          <div class="ui card">
-            <div class="content">
-              <img src="https://react.semantic-ui.com/images/avatar/large/molly.png" class="ui mini right floated image"/>
-              <div class="header">Molly Thomas</div>
-              <div class="meta">New User</div>
-              <div class="description">Molly wants to add you to the group <strong>musicians</strong></div>
-              </div>
-              <div class="extra content">
-                <div class="ui two buttons">
-                  <button class="ui green basic button">Approve</button>
-                  <button class="ui red basic button">Decline</button>
-                  </div>
-                  </div>
-                  </div>
-                  <div class="ui card">
-                    <div class="content">
-                      <img src="https://react.semantic-ui.com/images/avatar/large/jenny.jpg" class="ui mini right floated image"/>
-                      <div class="header">Jenny Lawrence</div>
-                      <div class="meta">New User</div>
-                      <div class="description">Jenny requested permission to view your contact details</div>
-                      </div>
-                      <div class="extra content">
-                        <div class="ui two buttons">
-                          <button class="ui green basic button">Approve</button>
-                          <button class="ui red basic button">Decline</button>
-                          </div>
-                          </div>
-                          </div>
-                          </div>
+      <div class="content">
+        <a class="header">Daniel Louise</a>
+      </div>
+    </div>
+  </div>
 
-
-
-
+  <div class="column">
+    <div class="ui fluid card">
+      <div class="image">
+        <img src="/images/avatar/large/helen.jpg">
+      </div>
+      <div class="content">
+        <a class="header">Helen Troy</a>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="ui fluid card">
+      <div class="image">
+        <img src="/images/avatar/large/elliot.jpg">
+      </div>
+      <div class="content">
+        <a class="header">Elliot Fu</a>
+      </div>
+    </div>
+  </div>
+</div> 
 
 
                                           // MODAL
@@ -66,3 +51,113 @@
             <br></br>
             <button>Send Message</button> */
             // }
+
+
+
+          
+        
+ 
+
+        
+              <div className="three column row">
+
+
+              <div className="column">
+
+
+
+               <div className="ui fluid card"> 
+                 <div className="select container template">
+                   Select Template
+                   <select
+                     className="ui selection dropdown"
+                     value={newMessage.templateId}
+                     onChange={(event) =>
+                      this.handleChangeFor(event, "templateId")
+                    }
+                   >
+                    {this.props.store.templates.map((template) => (
+                      <option key={template.id} value={template.id}>
+                        {template.template_name}
+                      </option>
+                    ))}
+                   </select>
+                  </div>
+                </div>
+              </div>
+              
+             
+
+
+
+
+
+        
+          <div className="column">
+            <div className="ui fluid card">
+              <div className="select container guest">
+                  Select Guest
+                  <select
+                    className="ui dropdown"
+                    type="text"
+                    name="select guest"
+                    value={newMessage.guestId}
+                    onChange={(event) =>
+                      this.handleChangeFor(event, "guestId")
+                    }
+                  >
+                    {this.props.store.allGuestsReducer.map((guest) => (
+                      <option key={guest.id} value={guest.id}>
+                        {guest.first_name}
+                        {guest.last_name}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+              </div>
+
+
+
+
+
+            <div className="column">
+
+              <div className="ui fluid card">
+                <div className="select container company">
+                  Select Hotel
+                  <select
+                    defaultValue={{ label: "Hotel" }}
+                    className="ui dropdown"
+                    type="text"
+                    name="select hotel"
+                    value={newMessage.companyId}
+                    onChange={(event) =>
+                      this.handleChangeFor(event, "companyId")
+                    }
+                  >
+                    {this.props.store.allHotelsReducer.map((company) => (
+                      <option key={company.id} value={company.id}>
+                        {company.company_name}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+            </div>
+            </div>
+          
+
+          {/* <div className="one column row">
+            <div className="column">
+              <button onClick={this.handleClick}>Generate Message</button>
+            </div>
+          </div> */}
+          {/* </div>
+          </div> */}
+        
+
+   
+      
+    
+
