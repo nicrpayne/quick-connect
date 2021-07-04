@@ -54,10 +54,10 @@ class LoginForm extends Component {
         <div className="login-section">
           <div className="login-form">
               <div>
-                <Header as="h2"  textAlign="center">
+                <header as="h2"  textAlign="center">
                   <Image className="check-in-bell" src="/assets/WhiteBell.png" /> 
                   <h1 style={{color: "#ea67a5"}}>welcome! check-in</h1>
-                </Header>
+                </header>
 
                 <Form size="large">
                   <Segment stacked>

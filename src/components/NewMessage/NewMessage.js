@@ -121,10 +121,11 @@ class NewMessage extends Component {
         
           <div className="three column row">
               
-              <div className="ui fluid column">
+              <div className="four wide column">
+                <div className="card-content">
                 <div className="ui card">
                     <select
-                      className="ui dropdown"
+                      className="ui selection dropdown"
                       value={newMessage.templateId}
                       onChange={(event) =>
                         this.handleChangeFor(event, "templateId")
@@ -135,12 +136,14 @@ class NewMessage extends Component {
                         </option>
                       ))}
                     </select>
+                    </div>
                 </div>
               </div>
-              <div className="ui fluid column">
+              <div className="four wide column">
+              <div className="card-content">
                 <div className="ui card">
                     <select
-                      className="ui dropdown"
+                      className="ui selection dropdown"
                       value={newMessage.guestId}
                       onChange={(event) =>
                         this.handleChangeFor(event, "guestId")
@@ -151,16 +154,18 @@ class NewMessage extends Component {
                         </option>
                       ))}
                     </select>
+                    </div>
                 </div>
               </div>
 
 
 
 
-            <div className="ui fluid column">
+            <div className="four wide column">
+            <div className="card-content">
               <div className="ui card">
                   <select
-                    className="ui dropdown"
+                    className="ui selection dropdown"
                     value={newMessage.companyId}
                     onChange={(event) =>
                       this.handleChangeFor(event, "companyId")
@@ -171,6 +176,7 @@ class NewMessage extends Component {
                       </option>
                     ))}
                   </select>
+                </div>
                 </div>
             </div>
 

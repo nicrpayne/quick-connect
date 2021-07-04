@@ -3,7 +3,12 @@
   font-weight: 300;
 }
 
+/* .inverted-vertical-container{
+  width: 150px;
+  height: auto;
+} */
 .ui.inverted.vertical.menu {
+  
   font-family: 'Lato', sans-serif !important;
   font-weight: 300;
   margin-top: 0rem;
@@ -13,8 +18,10 @@
   border-bottom-right-radius: 0rem;
   border-bottom-left-radius: 0rem;
   width: 12rem;
+  padding-right: 20px;
 }
 .ui.inverted.menu .menu{
+  z-index: 1;
   /* background: @invertedItemBackground; */
   background-color: #191c25;
   font-family: 'Lato', sans-serif !important;

@@ -20,6 +20,7 @@ const Nav = (props) => {
 
   return (
     <>
+    <div className="inverted-vertical-container">
     <div className="ui inverted vertical menu"     
      >
       <div >
@@ -54,6 +55,7 @@ const Nav = (props) => {
           {/* Always show this link since the about page is not protected */}
 
         </div>
+      </div>
       </div>
       </div>
     </>
