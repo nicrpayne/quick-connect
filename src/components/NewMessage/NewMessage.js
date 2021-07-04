@@ -4,7 +4,8 @@ import mapStoreToProps from "../../redux/mapStoreToProps";
 import moment from "moment";
 import Nav from "../Nav/Nav";
 import Header from "../Header/Header";
-import { Card, Icon, Image} from 'semantic-ui-react';
+import { Card, Icon, Image } from "semantic-ui-react";
+import "semantic-ui-css/semantic.min.css";
 
 import "../App/App.css";
 
@@ -105,89 +106,101 @@ class NewMessage extends Component {
       <>
         <Header />
         <Nav />
-        {/* <h3 class="ui block header">Block Header</h3> */}
-        {/* should these be cards? */}
-        <div className="ui grid">
-
-            <div className="twelve wide column"> 
-              <div className="title-icon-container">
-                <h2 class="ui center aligned header">
-                  <i aria-hidden="true" class="users circular icon"></i>
-                  <div class="content">send a message</div>
-                </h2>
+        <div className="ui container">
+          <div className="ui grid">
+            <div className="one column row">
+              <div className="twelve wide column">
+                <div className="title icon container">
+                  <h2 className="ui center aligned header">
+                    <i aria-hidden="true" class="users circular icon"></i>
+                    <div className="content">send a message</div>
+                  </h2>
+                </div>
               </div>
             </div>
 
+            <form>
+              <div className="three column row">
+                <div className="column">
+                  <div className="ui cards">
+                  <div class="ui card">
+                    <div className="select container template">
+                      Select Template
+                      <select
+                        className="ui selection dropdown"
+                        value={newMessage.templateId}
+                        onChange={(event) =>
+                          this.handleChangeFor(event, "templateId")
+                        }
+                      >
+                        {this.props.store.templates.map((template) => (
+                          <option key={template.id} value={template.id}>
+                            {template.template_name}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
+                </div>
 
-          <form>
-            <div class="ui card">
-            <div className="select-container">
-              Select Template
-              <select
-                className="ui selection dropdown"
+                <div className="column">
+                  <div class="ui card">
+                    <div className="select container guest">
+                      Select Guest
+                      <select
+                        className="ui dropdown"
+                        type="text"
+                        name="select guest"
+                        value={newMessage.guestId}
+                        onChange={(event) =>
+                          this.handleChangeFor(event, "guestId")
+                        }
+                      >
+                        {this.props.store.allGuestsReducer.map((guest) => (
+                          <option key={guest.id} value={guest.id}>
+                            {guest.first_name}
+                            {guest.last_name}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
+                </div>
 
-                value={newMessage.templateId}
-                onChange={(event) => this.handleChangeFor(event, "templateId")}
-              >
-                {this.props.store.templates.map((template) => (
-                  <option key={template.id} value={template.id}>
-                    {template.template_name}
-                  </option>
-                ))}
-              </select>
+                <div className="column">
+                  <div class="ui card">
+                    <div className="select container company">
+                      Select Hotel
+                      <select
+                        defaultValue={{ label: "Hotel" }}
+                        className="ui dropdown"
+                        type="text"
+                        name="select hotel"
+                        value={newMessage.companyId}
+                        onChange={(event) =>
+                          this.handleChangeFor(event, "companyId")
+                        }
+                      >
+                        {this.props.store.allHotelsReducer.map((company) => (
+                          <option key={company.id} value={company.id}>
+                            {company.company_name}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              
+
+              {/* <div className="one column row">
+                <div className="column">
+                  <button onClick={this.handleClick}>Generate Message</button>
+                </div>
+              </div> */}
               </div>
-
-
-
-
-              Select Guest
-              <select
-                className="ui dropdown"
-                type="text"
-                name="select guest"
-                value={newMessage.guestId}
-                onChange={(event) => this.handleChangeFor(event, "guestId")}
-              >
-                {this.props.store.allGuestsReducer.map((guest) => (
-                  <option key={guest.id} value={guest.id}>
-                    {guest.first_name}
-                    {guest.last_name}
-                  </option>
-                ))}
-              </select>
-              Select Hotel
-              <select
-                defaultValue={{ label: "Hotel" }}
-                className="ui dropdown"
-                type="text"
-                name="select hotel"
-                value={newMessage.companyId}
-                onChange={(event) => this.handleChangeFor(event, "companyId")}
-              >
-                {this.props.store.allHotelsReducer.map((company) => (
-                  <option key={company.id} value={company.id}>
-                    {company.company_name}
-                  </option>
-                ))}
-              </select>
-              <button onClick={this.handleClick}>Generate Message</button>
-              <br></br>
-              <br></br>
-              Your Message:
-              <p>
-                "{this.getGreeting()}{" "}
-                {this.getGuestNameById(this.state.newMessage.guestId)} and
-                welcome to{this.getCompanyById(this.state.newMessage.companyId)}
-                ! Room number{" "}
-                {this.getRoomNumberByGuestId(this.state.newMessage.guestId)} is
-                now ready you. Enjoy your stay, and let us know if you need
-                anything."
-              </p>
-              Date:
-              <br></br>
-              <button>Send Message</button>
-            </div>
-          </form>
+              </div>
+            </form>
+          </div>
         </div>
       </>
     );

@@ -130,31 +130,62 @@ New Message
 }
 
 .title-icon-container {
-  border-radius: 5px;
+  margin-left: -22px;
+  padding-bottom: 10px;
+
+  /* border-radius: 5px;
   padding: 8px;
-  position: relative;
-  margin-right: 30px;
- margin-left: -55px;
+  position: relative; */
+  /* margin-right: 30px;
+  margin-left: -55px;
   left: 250px;
+  top: 3rem; */
 
-  bottom: 45.95em;
-  width: 100%;
-
-  background: rgb(145, 26, 108);
+  /* width: 100%; */
+  /* margin-bottom: 4rem;
+  margin-top: -46.75rem; */ 
+  /* background: rgb(145, 26, 108);
   background: linear-gradient(
     90deg,
     rgba(145, 26, 108, 1) 0%,
     rgba(211, 20, 89, 1) 100%
-  );
+  ); */
+}
+.ui.grid{
+  margin-top: -1rem;
+  margin-bottom: -1rem;
+  margin-left: -3.8rem;
+  margin-right: -1rem;
 }
 .ui.center.aligned.header {
+  padding: 5px;
+  margin-left: -23px;
+  border-radius: 5px;
   color: white;
-    text-align: left;
-}; 
+  text-align: left;
+  background: rgb(145, 26, 108);
+  background: linear-gradient(
+    90deg,
+    rgba(145, 26, 108, 1) 0%,
+    rgba(211, 20, 89, 1) 100%)
+}
 .content {
   color: white;
 }
-
+.ui.three.column.row{
+  /* margin-right: 30px;
+  margin-left: -55px;
+  left: 250px;
+  top: 3rem;
+  margin-bottom: 4rem;
+  margin-top: -46.75rem; */
+}
 /* .ui.block.header {
 
 } */
+
+.ui.container{
+
+  position: relative;
+  bottom: 39rem;
+}
