@@ -165,10 +165,13 @@ New Message
     rgba(211, 20, 89, 1) 100%
   );
 }
+
 .checklist {
-  /* padding: 20px; */
   width: 140px !important;
   height: auto;
+  margin-top: -10px;
+  margin-bottom: -15px;
+  margin-left: 1rem;
 }
 
 .ui.card {
@@ -176,6 +179,7 @@ New Message
   justify-content: center;
   align-items: center;
   align-content: center;
+  align-self: start; 
   flex-wrap: wrap;
   height: 75px;
   padding: 20px;
@@ -184,6 +188,20 @@ New Message
   border: none !important;
   background-color: #191c25;
   box-shadow: none;
+}
+
+.step-text {
+  vertical-align: top;
+  display: flex;
+  flex-wrap: wrap;
+  font-weight: bold;
+  font-size: x-large;
+  color: rgb(145, 26, 108);
+  color: linear-gradient(
+    90deg,
+    rgba(145, 26, 108, 1) 0%,
+    rgba(211, 20, 89, 1) 100%
+  );
 }
 
 .ui.card:hover {
@@ -241,6 +259,3 @@ New Message
   top: 350px;
 }
 
-.content {
-  color: white;
-}

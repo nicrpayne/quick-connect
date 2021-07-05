@@ -113,8 +113,11 @@ class NewMessage extends Component {
               <div className="title icon container">
                 <h2 className="ui center aligned header">
                   <img src="/Assets/checklist.png" className="checklist"/>
-                  <div className="content"></div>
+                  craft a personal, unforgettable guest experience in three steps
+                  
                 </h2>
+                  
+                
               </div>
             </div>
           </div>
@@ -123,6 +126,7 @@ class NewMessage extends Component {
               
               <div className="four wide column">
                 <div className="card-content">
+                <div className="step-text">step 1.</div>
                 <div className="ui card">
                     <select
                       className="ui selection dropdown"
@@ -141,6 +145,7 @@ class NewMessage extends Component {
               </div>
               <div className="four wide column">
               <div className="card-content">
+              <div className="step-text">step 2.</div>
                 <div className="ui card">
                     <select
                       className="ui selection dropdown"
@@ -163,6 +168,7 @@ class NewMessage extends Component {
 
             <div className="four wide column">
             <div className="card-content">
+            <div className="step-text">step 3.</div>
               <div className="ui card">
                   <select
                     className="ui selection dropdown"
