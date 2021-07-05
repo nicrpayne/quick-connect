@@ -56,8 +56,8 @@ class App extends Component {
               <ProtectedRoute
                 // logged in shows UserPage else shows LoginPage
                 exact
-                path="/user"
-                component={UserPage}
+                path="/home"
+                component={NewMessage}
               />
 
               <ProtectedRoute
@@ -67,12 +67,12 @@ class App extends Component {
                 component={NewTemplate}
               />
 
-              <ProtectedRoute
+              {/* <ProtectedRoute
                 // logged in shows Template List else shows LoginPage
                 exact
                 path="/newmessage"
                 component={NewMessage}
-              />
+              /> */}
 
               <ProtectedRoute
                 // logged in shows InfoPage else shows LoginPage

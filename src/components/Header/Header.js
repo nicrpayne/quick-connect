@@ -34,6 +34,8 @@ function Header() {
   
         {/* <span style={{float: 'right'}}className="item link grey" >Log Out</span> */}
         {/* style={{marginRight: "1rem;"}} */}
+        {/* <div><h1 id="welcome">{this.props.store.user.username}</h1></div> */}
+        
         <LogOutButton className="item link grey"/>
         
         

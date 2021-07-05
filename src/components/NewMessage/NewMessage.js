@@ -112,8 +112,8 @@ class NewMessage extends Component {
             <div className="ui fluid column">
               <div className="title icon container">
                 <h2 className="ui center aligned header">
-                  <i aria-hidden="true" class="users circular icon"></i>
-                  <div className="content">send a message</div>
+                  <img src="/Assets/checklist.png" className="checklist"/>
+                  <div className="content"></div>
                 </h2>
               </div>
             </div>

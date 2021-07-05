@@ -21,7 +21,7 @@
   padding-right: 20px;
 }
 .ui.inverted.menu .menu{
-  z-index: 1;
+  z-index: 1; 
   /* background: @invertedItemBackground; */
   background-color: #191c25;
   font-family: 'Lato', sans-serif !important;
@@ -34,6 +34,10 @@
   padding: 2px;
 }
 
+.menu-image-style{
+  width: 10%;
+  height: auto;
+}
 /*--------------
     Inverted
 ---------------*/

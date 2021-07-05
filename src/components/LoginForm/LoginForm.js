@@ -1,24 +1,18 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import mapStoreToProps from "../../redux/mapStoreToProps";
-import {
-  Button,
-  Form,
-  Grid,
-  Header,
-  Image,
-  Segment,
-  Message,
-} from "semantic-ui-react";
+import { Form, Image, Segment, Message } from "semantic-ui-react";
 
 import "./LoginForm.css";
 
-const buttonStyle={
+const buttonStyle = {
   backgroundColor: "#e06da3",
   color: "white",
   position: "relative",
-  left: "4.75em"
-}
+  left: "4.75em",
+};
+
+const colors = ["#e967a5", "#1d949c", "#d31459", "#92196c", "#c0165f"];
 class LoginForm extends Component {
   state = {
     username: "",
@@ -50,13 +44,16 @@ class LoginForm extends Component {
   render() {
     return (
       <>
-      <div className="login-form-container">
-        <div className="login-section">
-          <div className="login-form">
+        <div className="login-form-container">
+          <div className="login-section">
+            <div className="login-form">
               <div>
-                <header as="h2"  textAlign="center">
-                  <Image className="check-in-bell" src="/assets/WhiteBell.png" /> 
-                  <h1 style={{color: "#ea67a5"}}>welcome! check-in</h1>
+                <header as="h2" textAlign="center">
+                  <Image
+                    className="check-in-bell"
+                    src="/assets/WhiteBell.png"
+                  />
+                  <h1 style={{ color: "#ea67a5" }}>welcome! check-in</h1>
                 </header>
 
                 <Form size="large">
@@ -100,30 +97,22 @@ class LoginForm extends Component {
                     >
                       login
                     </button>
-
                   </Segment>
                 </Form>
                 <Message style={{ textAlign: "center" }}>
-                  new to us? <a style={{color: "#e06da3"}} href="#">sign Up</a>
+                  new to us?{" "}
+                  <a style={{ color: "#e06da3" }} href="#">
+                    sign Up
+                  </a>
                 </Message>
-              </div> 
               </div>
-            
+            </div>
           </div>
 
           <div className="photo-section">
-
-            <div className="hotel-image">
-              {/* <h1>hotel picture</h1> */}
-            </div>
-
-
-
-
-
-          
+            <img src="/Assets/hotelUnsplashTest.jpeg"></img>
+          </div>
         </div>
-      </div>
       </>
     );
   }
@@ -131,62 +120,61 @@ class LoginForm extends Component {
 
 export default connect(mapStoreToProps)(LoginForm);
 
-            // <Grid
-            //   columns="two"
-            //   divided
-            //   textAlign="left"
-            //   style={{ height: "100vh" }}
-            //   verticalAlign="middle"
-            // >
-            //   <Grid.Column style={{ maxWidth: 450 }}>
-            //     <Header as="h2" color="teal" textAlign="center">
-            //       <Image src="/assets/WhiteBell.png" /> Welcome! Log in
-            //     </Header>
-            //     <Form size="large">
-            //       <Segment stacked>
-            //         {this.props.store.errors.loginMessage && (
-            //           <h3 className="alert" role="alert">
-            //             {this.props.store.errors.loginMessage}
-            //           </h3>
-            //         )}
-            //         <Form.Input
-            //           fluid
-            //           icon="user"
-            //           iconPosition="left"
-            //           placeholder="username"
-            //           type="text"
-            //           name="username"
-            //           required
-            //           value={this.state.username}
-            //           onChange={this.handleInputChangeFor("username")}
-            //         />
-            //         <Form.Input
-            //           fluid
-            //           icon="lock"
-            //           iconPosition="left"
-            //           placeholder="Password"
-            //           type="password"
-            //           required
-            //           value={this.state.password}
-            //           onChange={this.handleInputChangeFor("password")}
-            //         />
+// <Grid
+//   columns="two"
+//   divided
+//   textAlign="left"
+//   style={{ height: "100vh" }}
+//   verticalAlign="middle"
+// >
+//   <Grid.Column style={{ maxWidth: 450 }}>
+//     <Header as="h2" color="teal" textAlign="center">
+//       <Image src="/assets/WhiteBell.png" /> Welcome! Log in
+//     </Header>
+//     <Form size="large">
+//       <Segment stacked>
+//         {this.props.store.errors.loginMessage && (
+//           <h3 className="alert" role="alert">
+//             {this.props.store.errors.loginMessage}
+//           </h3>
+//         )}
+//         <Form.Input
+//           fluid
+//           icon="user"
+//           iconPosition="left"
+//           placeholder="username"
+//           type="text"
+//           name="username"
+//           required
+//           value={this.state.username}
+//           onChange={this.handleInputChangeFor("username")}
+//         />
+//         <Form.Input
+//           fluid
+//           icon="lock"
+//           iconPosition="left"
+//           placeholder="Password"
+//           type="password"
+//           required
+//           value={this.state.password}
+//           onChange={this.handleInputChangeFor("password")}
+//         />
 
-            //         <Button
-            //           onClick={(event) => this.login(event)}
-            //           color="teal"
-            //           fluid
-            //           size="large"
-            //           type="submit"
-            //           name="submit"
-            //           className="btn"
-            //           value="Log In"
-            //         >
-            //           Login
-            //         </Button>
-            //       </Segment>
-            //     </Form>
-            //     <Message style={{ textAlign: "center" }}>
-            //       New to us? <a href="#">Sign Up</a>
-            //     </Message>
-            //   </Grid.Column> 
-
+//         <Button
+//           onClick={(event) => this.login(event)}
+//           color="teal"
+//           fluid
+//           size="large"
+//           type="submit"
+//           name="submit"
+//           className="btn"
+//           value="Log In"
+//         >
+//           Login
+//         </Button>
+//       </Segment>
+//     </Form>
+//     <Message style={{ textAlign: "center" }}>
+//       New to us? <a href="#">Sign Up</a>
+//     </Message>
+//   </Grid.Column>

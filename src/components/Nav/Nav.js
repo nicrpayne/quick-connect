@@ -14,7 +14,7 @@ const Nav = (props) => {
   };
 
   if (props.store.user.id != null) {
-    loginLinkData.path = "/user";
+    loginLinkData.path = "/home";
     loginLinkData.text = "Home";
   }
 
@@ -40,9 +40,11 @@ const Nav = (props) => {
               <Link className="item" to="/newtemplate">
                 Add a Template
               </Link>
-              <Link className="item" to="/newmessage">
-                Send a Message
-              </Link>
+              
+              {/* <Link className="item" to="/newmessage">
+              {/* <img className="menu-image-style"src=""/> */}
+              {/* Send a Message */}
+              {/* </Link>  */}
               <Link className="item" to="/newguest">
                 Add a Guest
               </Link>
