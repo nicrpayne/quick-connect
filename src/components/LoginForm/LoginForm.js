@@ -9,7 +9,11 @@ const buttonStyle = {
   backgroundColor: "#c0165s",
   color: "white",
   position: "relative",
-  left: "5.5rem"
+  display: "flex !important",
+  justifyContent: "center",
+  alignItems: "center",
+  alignContent: "center",
+  flexWrap: "wrap",
 };
 
 const colors = ["#e967a5", "#1d949c", "#d31459", "#92196c", "#c0165f"];

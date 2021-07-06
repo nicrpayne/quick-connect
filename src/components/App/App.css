@@ -266,7 +266,6 @@ New Message
   align-items: center;
   align-content: center;
   flex-wrap: wrap;
-  /* margin-right: 5rem; */
 }
 .three.row.column {
   display: flex;
@@ -275,15 +274,17 @@ New Message
   align-items: center;
   align-content: center;
   flex-wrap: wrap;
-  margin-right: 5.75rem;
+  margin-right: 6.25rem;
 }
 
 .one-column-row {
-  display: flex;
+  display: flex !important;
+  position: relative;
   justify-content: center;
   align-items: center;
   align-content: center;
   flex-wrap: wrap;
+  margin-right: 5.5rem;
 }
 
 .select-container {
@@ -293,8 +294,8 @@ New Message
 }
 
 .ui.button{
+  margin-right: 5.5rem;
   padding: 15px;
-  /* margin-right: 10.75rem !important;  */
   color: white;
   font-family: 'Raleway', sans-serif !important;
   background-color: rgb(145, 26, 108);
