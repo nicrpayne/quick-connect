@@ -44,3 +44,12 @@
 
 // export default connect(mapStoreToProps)(TypeWriter);
 
+//UNIX
+
+  // functionConvertUnix({
+  //       // set unix_timestamp to variable from reduxstore
+  //       const unix_timestamp = {1486832543};
+  //       const date = new Date(unix_timestamp * 1000);
+  //       const momentFormattedTime = moment(date).format("L");
+  //       console.log(momentFormattedTime);
+  // })

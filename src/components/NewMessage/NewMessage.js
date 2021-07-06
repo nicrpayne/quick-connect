@@ -93,29 +93,18 @@ class NewMessage extends Component {
     }
     return greeting;
   }
-theWholeMessage(greeting, guestId, companyId, roomNumber){
-  return `${this.getGreeting(greeting)} ${this.getGuestNameById({guestId})}, and welcome to ${this.getCompanyById(companyId)}. Room number ${this.getRoomNumberByGuestId(roomNumber)},`
+  theWholeMessage( guestId, companyId, roomNumber) {
+    return `${this.getGreeting()} ${this.getGuestNameById(this.state.newMessage.guestId)}, 
+    and welcome to${this.getCompanyById(this.state.newMessage.companyId)}. 
+    Room number ${this.getRoomNumberByGuestId(this.state.newMessage.companyId)}, is
+    now ready you. Enjoy your stay, and let us know if you need
+    anything."`;
 
-  // {this.getGuestNameById(this.state.newMessage.guestId)} and welcome
-  // to
-  // {this.getCompanyById(this.state.newMessage.companyId)}! Room
-  // number{" "}
-  // {this.getRoomNumberByGuestId(this.state.newMessage.guestId)} is
-  // now ready you. Enjoy your stay, and let us know if you need
-  // anything." 
-}
-  // functionConvertUnix({
-  //       // set unix_timestamp to variable from reduxstore
-  //       const unix_timestamp = {1486832543};
-  //       const date = new Date(unix_timestamp * 1000);
-  //       const momentFormattedTime = moment(date).format("L");
-  //       console.log(momentFormattedTime);
-  // })
+  }
 
   render() {
-    console.log('attempt', this.theWholeMessage())
+    // console.log(this.theWholeMessage());
     const newMessage = this.state.newMessage;
-    
 
     return (
       <>
@@ -213,25 +202,27 @@ theWholeMessage(greeting, guestId, companyId, roomNumber){
 
           <div className="one column row">
             <div className="column">
-              <div>
-                <Typewriter
-                  onInit={(typewriter) => {
-                    typewriter
-                      .typeString("test")
-                      .pauseFor(2000)
-                      .deleteAll()
-                      .start();
-                  }}
-                />
+              <div className="message-display">
+                <div>
+                  <Typewriter
+                    onInit={(typewriter) => {
+                      typewriter
+                        .typeString(this.theWholeMessage())
+                        .pauseFor(2000)
+                        .deleteAll()
+                        .start();
+                    }}
+                  />
+                </div>
               </div>
-              {this.getGreeting()}{" "}
+              {/* {this.getGreeting()}{" "}
               {this.getGuestNameById(this.state.newMessage.guestId)} and welcome
               to
               {this.getCompanyById(this.state.newMessage.companyId)}! Room
               number{" "}
               {this.getRoomNumberByGuestId(this.state.newMessage.guestId)} is
               now ready you. Enjoy your stay, and let us know if you need
-              anything."
+              anything." */}
             </div>
           </div>
 
