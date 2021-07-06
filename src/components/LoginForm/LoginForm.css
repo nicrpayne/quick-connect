@@ -11,8 +11,11 @@ body {
   font-family: "Lato", sans-serif !important;
   font-weight: 300;
 }
-
+.ui.stacked.segment{
+  font-family: 'Raleway', sans-serif !important;
+}
 img.ui.image.check-in-bell {
+  color: #ea67a5;
   display: flex;
   position: relative;
   margin-left: 3.5em;
@@ -41,9 +44,15 @@ img.ui.image.check-in-bell {
   align-items: center;
   justify-content: center;
   margin-left: 3em;
+  padding-left: 10rem;
   /* flex:1;
     transition: all .5s ; */
 }
+.welcome-text{
+  font-family: 'Raleway', sans-serif !important;
+}
+
+
 .photo-section {
   height: 100vh;
   display: flex;

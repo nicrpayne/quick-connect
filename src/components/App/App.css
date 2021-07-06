@@ -154,6 +154,12 @@ New Message
 
 }
 .ui.center.aligned.header {
+  font-family: 'Raleway', sans-serif !important;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
   margin-right: 5.35rem;
   padding: 15px;
   border-radius: 5px;
@@ -170,6 +176,7 @@ New Message
 .checklist {
   width: 140px !important;
   height: auto;
+  padding-right: 1rem;
   margin-top: -10px;
   margin-bottom: -15px;
   margin-left: 1rem;
@@ -211,12 +218,13 @@ New Message
 }
 .ui.selection.dropdown {
   /* z-index: +5; */
+  padding: 2px;
   width: 200px;
-  -webkit-transition: all 0.25s ease !important;
+  /* -webkit-transition: all 0.25s ease !important;
   -moz-transition: all 0.25s ease !important;
   -ms-transition: all 0.25s ease !important;
   -o-transition: all 0.25s ease !important;
-  transition: all 0.25s ease !important;
+  transition: all 0.25s ease !important; */
 }
 
 .card-content {
@@ -232,11 +240,13 @@ New Message
 }
 
 .column {
+  
   display: flex !important;
   justify-content: center;
   align-items: center;
   align-content: center;
   flex-wrap: wrap;
+  /* margin-right: 5rem; */
 }
 .three.row.column {
   display: flex;
@@ -261,3 +271,16 @@ New Message
   top: 350px;
 }
 
+.ui.button{
+  padding: 15px;
+  margin-right: 5rem;
+  margin-top: 1rem;
+  color: white;
+  font-family: 'Raleway', sans-serif !important;
+  background-color: rgb(145, 26, 108);
+  background-color: linear-gradient(
+    90deg,
+    rgba(145, 26, 108, 1) 0%,
+    rgba(211, 20, 89, 1) 100%
+  );
+}
