@@ -98,7 +98,7 @@ class LoginForm extends Component {
                       type="submit"
                       name="submit"
                       style={buttonStyle}
-                      className="login-ui-button"
+                      className="ui button"
                       value="Log In"
                     >
                       login

@@ -1,10 +1,7 @@
 
 
-                                          // MODAL
-
-                                          {/* WILL BE MODAL */}
-            {/* Your Message: */}
-            {/* <p>
+            Your Message:
+            <p>
               "{this.getGreeting()}{" "}
               {this.getGuestNameById(this.state.newMessage.guestId)} and welcome
               to
@@ -16,27 +13,34 @@
             </p>
             Date:
             <br></br>
-            <button>Send Message</button> */
-            // }
+            <button>Send Message</button>
 
 
 
-          
-        
- 
-<div class="ui compact menu">
-  <div role="listbox" aria-expanded="false" class="ui item simple dropdown" tabindex="0">
-    <div aria-atomic="true" aria-live="polite" role="alert" class="divider text">Dropdown</div>
-    <i aria-hidden="true" class="dropdown icon"></i>
-    <div class="menu transition">
-      <div style="pointer-events:all" role="option" aria-checked="false" aria-selected="true" class="selected item">
-        <span class="text">Choice 1</span></div>
-        <div style="pointer-events:all" role="option" aria-checked="false" aria-selected="false" class="item">
-          <span class="text">Choice 2</span>
-          </div>
-          <div style="pointer-events:all" role="option" aria-checked="false" aria-selected="false" class="item">
-            <span class="text">Choice 3</span>
-            </div>
-            </div>
-            </div>
-            </div>
+
+            // import React, { Component } from "react";
+// import { connect } from "react-redux";
+// import mapStoreToProps from "../../redux/mapStoreToProps";
+// import Typewriter from "typewriter-effect";
+
+// class TypeWriter extends Component {
+//   render() {
+
+
+//     return (
+//         <div></div>
+    //     <>
+      <div>
+        <Typewriter
+          onInit={(typewriter) => {
+            typewriter.typeString("test").pauseFor(2000).deleteAll().start();
+          }}
+        />
+      </div>
+//     //   </>
+//     )
+//   }
+// }
+
+// export default connect(mapStoreToProps)(TypeWriter);
+

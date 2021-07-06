@@ -5,14 +5,16 @@ import moment from "moment";
 import Nav from "../Nav/Nav";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
-// import GenerateMessageModal from "./Modal";
-// import { Card, Icon, Image, Grid, Column, Segment } from "semantic-ui-react";
+import Typewriter from "typewriter-effect";
+
 import "semantic-ui-css/semantic.min.css";
 
 import "../App/App.css";
+import { isConstructorDeclaration } from "typescript";
 
 class NewMessage extends Component {
   state = {
+    visible: true,
     newMessage: {
       templateId: "",
       guestId: "",
@@ -52,7 +54,7 @@ class NewMessage extends Component {
     let guestName = "";
     this.props.store.allGuestsReducer.map((guest) => {
       if (guest.id == id) {
-        guestName = guest.first_name + " " + guest.last_name;
+        guestName = guest.first_name;
       }
     });
     return guestName;
@@ -91,7 +93,17 @@ class NewMessage extends Component {
     }
     return greeting;
   }
+theWholeMessage(greeting, guestId, companyId, roomNumber){
+  return `${this.getGreeting(greeting)} ${this.getGuestNameById({guestId})}, and welcome to ${this.getCompanyById(companyId)}. Room number ${this.getRoomNumberByGuestId(roomNumber)},`
 
+  // {this.getGuestNameById(this.state.newMessage.guestId)} and welcome
+  // to
+  // {this.getCompanyById(this.state.newMessage.companyId)}! Room
+  // number{" "}
+  // {this.getRoomNumberByGuestId(this.state.newMessage.guestId)} is
+  // now ready you. Enjoy your stay, and let us know if you need
+  // anything." 
+}
   // functionConvertUnix({
   //       // set unix_timestamp to variable from reduxstore
   //       const unix_timestamp = {1486832543};
@@ -101,8 +113,9 @@ class NewMessage extends Component {
   // })
 
   render() {
+    console.log('attempt', this.theWholeMessage())
     const newMessage = this.state.newMessage;
-    console.log(this.state);
+    
 
     return (
       <>
@@ -200,12 +213,41 @@ class NewMessage extends Component {
 
           <div className="one column row">
             <div className="column">
-              <button className="ui button" onClick={this.handleClick}>
-                Generate Message
+              <div>
+                <Typewriter
+                  onInit={(typewriter) => {
+                    typewriter
+                      .typeString("test")
+                      .pauseFor(2000)
+                      .deleteAll()
+                      .start();
+                  }}
+                />
+              </div>
+              {this.getGreeting()}{" "}
+              {this.getGuestNameById(this.state.newMessage.guestId)} and welcome
+              to
+              {this.getCompanyById(this.state.newMessage.companyId)}! Room
+              number{" "}
+              {this.getRoomNumberByGuestId(this.state.newMessage.guestId)} is
+              now ready you. Enjoy your stay, and let us know if you need
+              anything."
+            </div>
+          </div>
+
+          <div className="one column row">
+            <div className="column">
+              <button
+                id="open"
+                className="ui button"
+                onClick={this.handleClick}
+              >
+                send text message
               </button>
             </div>
           </div>
         </div>
+
         <Footer />
       </>
     );
