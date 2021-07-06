@@ -114,96 +114,88 @@ class NewMessage extends Component {
             <div className="ui fluid column">
               <div className="title icon container">
                 <h2 className="ui center aligned header">
-                  <img src="/Assets/checklist.png" className="checklist"/>
-                  Craft a personal, unforgettable guest experience in three steps
-                  
+                  <img src="/Assets/checklist.png" className="checklist" />
+                  Craft a personal, unforgettable guest experience in three
+                  steps
                 </h2>
-                  
-                
               </div>
             </div>
           </div>
-        {/* <div className="three-column-container"> */}
+          {/* <div className="three-column-container"> */}
 
-
-          <div className="three column row" >
-              
-              <div className="four wide column">
-                <div className="card-content">
+          <div className="three column row">
+            <div className="four wide column">
+              <div className="card-content">
                 <div className="step-text">step 1.</div>
                 <div className="ui card">
-                    <select
-                      className="ui selection dropdown"
-                      value={newMessage.templateId}
-                      onChange={(event) =>
-                        this.handleChangeFor(event, "templateId")
-                      }>
-                      {this.props.store.templates.map((template) => (
-                        <option key={template.id} value={template.id}>
-                          {template.template_name}
-                        </option>
-                      ))}
-                      <option value="" disabled selected hidden>template</option>
-                    </select>
-                    
-                    </div>
-                    
-                </div>
-                
-              </div>
-              <div className="vl">
-
-              </div>
-
-              <div className="four wide column">
-              <div className="card-content">
-              <div className="step-text">step 2.</div>
-                <div className="ui card">
-                    <select
-                      name="guest name"
-                      className="ui selection dropdown"
-                      
-                      value={newMessage.guestId}
-                      onChange={(event) =>
-                        this.handleChangeFor(event, "guestId")
-                      }>
-                      {this.props.store.allGuestsReducer.map((guest) => (
-                        <option key={guest.id} value={guest.id}>
-                          {guest.first_name} {guest.last_name}
-                        </option>
-                        
-                      ))}
-                      <option value="" disabled selected hidden>guest name</option>
-                    </select>
-                    </div>
+                  <select
+                    className="ui selection dropdown"
+                    value={newMessage.templateId}
+                    onChange={(event) =>
+                      this.handleChangeFor(event, "templateId")
+                    }
+                  >
+                    {this.props.store.templates.map((template) => (
+                      <option key={template.id} value={template.id}>
+                        {template.template_name}
+                      </option>
+                    ))}
+                    <option value="" disabled selected hidden>
+                      template
+                    </option>
+                  </select>
                 </div>
               </div>
-              <div className="vl2">
-
-              </div>
-
+            </div>
+            <div className="vl"></div>
 
             <div className="four wide column">
-            <div className="card-content">
-            <div className="step-text">step 3.</div>
-              <div className="ui card">
+              <div className="card-content">
+                <div className="step-text">step 2.</div>
+                <div className="ui card">
+                  <select
+                    name="guest name"
+                    className="ui selection dropdown"
+                    value={newMessage.guestId}
+                    onChange={(event) => this.handleChangeFor(event, "guestId")}
+                  >
+                    {this.props.store.allGuestsReducer.map((guest) => (
+                      <option key={guest.id} value={guest.id}>
+                        {guest.first_name} {guest.last_name}
+                      </option>
+                    ))}
+                    <option value="" disabled selected hidden>
+                      guest name
+                    </option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div className="vl2"></div>
+
+            <div className="four wide column">
+              <div className="card-content">
+                <div className="step-text">step 3.</div>
+                <div className="ui card">
                   <select
                     className="ui selection dropdown"
                     value={newMessage.companyId}
                     onChange={(event) =>
                       this.handleChangeFor(event, "companyId")
-                    }>
+                    }
+                  >
                     {this.props.store.allHotelsReducer.map((company) => (
                       <option key={company.id} value={company.id}>
                         {company.company_name}
                       </option>
                     ))}
-                    <option value="" disabled selected hidden>hotel</option>
+                    <option value="" disabled selected hidden>
+                      hotel
+                    </option>
                   </select>
                 </div>
-                </div>
+              </div>
             </div>
-    
           </div>
 
           <div className="one column row">
@@ -213,7 +205,6 @@ class NewMessage extends Component {
               </button>
             </div>
           </div>
-
         </div>
         <Footer />
       </>

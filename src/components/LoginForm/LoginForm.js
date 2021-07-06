@@ -14,6 +14,7 @@ const buttonStyle = {
   alignItems: "center",
   alignContent: "center",
   flexWrap: "wrap",
+  marginLeft: "5rem",
 };
 
 const colors = ["#e967a5", "#1d949c", "#d31459", "#92196c", "#c0165f"];
@@ -97,7 +98,7 @@ class LoginForm extends Component {
                       type="submit"
                       name="submit"
                       style={buttonStyle}
-                      className="ui button"
+                      className="login-ui-button"
                       value="Log In"
                     >
                       login
