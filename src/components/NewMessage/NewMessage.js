@@ -113,7 +113,7 @@ class NewMessage extends Component {
               <div className="title icon container">
                 <h2 className="ui center aligned header">
                   <img src="/Assets/checklist.png" className="checklist"/>
-                  craft a personal, unforgettable guest experience in three steps
+                  Craft a personal, unforgettable guest experience in three steps
                   
                 </h2>
                   
@@ -139,6 +139,7 @@ class NewMessage extends Component {
                           {template.template_name}
                         </option>
                       ))}
+                      <option value="" disabled selected hidden>template</option>
                     </select>
                     </div>
                 </div>
@@ -148,7 +149,9 @@ class NewMessage extends Component {
               <div className="step-text">step 2.</div>
                 <div className="ui card">
                     <select
+                      name="guest name"
                       className="ui selection dropdown"
+                      
                       value={newMessage.guestId}
                       onChange={(event) =>
                         this.handleChangeFor(event, "guestId")
@@ -157,7 +160,9 @@ class NewMessage extends Component {
                         <option key={guest.id} value={guest.id}>
                           {guest.first_name} {guest.last_name}
                         </option>
+                        
                       ))}
+                      <option value="" disabled selected hidden>guest name</option>
                     </select>
                     </div>
                 </div>
@@ -181,6 +186,7 @@ class NewMessage extends Component {
                         {company.company_name}
                       </option>
                     ))}
+                    <option value="" disabled selected hidden>hotel</option>
                   </select>
                 </div>
                 </div>

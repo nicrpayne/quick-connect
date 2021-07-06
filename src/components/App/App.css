@@ -154,6 +154,7 @@ New Message
 
 }
 .ui.center.aligned.header {
+  margin-right: 5.35rem;
   padding: 15px;
   border-radius: 5px;
   color: white;
@@ -243,6 +244,7 @@ New Message
   align-items: center;
   align-content: center;
   flex-wrap: wrap;
+  margin-right: 5rem;
 }
 
 .one-column-row {

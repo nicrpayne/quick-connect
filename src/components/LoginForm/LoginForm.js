@@ -44,6 +44,7 @@ class LoginForm extends Component {
   render() {
     return (
       <>
+      <div className="log-in-page">
         <div className="login-form-container">
           <div className="login-section">
             <div className="login-form">
@@ -109,10 +110,12 @@ class LoginForm extends Component {
             </div>
           </div>
 
-          <div className="photo-section">
-            <img src="/Assets/hotelUnsplashTest.jpeg"></img>
-          </div>
+
         </div>
+        <div className="photo-section">
+            <img className="photo" src="/Assets/hotel-image.jpeg"></img>
+          </div>
+          </div>
       </>
     );
   }

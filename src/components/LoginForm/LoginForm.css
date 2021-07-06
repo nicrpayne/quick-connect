@@ -1,59 +1,64 @@
 * {
-    padding:0;
-    margin:0;
-  }
-  
-  *{
-    font-family: 'Lato', sans-serif !important;
-  font-weight: 300;
-  }
-  body {
-    font-family: 'Lato', sans-serif !important;
-  font-weight: 300;
-  }
+  padding: 0;
+  margin: 0;
+}
 
-  img.ui.image.check-in-bell {
-    position: relative;
-    margin-left: 3.5em;
-    top: 1em;
-    left: 1em;
-    
-    /* padding-bottom: 0px; */
-    width: 125px !important;
-    height: auto;
-    
-  }
-  
-  .login-form-container {
-    height:100vh;
-    display: flex;
-  }
-  /* .login-section:hover {
+* {
+  font-family: "Lato", sans-serif !important;
+  font-weight: 300;
+}
+body {
+  font-family: "Lato", sans-serif !important;
+  font-weight: 300;
+}
+
+img.ui.image.check-in-bell {
+  display: flex;
+  position: relative;
+  margin-left: 3.5em;
+  top: 1em;
+  left: 1em;
+  width: 125px !important;
+  height: auto;
+}
+
+.log-in-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login-form-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+/* .login-section:hover {
     flex:1.25 ;
   } */
-  .login-section {
-    height:100% ;
-    display: flex ;
-    align-items: center ;
-    justify-content: center ; 
-    flex:1;
-    transition: all .5s ;
+.login-section {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 3em;
+  /* flex:1;
+    transition: all .5s ; */
+}
+.photo-section {
+  height: 100vh;
+  display: flex;
 
+  margin-left: auto;
+  padding: 0px;
+  max-width: 55%;
+}
 
-  }
-  .photo-section {
-    height:100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex:1;
-    transition: all .5s;
-    /* background:url("/Assets/hotelUnsplashTest.jpeg"); */
-    background-position: center;
-    background-size: cover;
-    background-blend-mode: multiply;
-  }
-    .photo-section:hover {
-    flex:1.25;
-  };
-
+.photo {
+  height: 100vh;
+  display: flex;
+  margin-left: auto;
+  object-fit: cover;
+}
+/* .photo-section:hover {
+    flex:1.1;
+  }; */
