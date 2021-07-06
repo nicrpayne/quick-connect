@@ -14,11 +14,18 @@ body {
 .ui.stacked.segment{
   font-family: 'Raleway', sans-serif !important;
 }
+/* .bell-container{
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+
+} */
 img.ui.image.check-in-bell {
   color: #ea67a5;
   display: flex;
   position: relative;
-  margin-left: 3.5em;
+  margin-left: 3.75em;
   top: 1em;
   left: 1em;
   width: 125px !important;
@@ -43,7 +50,7 @@ img.ui.image.check-in-bell {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 3em;
+  margin-left: 6.5em;
   padding-left: 10rem;
   /* flex:1;
     transition: all .5s ; */

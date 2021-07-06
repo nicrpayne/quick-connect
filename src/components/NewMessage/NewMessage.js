@@ -4,6 +4,7 @@ import mapStoreToProps from "../../redux/mapStoreToProps";
 import moment from "moment";
 import Nav from "../Nav/Nav";
 import Header from "../Header/Header";
+// import GenerateMessageModal from "./Modal";
 // import { Card, Icon, Image, Grid, Column, Segment } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 
@@ -121,8 +122,10 @@ class NewMessage extends Component {
               </div>
             </div>
           </div>
-        
-          <div className="three column row">
+        {/* <div className="three-column-container"> */}
+
+
+          <div className="three column row" >
               
               <div className="four wide column">
                 <div className="card-content">
@@ -141,9 +144,16 @@ class NewMessage extends Component {
                       ))}
                       <option value="" disabled selected hidden>template</option>
                     </select>
+                    
                     </div>
+                    
                 </div>
+                
               </div>
+              <div className="vl">
+
+              </div>
+
               <div className="four wide column">
               <div className="card-content">
               <div className="step-text">step 2.</div>
@@ -167,8 +177,9 @@ class NewMessage extends Component {
                     </div>
                 </div>
               </div>
+              <div className="vl2">
 
-
+              </div>
 
 
             <div className="four wide column">
@@ -191,7 +202,7 @@ class NewMessage extends Component {
                 </div>
                 </div>
             </div>
-
+    
           </div>
 
           <div className="one column row">
@@ -201,7 +212,9 @@ class NewMessage extends Component {
               </button>
             </div>
           </div>
+
         </div>
+       
       </>
     );
   }

@@ -135,6 +135,14 @@ New Message
   top: 7rem;
   left: 12rem;
 }
+.ui-container{
+  display: flex;
+  position: relative;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
 
 .ui.fluid.column {
   display: flex !important;
@@ -239,8 +247,14 @@ New Message
   background-color: #191c25;
 }
 
+.card-cont:hover{
+  background-color: #cacbcd;
+  background-image: none;
+  box-shadow: 0 0 0 1px transparent inset, 0 0 0 0 rgb(34 36 38 / 15%) inset;
+  color: rgba(0,0,0,.8);
+}
+
 .column {
-  
   display: flex !important;
   justify-content: center;
   align-items: center;
@@ -250,11 +264,12 @@ New Message
 }
 .three.row.column {
   display: flex;
+  position: relative;
   justify-content: space-evenly;
   align-items: center;
   align-content: center;
   flex-wrap: wrap;
-  margin-right: 5rem;
+  margin-right: 5.5rem;
 }
 
 .one-column-row {
@@ -273,8 +288,8 @@ New Message
 
 .ui.button{
   padding: 15px;
-  margin-right: 5rem;
-  margin-top: 1rem;
+  margin-right: 4.5rem;
+  margin-top: 3rem;
   color: white;
   font-family: 'Raleway', sans-serif !important;
   background-color: rgb(145, 26, 108);
@@ -283,4 +298,37 @@ New Message
     rgba(145, 26, 108, 1) 0%,
     rgba(211, 20, 89, 1) 100%
   );
+}
+
+/* .three-column-container {
+  display: flex;
+  position: relative;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+} */
+.vl {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  border-left: 1.5px solid #191c25;
+  height: 100px;
+  position: absolute;
+  left: 34.25%;
+  top: 2.5rem;
+}
+.vl2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  border-left: 1.5px solid #191c25;
+  height: 100px;
+  position: absolute;
+  left: 65.5%;
+  top: 2.5rem;
 }

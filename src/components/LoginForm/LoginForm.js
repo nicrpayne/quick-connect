@@ -9,7 +9,7 @@ const buttonStyle = {
   backgroundColor: "#e06da3",
   color: "white",
   position: "relative",
-  left: "4.75em",
+  left: "5.25rem"
 };
 
 const colors = ["#e967a5", "#1d949c", "#d31459", "#92196c", "#c0165f"];
@@ -49,7 +49,7 @@ class LoginForm extends Component {
           <div className="login-section">
             <div className="login-form">
               <div>
-                <header as="h2" textAlign="center">
+                <header className="bell-container"as="h2" textAlign="center">
                   <Image
                     className="check-in-bell"
                     src="/assets/WhiteBell.png"
