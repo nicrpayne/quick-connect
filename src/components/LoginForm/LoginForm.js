@@ -6,10 +6,10 @@ import { Form, Image, Segment, Message } from "semantic-ui-react";
 import "./LoginForm.css";
 
 const buttonStyle = {
-  backgroundColor: "#e06da3",
+  backgroundColor: "#c0165s",
   color: "white",
   position: "relative",
-  left: "5.25rem"
+  left: "5.5rem"
 };
 
 const colors = ["#e967a5", "#1d949c", "#d31459", "#92196c", "#c0165f"];

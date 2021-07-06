@@ -4,6 +4,7 @@ import mapStoreToProps from "../../redux/mapStoreToProps";
 import moment from "moment";
 import Nav from "../Nav/Nav";
 import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 // import GenerateMessageModal from "./Modal";
 // import { Card, Icon, Image, Grid, Column, Segment } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
@@ -214,7 +215,7 @@ class NewMessage extends Component {
           </div>
 
         </div>
-       
+        <Footer />
       </>
     );
   }

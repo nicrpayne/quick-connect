@@ -4,6 +4,7 @@ import mapStoreToProps from "../../redux/mapStoreToProps";
 import NewHotelList from "../NewHotelList/NewHotelList";
 import Nav from "../Nav/Nav";
 import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 // import NewMessage from "../NewMessage/NewMessage";
 
 // Basic class component structure for React with default state
@@ -109,6 +110,7 @@ class NewHotel extends Component {
             {/* {JSON.stringify(this.props.store.allHotelsReducer)} */}
           </div>
         </form>
+        <Footer />
       </>
     );
   }

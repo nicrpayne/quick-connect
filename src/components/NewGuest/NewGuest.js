@@ -5,6 +5,7 @@ import NewGuestList from "../NewGuestList/NewGuestList";
 import NewHotelList from "../NewHotelList/NewHotelList";
 import Nav from "../Nav/Nav";
 import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 
 class NewGuest extends Component {
   state = {
@@ -125,6 +126,7 @@ class NewGuest extends Component {
             <div></div>
           </div>
         </form>
+        <Footer />
       </>
     );
   }

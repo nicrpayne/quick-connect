@@ -188,6 +188,12 @@ New Message
   margin-top: -10px;
   margin-bottom: -15px;
   margin-left: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  align-self: start; 
+  flex-wrap: wrap;
 }
 
 .ui.card {
@@ -269,7 +275,7 @@ New Message
   align-items: center;
   align-content: center;
   flex-wrap: wrap;
-  margin-right: 5.5rem;
+  margin-right: 5.75rem;
 }
 
 .one-column-row {
@@ -288,8 +294,7 @@ New Message
 
 .ui.button{
   padding: 15px;
-  margin-right: 4.5rem;
-  margin-top: 3rem;
+  /* margin-right: 10.75rem !important;  */
   color: white;
   font-family: 'Raleway', sans-serif !important;
   background-color: rgb(145, 26, 108);

@@ -4,6 +4,7 @@ import mapStoreToProps from "../../redux/mapStoreToProps";
 import NewTemplateList from "../NewTemplateList/NewTemplateList";
 import Nav from "../Nav/Nav";
 import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 // import NewMessage from "../NewMessage/NewMessage";
 
 // Basic class component structure for React with default state
@@ -92,6 +93,7 @@ class NewTemplate extends Component {
             {/* {JSON.stringify(this.props.store.templates)} */}
           </div>
         </form>
+        <Footer />
       </>
     );
   }
