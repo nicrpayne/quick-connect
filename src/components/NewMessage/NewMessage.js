@@ -179,8 +179,12 @@ class NewMessage extends Component {
               <div className="card-content">
                 <div className="step-text">step 3.</div>
                 <div className="ui card">
+
                   <select
                     className="ui selection dropdown"
+                    onClick={() => {
+                      this.setState({ visible: false})
+                    }}
                     value={newMessage.companyId}
                     onChange={(event) =>
                       this.handleChangeFor(event, "companyId")
@@ -203,6 +207,7 @@ class NewMessage extends Component {
           <div className="one column row">
             <div className="column">
               <div className="message-display">
+                {this.state.visible ? <Typewriter /> :null}
                 <div>
                   <Typewriter
                     onInit={(typewriter) => {
