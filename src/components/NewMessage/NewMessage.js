@@ -46,7 +46,7 @@ class NewMessage extends Component {
     try {
       await this.props.dispatch({
         type: "NEW_MESSAGE",
-        payload: this.state.newMessage,
+        payload: this.newMessage(),
       });
     } catch {}
   };
@@ -94,24 +94,15 @@ class NewMessage extends Component {
     }
     return greeting;
   }
-  firstHalfMessage(guestId, companyId, roomNumber) {
+
+ newMessage(guestId, companyId, roomNumber) {
     return `${this.getGreeting()} ${this.getGuestNameById(
-      this.state.newMessage.guestId
-    )}, 
-    and welcome to${this.getCompanyById(this.state.newMessage.companyId)}. `;
-  }
-  secondHalfMessage(guestId, companyId, roomNumber) {
-    return ` 
-    Room number ${this.getRoomNumberByGuestId(
-      this.state.newMessage.companyId
-    )} is
-    now ready you. Enjoy your stay, and let us know if you need
-    anything.`;
-  }
+      this.state.newMessage.guestId)}, and welcome to${this.getCompanyById(this.state.newMessage.companyId)}! Room number ${this.getRoomNumberByGuestId(this.state.newMessage.companyId)} is now ready you. Enjoy your stay, and let us know if you need anything.`};
 
   render() {
-    console.log(this.firstHalfMessage(), this.secondHalfMessage());
     const newMessage = this.state.newMessage;
+    // const newMessageComplete = newMessage();
+    // console.log(newMessageComplete)
 
     return (
       <>

@@ -7,7 +7,7 @@ import newTemplate from './newTemplate.reducer';
 import selectedTemplateReducer from './selectedTemplate.reducer';
 import allGuestsReducer from './allGuests.reducer';
 import allHotelsReducer from './allHotels.reducer';
-import messageReducer from './message.reducer';
+// import messageReducer from './message.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -24,7 +24,7 @@ const rootReducer = combineReducers({
   selectedTemplateReducer,
   allGuestsReducer,
   allHotelsReducer,
-  messageReducer
+  // messageReducer
 });
 
 export default rootReducer;
