@@ -24,7 +24,6 @@ class NewMessage extends Component {
       roomNumber: "",
     },
     currentTime: new Date().toLocaleString(),
-    visible: false,
   };
 
   async componentDidMount() {
@@ -41,11 +40,6 @@ class NewMessage extends Component {
     });
   };
 
-  stateToggle() {
-    this.setState({
-      visible: true,
-    });
-  }
 
   handleClick = async (event) => {
     event.preventDefault();
@@ -54,8 +48,6 @@ class NewMessage extends Component {
         type: "NEW_MESSAGE",
         payload: this.state.newMessage,
       });
-      this.stateToggle();
-      //this.props.history.push('/messageDisplayPage')
     } catch {}
   };
 
