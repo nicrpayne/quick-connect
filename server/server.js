@@ -12,6 +12,16 @@ const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
 const client = require('twilio')(accountSid, authToken);
 
+client.messages
+  .create({
+    body: 'This is a test text message!!',
+    from: '+16124284192',
+    to: '19524515638'
+  })
+.then( message => console.log(message))
+.catch((err) => console.log(err)) ;
+
+
 // Route includes
 const userRouter = require('./routes/user.router');
 const newTemplateRouter = require('./routes/new.template.router');
