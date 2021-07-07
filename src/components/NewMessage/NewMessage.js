@@ -219,13 +219,14 @@ class NewMessage extends Component {
           <div className="one column row">
             <div className="column">
               <div className="message-display">
-                <div>
+                <div className="message-text">
                   <Typewriter 
                   options={{
                     autoStart: true,
                     loop: true,
-                    delay: 20,
-                    strings: [
+                    delay: 30,
+                    strings: 
+                    [
                       `${this.getGreeting()} <strong>${this.getGuestNameById(
                         this.state.newMessage.guestId)}</strong>,
                       and welcome to <strong>${this.getCompanyById(this.state.newMessage.companyId)}</strong>.

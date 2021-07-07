@@ -329,7 +329,10 @@ button.login.ui.button:hover{
 }
 
 .message-display{
-  margin-right: 5rem;
+  font-family: 'Inconsolata', monospace !important;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-right: 5.25rem;
   display: flex !important;
   position: relative;
   justify-content: center;
@@ -337,6 +340,5 @@ button.login.ui.button:hover{
   align-content: center;
   flex-wrap: wrap;
   color: #33ff33;
-  font-size: 17px;
-  font-family: monospace;
+  font-size: 17.5px;
 }
