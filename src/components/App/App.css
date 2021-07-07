@@ -310,20 +310,9 @@ button.login.ui.button:hover{
   background-color: red !important;
 }
 
-/* .three-column-container {
-  display: flex;
-  position: relative;
-  justify-content: space-evenly;
-  align-items: center;
-  align-content: center;
-  flex-wrap: wrap;
-} */
+
 .vl {
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  flex-wrap: wrap ; */
+
   border-left: 1.5px solid #191c25;
   height: 100px;
   position: absolute;
@@ -331,14 +320,23 @@ button.login.ui.button:hover{
   top: 2.5rem;
 }
 .vl2 {
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  flex-wrap: wrap; */
+
   border-left: 1.5px solid #191c25;
   height: 100px;
   position: absolute;
   left: 65.5%;
   top: 2.5rem;
+}
+
+.message-display{
+  margin-right: 5rem;
+  display: flex !important;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  color: #33ff33;
+  font-size: 17px;
+  font-family: monospace;
 }

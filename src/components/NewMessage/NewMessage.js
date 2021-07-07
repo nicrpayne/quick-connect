@@ -1,20 +1,22 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import mapStoreToProps from "../../redux/mapStoreToProps";
+import Typewriter from "typewriter-effect";
+
+
 import moment from "moment";
 import Nav from "../Nav/Nav";
 import Header from "../Header/Header";
-import Footer from "../Footer/Footer";
-import Typewriter from "typewriter-effect";
+import Footer from "../Footer/Footer"; 
+
 
 import "semantic-ui-css/semantic.min.css";
 
 import "../App/App.css";
-import { isConstructorDeclaration } from "typescript";
+
 
 class NewMessage extends Component {
   state = {
-    visible: true,
     newMessage: {
       templateId: "",
       guestId: "",
@@ -22,6 +24,7 @@ class NewMessage extends Component {
       roomNumber: "",
     },
     currentTime: new Date().toLocaleString(),
+    visible: false,
   };
 
   async componentDidMount() {
@@ -38,6 +41,12 @@ class NewMessage extends Component {
     });
   };
 
+  stateToggle() {
+    this.setState({
+      visible: true,
+    });
+  }
+
   handleClick = async (event) => {
     event.preventDefault();
     try {
@@ -45,7 +54,7 @@ class NewMessage extends Component {
         type: "NEW_MESSAGE",
         payload: this.state.newMessage,
       });
-
+      this.stateToggle();
       //this.props.history.push('/messageDisplayPage')
     } catch {}
   };
@@ -93,21 +102,28 @@ class NewMessage extends Component {
     }
     return greeting;
   }
-  theWholeMessage( guestId, companyId, roomNumber) {
-    return `${this.getGreeting()} ${this.getGuestNameById(this.state.newMessage.guestId)}, 
-    and welcome to${this.getCompanyById(this.state.newMessage.companyId)}. 
-    Room number ${this.getRoomNumberByGuestId(this.state.newMessage.companyId)}, is
+  firstHalfMessage(guestId, companyId, roomNumber) {
+    return `${this.getGreeting()} ${this.getGuestNameById(
+      this.state.newMessage.guestId
+    )}, 
+    and welcome to${this.getCompanyById(this.state.newMessage.companyId)}. `;
+  }
+  secondHalfMessage(guestId, companyId, roomNumber) {
+    return ` 
+    Room number ${this.getRoomNumberByGuestId(
+      this.state.newMessage.companyId
+    )} is
     now ready you. Enjoy your stay, and let us know if you need
-    anything."`;
-
+    anything.`;
   }
 
   render() {
-    // console.log(this.theWholeMessage());
+    console.log(this.firstHalfMessage(), this.secondHalfMessage());
     const newMessage = this.state.newMessage;
 
     return (
       <>
+      
         <Header />
         <Nav />
 
@@ -179,12 +195,8 @@ class NewMessage extends Component {
               <div className="card-content">
                 <div className="step-text">step 3.</div>
                 <div className="ui card">
-
                   <select
                     className="ui selection dropdown"
-                    onClick={() => {
-                      this.setState({ visible: false})
-                    }}
                     value={newMessage.companyId}
                     onChange={(event) =>
                       this.handleChangeFor(event, "companyId")
@@ -207,27 +219,23 @@ class NewMessage extends Component {
           <div className="one column row">
             <div className="column">
               <div className="message-display">
-                {this.state.visible ? <Typewriter /> :null}
                 <div>
-                  <Typewriter
-                    onInit={(typewriter) => {
-                      typewriter
-                        .typeString(this.theWholeMessage())
-                        .pauseFor(2000)
-                        .deleteAll()
-                        .start();
-                    }}
+                  <Typewriter 
+                  options={{
+                    autoStart: true,
+                    loop: true,
+                    delay: 20,
+                    strings: [
+                      `${this.getGreeting()} <strong>${this.getGuestNameById(
+                        this.state.newMessage.guestId)}</strong>,
+                      and welcome to <strong>${this.getCompanyById(this.state.newMessage.companyId)}</strong>.
+                      Room number <strong>${this.getRoomNumberByGuestId(this.state.newMessage.companyId)}</strong> is now ready you.
+                      Enjoy your stay, and let us know if you need anything.`
+                    ]
+                  }} 
                   />
                 </div>
               </div>
-              {/* {this.getGreeting()}{" "}
-              {this.getGuestNameById(this.state.newMessage.guestId)} and welcome
-              to
-              {this.getCompanyById(this.state.newMessage.companyId)}! Room
-              number{" "}
-              {this.getRoomNumberByGuestId(this.state.newMessage.guestId)} is
-              now ready you. Enjoy your stay, and let us know if you need
-              anything." */}
             </div>
           </div>
 
@@ -238,7 +246,7 @@ class NewMessage extends Component {
                 className="ui button"
                 onClick={this.handleClick}
               >
-                send text message
+                Send Text Message
               </button>
             </div>
           </div>
