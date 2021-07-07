@@ -6,8 +6,14 @@ import axios from 'axios';
 
 function* sendMessage(action) {
     try {
-        yield axios.post('/api/message', action.payload);
-       console.log('sendMessage saga payload:', action.payload)
+
+
+        const response = yield axios.get('/api/message/');
+        
+       console.log('SEND MESSAGE SAGA', response.data)
+
+        yield axios.post('api/message', action.payload)
+        // console.log('sendMessage saga', response.data, action.payload)
       } catch (error) {
         console.log('Error sending message:', error);
       }

@@ -96,8 +96,7 @@ class NewMessage extends Component {
   }
 
  newMessage(guestId, companyId, roomNumber) {
-    return `${this.getGreeting()} ${this.getGuestNameById(
-      this.state.newMessage.guestId)}, and welcome to${this.getCompanyById(this.state.newMessage.companyId)}! Room number ${this.getRoomNumberByGuestId(this.state.newMessage.companyId)} is now ready you. Enjoy your stay, and let us know if you need anything.`};
+    return `${this.getGreeting()} ${this.getGuestNameById(this.state.newMessage.guestId)}, and welcome to${this.getCompanyById(this.state.newMessage.companyId)}! Room number ${this.getRoomNumberByGuestId(this.state.newMessage.companyId)} is now ready you. Enjoy your stay, and let us know if you need anything.`};
 
   render() {
     const newMessage = this.state.newMessage;

@@ -13,7 +13,7 @@ const router = express.Router();
   pool.query(queryText)
       .then(response => {
           res.send(response.rows)
-          console.log('BROOOO GUESTS', response.rows);
+        //   console.log('BROOOO GUESTS', response.rows);
       }).catch(error => {
           console.log('error in guests GET', error)
           res.sendStatus(500);

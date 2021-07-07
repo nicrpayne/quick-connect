@@ -7,9 +7,9 @@ const sessionMiddleware = require('./modules/session-middleware');
 const passport = require('./strategies/user.strategy');
 
 //Twilio
-const accountSid = process.env.TWILIO_ACCOUNT_SID;
-const authToken = process.env.TWILIO_AUTH_TOKEN;
-const client = require('twilio')(accountSid, authToken);
+// const accountSid = process.env.TWILIO_ACCOUNT_SID;
+// const authToken = process.env.TWILIO_AUTH_TOKEN;
+// const client = require('twilio')(accountSid, authToken);
 
 
 
@@ -20,7 +20,7 @@ const allTemplatesRouter = require('./routes/all.templates.router');
 const selectedTemplateRouter = require('./routes/selected.template.router');
 const allGuestsRouter = require('./routes/all.guests.router');
 const allHotelsRouter = require('./routes/all.hotels.router');
-// const generateMessageRouter = require('./routes/generate.message.router')
+const generateMessageRouter = require('./routes/generate.message.router')
 
 
 
@@ -42,7 +42,7 @@ app.use('/api/allTemplates', allTemplatesRouter);
 app.use('/api/selectedTemplate', selectedTemplateRouter);
 app.use('/api/allGuests/', allGuestsRouter);
 app.use('/api/allHotels/', allHotelsRouter);
-// app.use('/api/message', generateMessageRouter);
+app.use('/api/message/', generateMessageRouter);
 
 
 
