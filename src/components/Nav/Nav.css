@@ -8,10 +8,10 @@
   height: auto;
 } */
 .ui.inverted.vertical.menu {
-  
+  margin-top: 2rem;
   /* font-family: 'Raleway', sans-serif !important; */
   font-weight: 300;
-  margin-top: 0rem;
+  /* margin-top: 0rem; */
   height: 100vh;
   border-top-left-radius: 0rem;
   border-top-right-radius: 0rem;

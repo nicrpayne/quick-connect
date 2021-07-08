@@ -53,6 +53,7 @@ const ProtectedRoute = (props) => {
       {...otherProps}
       component={ComponentToShow}
     />
+    
   );
 };
 

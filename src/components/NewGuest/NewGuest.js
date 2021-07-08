@@ -156,7 +156,7 @@ class NewGuest extends Component {
             </Segment>
           </div>
         </div>
-        {/* <Footer /> */}
+        <Footer />
       </>
     );
   }
