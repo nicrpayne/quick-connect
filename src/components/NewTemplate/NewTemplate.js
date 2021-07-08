@@ -5,6 +5,7 @@ import NewTemplateList from "../NewTemplateList/NewTemplateList";
 import Nav from "../Nav/Nav";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
+import { Button, Form, Segment, Select } from "semantic-ui-react";
 // import NewMessage from "../NewMessage/NewMessage";
 
 // Basic class component structure for React with default state
@@ -53,14 +54,24 @@ class NewTemplate extends Component {
     // console.log('brooooo!', template);
     return (
       <>
-            <Header />
-      <Nav />
-        <div>
-          <h2>{this.state.heading}</h2>
-        </div>
-        <form>
+        <Header />
+        <Nav />
+        <div className="ui grid">
+          <div className="row">
+            <div className="ui fluid column">
+              <div className="title icon container">
+                <h2 className="ui center aligned header">
+                  <img src="/Assets/checklist.png" className="checklist" />
+                  Adding your own customized template will be coming soon!          
+                </h2>
+              </div>
+            </div>
+          </div>
+
           <div>
-            <input
+            <Segment inverted>
+              <Form inverted>
+            <Form.Input
               // className=""
               type="text"
               name="templateName"
@@ -69,8 +80,8 @@ class NewTemplate extends Component {
               value={template.name}
               onChange={(event) => this.handleInputChangeFor(event, "name")}
               // onChange={this.handleInputChangeFor("templateName")}
-            ></input>
-            <input
+            />
+            <Form.Input
               // className=""
               type="text"
               name="body"
@@ -79,20 +90,24 @@ class NewTemplate extends Component {
               value={template.body}
               onChange={(event) => this.handleInputChangeFor(event, "body")}
               // onChange={this.handleInputChangeFor("templateName")}
-            ></input>
-            hello
-            <button
+            />
+            
+            <Button
               // className=""
               onClick={this.handleClick}
               size={"large"}
               variant={"outlined"}
+              disabled={!template.name|| !template.body}
             >
               Add
-            </button>
-            <NewTemplateList newTemplateList={this.props.store.templates} />
+            </Button>
+            </Form>
+            </Segment>
+            {/* <NewTemplateList newTemplateList={this.props.store.templates} />
             {/* {JSON.stringify(this.props.store.templates)} */}
-          </div>
-        </form>
+          </div> 
+        </div>
+
         <Footer />
       </>
     );
