@@ -232,8 +232,11 @@ New Message
 }
 .ui.selection.dropdown {
   /* z-index: +5; */
+  /* appearance: none; */
   padding: 2px;
   width: 200px;
+  /* background: #4d5061; */
+
   /* -webkit-transition: all 0.25s ease !important;
   -moz-transition: all 0.25s ease !important;
   -ms-transition: all 0.25s ease !important;
@@ -341,4 +344,28 @@ button.login.ui.button:hover{
   flex-wrap: wrap;
   color: #33ff33;
   font-size: 17.5px;
+}
+
+/* --------------------------------------------------------------------------------
+New Guest
+-------------------------------------------------------------------------------- */
+.guest.ui.dropdown.selection{
+  margin-bottom: 1rem;
+}
+
+.guest-button{
+  width: 200px;
+  margin-top: 15px !important;
+  margin-left: 16rem !important;
+  /* margin: 0; */
+  /* margin-top: 1rem; */
+
+  /* text-align: center */
+
+  /* position: absolute; */
+  /* top: 50%; */
+  /* -ms-transform: translateY(-50%);
+  transform: translateY(-50%); */
+  /* top: 9rem;
+  left: 16.5rem; */
 }

@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import mapStoreToProps from "../../redux/mapStoreToProps";
 import NewGuestListItem from "../NewGuestListItem/NewGuestListItem";
-import Nav from "../Nav/Nav";
-import Header from "../Header/Header";
+
 
 class NewGuestList extends Component {
   render() {
@@ -19,8 +18,7 @@ class NewGuestList extends Component {
 
     return (
       <>
-      <Header />
-      <Nav />
+
       <div>
         <ul>
           {GuestListItem}

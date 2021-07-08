@@ -2,10 +2,13 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import mapStoreToProps from "../../redux/mapStoreToProps";
 import NewGuestList from "../NewGuestList/NewGuestList";
-import NewHotelList from "../NewHotelList/NewHotelList";
+
 import Nav from "../Nav/Nav";
 import Header from "../Header/Header";
-import Footer from "../Footer/Footer";
+// import Footer from "../Footer/Footer";
+import { Button, Form, Segment, Select } from "semantic-ui-react";
+
+import { input } from "semantic-ui-react";
 
 class NewGuest extends Component {
   state = {
@@ -53,80 +56,106 @@ class NewGuest extends Component {
     console.log("brooooo! guest variable:", guest);
     return (
       <>
-      <Header />
-      <Nav />
-        <div>
-          <h2>{this.state.heading}</h2>
-        </div>
-        <form>
-          <div>
-            <input
-              // className=""
-              type="text"
-              name="guestFirstName"
-              placeholder="First Name"
-              // label="Guest First Name"
-              value={guest.first_name}
-              onChange={(event) =>
-                this.handleInputChangeFor(event, "firstName")
-              }
-            ></input>
-            <input
-              // className=""
-              type="text"
-              name="guestLastName"
-              placeholder="Last name"
-              // label="Guest Last Name"
-              value={guest.last_name}
-              onChange={(event) => this.handleInputChangeFor(event, "lastName")}
-            ></input>
-            <input
-              // className=""
-              type="text"
-              name="body"
-              placeholder="Mobile"
-              // label="Guest Mobile"
-              value={guest.mobile}
-              onChange={(event) => this.handleInputChangeFor(event, "mobile")}
-            ></input>
-            <input
-              // className=""
-              type="text"
-              name="guestEmail"
-              placeholder="Email"
-              // label="Guest Email"
-              value={guest.email}
-              onChange={(event) => this.handleInputChangeFor(event, "email")}
-            ></input>
-            <select
-              type="text"
-              name="select hotel"
-              placeholder="Select Hotel"
-              value={guest.companyId}
-              onChange={(event) =>
-                this.handleInputChangeFor(event, "companyId")
-              }
-            >
-              {this.props.store.allHotelsReducer.map((company) => (
-                <option key={company.id} value={company.id}>
-                  {company.company_name}, {company.id}
-                </option>
-              ))}
-            </select>
-            <br></br>
-            <button
-              // className=""
-              onClick={this.handleClick}
-              size={"large"}
-              variant={"outlined"}
-            >
-              Add
-            </button>
-            <NewGuestList newGuestList={this.props.store.allGuestsReducer} />
-            <div></div>
+        <Header />
+        <Nav />
+        <div className="ui grid">
+          <div className="row">
+            <div className="ui fluid column">
+              <div className="title icon container">
+                <h2 className="ui center aligned header">
+                  <img src="/Assets/checklist.png" className="checklist" />
+                  Add a new Guest to connect with below
+                </h2>
+              </div>
+            </div>
           </div>
-        </form>
-        <Footer />
+
+          <div>
+            <Segment inverted>
+              <Form inverted>
+                <Form.Group widths="equal">
+                  <Form.Input
+                    // className=""
+                    type="text"
+                    name="guestFirstName"
+                    placeholder="First Name"
+                    // label="Guest First Name"
+                    value={guest.first_name}
+                    onChange={(event) =>
+                      this.handleInputChangeFor(event, "firstName")
+                    }
+                  />
+                  <Form.Input
+                    // className=""
+                    type="text"
+                    name="guestLastName"
+                    placeholder="Last name"
+                    // label="Guest Last Name"
+                    value={guest.last_name}
+                    onChange={(event) =>
+                      this.handleInputChangeFor(event, "lastName")
+                    }
+                  />
+                  <Form.Input
+                    // className=""
+                    type="text"
+                    name="body"
+                    placeholder="Mobile"
+                    // label="Guest Mobile"
+                    value={guest.mobile}
+                    onChange={(event) =>
+                      this.handleInputChangeFor(event, "mobile")
+                    }
+                  />
+                  <Form.Input
+                    // className=""
+                    type="text"
+                    name="guestEmail"
+                    placeholder="Email"
+                    // label="Guest Email"
+                    value={guest.email}
+                    onChange={(event) =>
+                      this.handleInputChangeFor(event, "email")
+                    }
+                  />
+                  </Form.Group>
+
+
+                  <select className="guest-ui-dropdown-selection"
+                    
+                    value={guest.companyId}
+                    onChange={(event) =>
+                      this.handleInputChangeFor(event, "companyId")
+                    }
+                  >
+                    {this.props.store.allHotelsReducer.map((company) => (
+                      <option key={company.id} value={company.id}>
+                        {company.company_name}, {company.id}
+                      </option>
+                    ))}
+                    <option value="" disabled selected hidden>
+                      Select Hotel
+                    </option>
+                  </select>
+                
+                
+                <Button
+                  className="guest-button"
+                  onClick={this.handleClick}
+                  size={"large"}
+                  variant={"outlined"}
+                >
+                  Add
+                </Button>
+                {/* <NewGuestList
+                  newGuestList={this.props.store.allGuestsReducer}
+                /> */}
+                <div></div>
+              </Form>
+            </Segment>
+          </div>
+        </div>
+        {/* <Footer /> */}
       </>
     );
   }

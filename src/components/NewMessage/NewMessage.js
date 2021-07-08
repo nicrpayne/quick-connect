@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import mapStoreToProps from "../../redux/mapStoreToProps";
 import Typewriter from "typewriter-effect";
-
+import { Select } from "semantic-ui-react";
 
 import moment from "moment";
 import Nav from "../Nav/Nav";
@@ -197,7 +197,7 @@ class NewMessage extends Component {
                 <div className="step-text">step 3.</div>
                 <div className="ui card">
                   <select
-                    className="ui selection dropdown"
+                    className="ui dropdown selection"
                     value={newMessage.companyId}
                     onChange={(event) =>
                       this.handleChangeFor(event, "companyId")
