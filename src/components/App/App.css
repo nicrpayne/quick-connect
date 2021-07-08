@@ -357,15 +357,13 @@ New Guest
   width: 200px;
   margin-top: 15px !important;
   margin-left: 16rem !important;
-  /* margin: 0; */
-  /* margin-top: 1rem; */
 
-  /* text-align: center */
+}
 
-  /* position: absolute; */
-  /* top: 50%; */
-  /* -ms-transform: translateY(-50%);
-  transform: translateY(-50%); */
-  /* top: 9rem;
-  left: 16.5rem; */
+.hotel-button{
+  width: 100px;
+  padding-right: rem !important; 
+  margin-top: 15px !important;
+  margin-left: 6.5rem !important;
+  margin-bottom: 15px !important;
 }

@@ -5,7 +5,7 @@ import NewGuestList from "../NewGuestList/NewGuestList";
 
 import Nav from "../Nav/Nav";
 import Header from "../Header/Header";
-// import Footer from "../Footer/Footer";
+import Footer from "../Footer/Footer";
 import { Button, Form, Segment, Select } from "semantic-ui-react";
 
 import { input } from "semantic-ui-react";
