@@ -107,7 +107,7 @@ class LoginForm extends Component {
                 </Form>
                 <Message style={{ textAlign: "center" }}>
                   new to us?{" "}
-                  <a style={{ color: "#e06da3" }} href="#">
+                  <a style={{ color: "#e06da3" }} href="#/registration">
                     sign Up
                   </a>
                 </Message>
