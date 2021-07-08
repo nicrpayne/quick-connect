@@ -23,6 +23,7 @@ class NewMessage extends Component {
       mobile: "",
       companyId: "",
       roomNumber: "",
+      loading: false,
     },
     currentTime: new Date().toLocaleString(),
   };
@@ -45,10 +46,14 @@ class NewMessage extends Component {
   handleClick = async (event) => {
     event.preventDefault();
     try {
+      
       await this.props.dispatch({
         type: "NEW_MESSAGE",
-        payload: this.newMessage(),
-      });
+        payload: {
+          message: this.newMessage(),
+          mobile: this.getMobileByGuestId(this.state.newMessage.guestId)}
+      }); 
+        // console.log('response', response)
     } catch {}
   };
 
@@ -64,15 +69,25 @@ class NewMessage extends Component {
 
   getRoomNumberByGuestId(id) {
     let roomNumber = "";
-    let mobile = "";
     this.props.store.allGuestsReducer.map((guest) => {
       if (guest.id == id) {
         roomNumber = guest.room_number;
-        mobile = guest.mobile;
+
       }
-    }); console.log("getRoomNumber", mobile, roomNumber)
+    }); 
     return roomNumber;
   }
+
+  getMobileByGuestId(id) {
+    let mobile = "";
+    this.props.store.allGuestsReducer.map((guest) => {
+      if (guest.id == id) {
+        mobile = guest.mobile;
+      }
+    }); console.log('mobile=', mobile);
+    return mobile;
+  }
+
 
   getCompanyById(id) {
     let companyName = "";
@@ -103,7 +118,7 @@ class NewMessage extends Component {
     
   render() {
     const newMessage = this.state.newMessage;
-
+    
     console.log(this.state.newMessage)
     console.log("test", this.newMessage())
 
@@ -160,12 +175,12 @@ class NewMessage extends Component {
                   <select
                     name="guest name"
                     className="ui selection dropdown"
-                    value={newMessage.guestId, newMessage.mobile}
-                    onChange={(event) => this.handleChangeFor(event, "guestId", "mobile")}
+                    value={newMessage.guestId}
+                    onChange={(event) => this.handleChangeFor(event, "guestId")}
                   >
                     {this.props.store.allGuestsReducer.map((guest) => (
                       <option key={guest.id} value={guest.id}>
-                        {guest.first_name} {guest.last_name} {guest.mobile}
+                        {guest.first_name} {guest.last_name} 
                       </option>
                     ))}
                     <option value="" disabled selected hidden>
@@ -231,6 +246,7 @@ class NewMessage extends Component {
               <button
                 id="open"
                 className="ui button"
+                disabled={!newMessage.guestId || !newMessage.companyId || !newMessage.templateId || this.state.newMessage.loading}
                 onClick={this.handleClick}
               >
                 Send Text Message

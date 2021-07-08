@@ -20,7 +20,7 @@ const allTemplatesRouter = require('./routes/all.templates.router');
 const selectedTemplateRouter = require('./routes/selected.template.router');
 const allGuestsRouter = require('./routes/all.guests.router');
 const allHotelsRouter = require('./routes/all.hotels.router');
-const generateMessageRouter = require('./routes/generate.message.router')
+const generateMessageRouter = require('./routes/generate.message.router');
 
 
 
