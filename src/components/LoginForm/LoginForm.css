@@ -38,9 +38,12 @@ img.ui.image.check-in-bell {
   justify-content: center;
 }
 .login-form-container {
-  height: 100vh;
+  padding-right: 4rem;
   display: flex;
+  align-items: center;
   justify-content: center;
+  height: 100vh;
+  margin-left: 2.5rem;
 }
 /* .login-section:hover {
     flex:1.25 ;
@@ -50,11 +53,16 @@ img.ui.image.check-in-bell {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 6.5em;
-  padding-left: 10rem;
+  /* margin-left: 6.5em;
+  padding-left: 10rem; */
+  padding: 3rem;
+  margin-left: 3rem;
+  /* margin-left: 1rem; */
+  margin-right: 1rem;
+}
   /* flex:1;
     transition: all .5s ; */
-}
+
 .welcome-text{
   font-family: 'Raleway', sans-serif !important;
 }
