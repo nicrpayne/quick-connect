@@ -9,14 +9,14 @@ const router = express.Router();
 
 router.get('/:id', (req, res) => {
     // const newMessage = req.body
-console.log('in newMessage router')
+// console.log('in newMessage router')
   //GET phone number of guest by ID, pass number in query string
     const sqlGetMobile = `SELECT * FROM "guests"
-                          WHERE "id"=$1`
+                          WHERE "id"=$1;`
 
     // Save the result to get the returned value
     // console.log('in newMessage', result.rows)
-    const result = pool.query(sqlGetMobile, [req.params.id])
+    const result = pool.query(sqlGetMobile, req.params.id)
     // Get the phone number from the result - will have 1 row with the id 
         // console.log("in message router")
         .then(result => {

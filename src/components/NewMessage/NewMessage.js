@@ -20,6 +20,7 @@ class NewMessage extends Component {
     newMessage: {
       templateId: "",
       guestId: "",
+      mobile: "",
       companyId: "",
       roomNumber: "",
     },
@@ -63,11 +64,13 @@ class NewMessage extends Component {
 
   getRoomNumberByGuestId(id) {
     let roomNumber = "";
+    let mobile = "";
     this.props.store.allGuestsReducer.map((guest) => {
       if (guest.id == id) {
         roomNumber = guest.room_number;
+        mobile = guest.mobile;
       }
-    });
+    }); console.log("getRoomNumber", mobile, roomNumber)
     return roomNumber;
   }
 
@@ -96,12 +99,14 @@ class NewMessage extends Component {
   }
 
  newMessage(guestId, companyId, roomNumber) {
-    return `${this.getGreeting()} ${this.getGuestNameById(this.state.newMessage.guestId)}, and welcome to${this.getCompanyById(this.state.newMessage.companyId)}! Room number ${this.getRoomNumberByGuestId(this.state.newMessage.companyId)} is now ready you. Enjoy your stay, and let us know if you need anything.`};
-
+    return `${this.getGreeting()} ${this.getGuestNameById(this.state.newMessage.guestId)}, and welcome to${this.getCompanyById(this.state.newMessage.companyId)}! Room number ${this.getRoomNumberByGuestId(this.state.newMessage.guestId)} is now ready you. Enjoy your stay, and let us know if you need anything.`};
+    
   render() {
     const newMessage = this.state.newMessage;
-    // const newMessageComplete = newMessage();
-    // console.log(newMessageComplete)
+
+    console.log(this.state.newMessage)
+    console.log("test", this.newMessage())
+
 
     return (
       <>
@@ -121,7 +126,6 @@ class NewMessage extends Component {
               </div>
             </div>
           </div>
-          {/* <div className="three-column-container"> */}
 
           <div className="three column row">
             <div className="four wide column">
@@ -156,12 +160,12 @@ class NewMessage extends Component {
                   <select
                     name="guest name"
                     className="ui selection dropdown"
-                    value={newMessage.guestId}
-                    onChange={(event) => this.handleChangeFor(event, "guestId")}
+                    value={newMessage.guestId, newMessage.mobile}
+                    onChange={(event) => this.handleChangeFor(event, "guestId", "mobile")}
                   >
                     {this.props.store.allGuestsReducer.map((guest) => (
                       <option key={guest.id} value={guest.id}>
-                        {guest.first_name} {guest.last_name}
+                        {guest.first_name} {guest.last_name} {guest.mobile}
                       </option>
                     ))}
                     <option value="" disabled selected hidden>
