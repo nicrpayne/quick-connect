@@ -37,6 +37,12 @@ const Nav = (props) => {
           {/* Show the link to the info page and the logout button if the user is logged in */}
           {props.store.user.id && (
             <>
+            <Link className="item" to="/newguest">
+                Add a Guest
+              </Link>
+              <Link className="item" to="/newhotel">
+                Add a Company
+              </Link>
               <Link className="item" to="/newtemplate">
                 Add a Template
               </Link>
@@ -45,12 +51,8 @@ const Nav = (props) => {
               {/* <img className="menu-image-style"src=""/> */}
               {/* Send a Message */}
               {/* </Link>  */}
-              <Link className="item" to="/newguest">
-                Add a Guest
-              </Link>
-              <Link className="item" to="/newhotel">
-                Add a Company
-              </Link>
+              
+              
               
             </>
           )}
