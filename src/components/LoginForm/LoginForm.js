@@ -14,7 +14,7 @@ const buttonStyle = {
   alignItems: "center",
   alignContent: "center",
   flexWrap: "wrap",
-  marginLeft: "5rem",
+  marginLeft: "5.75rem",
 };
 
 const colors = ["#e967a5", "#1d949c", "#d31459", "#92196c", "#c0165f"];

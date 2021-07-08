@@ -41,7 +41,7 @@ const Nav = (props) => {
                 Add a Guest
               </Link>
               <Link className="item" to="/newhotel">
-                Add a Company
+                Add a Hotel
               </Link>
               <Link className="item" to="/newtemplate">
                 Add a Template
