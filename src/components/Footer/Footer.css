@@ -1,7 +1,15 @@
 footer {
-  margin-top: 80px;
-  padding: 20px;
+  display: flex;
+  position: relative;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  /* margin-top: 80px; */
+  /* padding: 20px; */
   text-align: center;
+  color: #404040;
+  margin-right: -5rem;
 }
 
 *{
