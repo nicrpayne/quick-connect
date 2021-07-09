@@ -5,7 +5,6 @@ const router = express.Router();
 
 
  router.get('/', (req, res) => {
-    // console.log('BROOOO GUESTS', req.body);
   const queryText = `SELECT * FROM "guests"
                     JOIN "reservation" ON "guests".id = 
                     "reservation".guest_id 
@@ -44,14 +43,15 @@ router.post('/', async (req, res) => {
          const newGuestId = result.rows[0].id;
 
          const sqlAddReservation = `INSERT INTO "reservation" 
-                                    ("room_number", "start_time_stamp", "end_time_stamp", "guest_id", "company_id")
-                                    VALUES ($1, $2, $3, $4, $5);`;
+                                    ("start_time_stamp", "end_time_stamp", "guest_id", "company_id")
+                                    VALUES ($1, $2, $3, $4)
+                                    RETURNING reservation.room_number;`;
 const reservationQueryValues = [
-newGuest.room_number,
+// newGuest.room_number,
 newGuest.start_time_stamp,
 newGuest.end_time_stamp,
 newGuestId,
-newGuest.company_id
+newGuest.companyId
 ];
 console.log('in guests Post', reservationQueryValues)
 await connection.query(sqlAddReservation, reservationQueryValues);

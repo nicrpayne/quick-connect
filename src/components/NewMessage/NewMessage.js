@@ -256,7 +256,8 @@ class NewMessage extends Component {
               >
                 Send Text Message
               </button>
-              {JSON.stringify(this.props.store.messageReducer)}
+              {/* {JSON.stringify(this.props.store.messageReducer)} */}
+              {/* {JSON.stringify(this.props.store.response)} */}
             </div>
           </div>
         </div>
