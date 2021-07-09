@@ -89,9 +89,9 @@ class NewHotel extends Component {
                 name="company_address"
                 placeholder="Hotel City"
                 // label="Hotel Address"
-                value={hotel.company_address}
+                value={hotel.company_city}
                 onChange={(event) =>
-                  this.handleInputChangeFor(event, "company_address")
+                  this.handleInputChangeFor(event, "company_city")
                 }
               />
               <Form.Input
@@ -106,7 +106,7 @@ class NewHotel extends Component {
                 }
               />
               <Button
-              disabled={!hotel.company_name || !hotel.company_address|| !hotel.company_timezone }
+              disabled={!hotel.company_name || !hotel.company_city|| !hotel.company_timezone }
               className="hotel-button"
                 onClick={this.handleClick}
                 size={"large"}

@@ -6,7 +6,7 @@ import axios from 'axios';
 function* getHotels() {
     try {
         const response = yield axios.get('/api/allHotels/');
-        console.log('getHotelsSaga response.data', response);
+        // console.log('getHotelsSaga response.data', response);
         yield put({ type: 'SET_ALL_HOTELS', payload: response.data });
     } catch (error) {
         console.log('Error in getHotels', error);
@@ -14,7 +14,7 @@ function* getHotels() {
 }
 
 function* addHotel(action) {
-    console.log('in addHotel saga', action.payload)
+    // console.log('in addHotel saga', action.payload)
     try {  
         yield axios.post('/api/allHotels/', action.payload)
     }   catch (error) {

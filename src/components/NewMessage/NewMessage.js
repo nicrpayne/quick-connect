@@ -231,7 +231,7 @@ class NewMessage extends Component {
                       )}</strong>.
                       Room number <strong>${this.getRoomNumberByGuestId(
                         this.state.newMessage.guestId
-                      )}</strong> is now ready you.
+                      )}</strong> is now ready for you.
                       Enjoy your stay, and let us know if you need anything.`,
                       ],
                     }}
