@@ -1,17 +1,18 @@
 html,
 body,
 #react-root {
-  height: 100%;
+  /* height: 100%; */
 }
 * {
   font-family: "Lato", sans-serif !important;
   font-weight: 300;
+
 }
 
 body {
   font-family: "Lato", sans-serif !important;
   font-weight: 300;
-  overflow-x: hidden;
+  
   font-size: 0.875rem;
   font-family: "Roboto", sans-serif;
   background: black;
@@ -69,7 +70,10 @@ Button
 } */
 
 /* This line makes the "Register" and "Login" buttons look like links */
-/* .btn_asLink {
+.btn_asLink {
+  position: aboslute;
+  height: 50px;
+  width: auto;
   padding: 0;
   border-width: 0;
   border-bottom: 1px solid #444;
@@ -77,13 +81,14 @@ Button
   background: none;
   font: inherit;
   color: #444;
+  font-size: 23px;
 }
 
 .btn_asLink:hover {
   background-color: transparent;
-  border-color: #008183;
-  color: #008183;
-} */
+  /* border-color: #008183;
+  color: #008183; */
+}
 
 /* --------------------------------------------------------------------------------
 Alert
@@ -104,22 +109,7 @@ Alert
 Form Treatment
 -------------------------------------------------------------------------------- */
 
-.formPanel {
-  display: flex !important;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  flex-wrap: wrap;
-  box-sizing: border-box;
-  width: 400px;
-  max-width: 100%;
-  padding: 25px;
-  margin: 0 auto 20px;
-  background-color: #193042;
-  border-radius: 10px;
-  box-shadow: 0 1px 2px rgb(0, 0, 0, 0.4);
-  opacity: 0.7;
-}
+
 
 input {
   margin: 5px;
@@ -135,7 +125,7 @@ New Message
   align-items: center;
   align-content: center;
   flex-wrap: wrap;
-  z-index: 0;
+  z-index: -10;
   left: 3.5rem;
   position: absolute;
   top: 7rem;
@@ -237,17 +227,10 @@ New Message
   /* border: 2px solid #000; */
 }
 .ui.selection.dropdown {
-  /* z-index: +5; */
-  /* appearance: none; */
+
   padding: 2px;
   width: 200px;
-  /* background: #4d5061; */
 
-  /* -webkit-transition: all 0.25s ease !important;
-  -moz-transition: all 0.25s ease !important;
-  -ms-transition: all 0.25s ease !important;
-  -o-transition: all 0.25s ease !important;
-  transition: all 0.25s ease !important; */
 }
 
 .card-content {
@@ -376,22 +359,56 @@ New Guest
 
 
 /* --------------------------------------------------------------------------------
-New Guest
+Register
 -------------------------------------------------------------------------------- */
-.register-ui-grid {
+/* .register-ui-grid { */
+  /* display: flex !important;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  z-index: -1;
+  height: 100vh;
+  pointer-events: none !important; 
+  left: 3.5rem;
+  position: absolute;
+  top: 7rem;
+  left: 12rem; */
+/* } */
+.register-input{
+  /* z-index: 9999; */
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  border-radius: 5px !important;
+  height: 25px;
+}
+
+.formPanel {
+  font-family: 'Raleway', sans-serif !important;
   display: flex !important;
   justify-content: center;
   align-items: center;
   align-content: center;
   flex-wrap: wrap;
-  z-index: 0;
-  height: 100vh;
-  /* left: 3.5rem; */
-  /* position: absolute; */
-  /* top: 7rem; */
-  /* left: 12rem; */
+  box-sizing: border-box;
+  width: 300px;
+  max-width: 100%;
+  padding: 25px;
+  margin: 0 auto 20px;
+  background-color: #193042;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgb(0, 0, 0, 0.4);
+  opacity: 0.7;
+  position: absolute;
+  left: 5rem;
+  top: 5rem;
 }
 
-
+.register{
+  font-family: 'Raleway', sans-serif !important;
+  font-weight: 700 !important;
+}
 
 

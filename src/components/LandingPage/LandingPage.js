@@ -52,9 +52,9 @@ class LandingPage extends Component {
 
             <center>
               <h4>Already a Member?</h4>
-              <button className="btn btn_sizeSm" onClick={this.onLogin}>
+              {/* <button className="btn btn_sizeSm" onClick={this.onLogin}>
                 Login
-              </button>
+              </button> */}
             </center>
           </div>
         </div>

@@ -1,8 +1,18 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import mapStoreToProps from "../../redux/mapStoreToProps";
-import { Button, Form, Segment, Select } from "semantic-ui-react";
 
+const buttonStyle = {
+  backgroundColor: "#c0165s",
+  color: "white",
+  position: "relative",
+  display: "flex !important",
+  justifyContent: "center",
+  alignItems: "center",
+  alignContent: "center",
+  flexWrap: "wrap",
+  marginLeft: "5.75rem",
+};
 class RegisterForm extends Component {
   state = {
     username: "",
@@ -36,23 +46,19 @@ class RegisterForm extends Component {
       alignContent: "center",
       flexWrap: "wrap",
       height: "100vh",
-      // width: "100vw",
       margin: "0",
       backgroundRepeat: "no-repeat",
       backgroundSize: "cover",
-      position: "absolute",
-      top: "-30px",
-      left: "-30px",
-      width: "calc(100vw + 60px)",
-      height: "calc(100vh + 60px)",
-      zIndex: "-1",
-      filter: "blur(0px)",
+      // position: "absolute",
+      // top: "-30px",
+      // left: "-30px",
+      // zIndex: "-1",
     };
 
     return (
       <div className="register-ui-grid" style={imageStyle}>
         <form className="formPanel" onSubmit={this.registerUser}>
-          <h2>Register User</h2>
+          <h2>Register Here</h2>
           {this.props.store.errors.registrationMessage && (
             <h3 className="alert" role="alert">
               {this.props.store.errors.registrationMessage}
@@ -62,6 +68,7 @@ class RegisterForm extends Component {
             <label htmlFor="username">
               Username:
               <input
+                className="register-input"
                 type="text"
                 name="username"
                 value={this.state.username}
@@ -74,6 +81,7 @@ class RegisterForm extends Component {
             <label htmlFor="password">
               Password:
               <input
+                className="register-input"
                 type="password"
                 name="password"
                 value={this.state.password}
@@ -83,12 +91,18 @@ class RegisterForm extends Component {
             </label>
           </div>
           <div>
-            <Button
-              className="btn"
+            <input
+              className="register-input"
               type="submit"
               name="submit"
               value="Register"
-            ></Button>
+              fluid
+              size="large"
+              type="submit"
+              name="submit"
+              style={buttonStyle}
+              className="ui button"
+            />
           </div>
         </form>
       </div>

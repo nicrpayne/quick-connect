@@ -10,10 +10,9 @@ import { connect } from "react-redux";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
 
-import Footer from "../Footer/Footer";
+
 import AboutPage from "../AboutPage/AboutPage";
-import UserPage from "../UserPage/UserPage";
-import LandingPage from "../LandingPage/LandingPage";
+
 import LoginPage from "../LoginPage/LoginPage";
 import RegisterPage from "../RegisterPage/RegisterPage";
 import NewTemplate from "../NewTemplate/NewTemplate";
@@ -97,7 +96,7 @@ class App extends Component {
                 exact
                 path="/login"
                 component={LoginPage}
-                authRedirect="/user"
+                authRedirect="/home"
               />
               <ProtectedRoute
                 // with authRedirect:
@@ -106,17 +105,17 @@ class App extends Component {
                 exact
                 path="/registration"
                 component={RegisterPage}
-                authRedirect="/user"
+                authRedirect="/home"
               />
-              {/* <ProtectedRoute
+              <ProtectedRoute
                 // with authRedirect:
                 // - if logged in, redirects to "/user"
                 // - else shows LandingPage at "/home"
                 exact
                 path="/home"
-                component={LandingPage}
+                component={NewMessage}
                 authRedirect="/user"
-              /> */}
+              />
 
               {/* If none of the other routes matched, we will show a 404. */}
               <Route render={() => <h1>404</h1>} />

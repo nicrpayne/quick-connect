@@ -49,80 +49,79 @@ class LoginForm extends Component {
   render() {
     return (
       <>
-      <div className="log-in-page">
-        <div className="login-form-container">
-          <div className="login-section">
-            <div className="login-form">
-              <div>
-                <header className="bell-container"as="h2" textAlign="center">
-                  <Image
-                    className="check-in-bell"
-                    src="/assets/WhiteBell.png"
-                  />
-                  <h1 style={{color: "#c0165f"}}className="welcome-text">welcome! check-in</h1>
-                </header>
-
-                <Form size="large">
-                  <Segment stacked>
-                    {this.props.store.errors.loginMessage && (
-                      <h3 className="alert" role="alert">
-                        {this.props.store.errors.loginMessage}
-                      </h3>
-                    )}
-                    <Form.Input
-                      fluid
-                      // icon="user"
-                      // iconPosition="left"
-                      placeholder="username"
-                      type="text"
-                      name="username"
-                      required
-                      value={this.state.username}
-                      onChange={this.handleInputChangeFor("username")}
+        <div className="log-in-page">
+          <div className="login-form-container">
+            <div className="login-section">
+              <div className="login-form">
+                <div>
+                  <header className="bell-container" as="h2" textAlign="center">
+                    <Image
+                      className="check-in-bell"
+                      src="/assets/WhiteBell.png"
                     />
-                    <Form.Input
-                      fluid
-                      // icon="lock"
-                      // iconPosition="left"
-                      placeholder="password"
-                      type="password"
-                      required
-                      value={this.state.password}
-                      onChange={this.handleInputChangeFor("password")}
-                    />
+                    <h1 style={{ color: "#c0165f" }} className="welcome-text">
+                      welcome! check-in
+                    </h1>
+                  </header>
 
-                    <button
-                      onClick={(event) => this.login(event)}
-                      fluid
-                      size="large"
-                      type="submit"
-                      name="submit"
-                      style={buttonStyle}
-                      className="ui button"
-                      value="Log In"
-                    >
-                      login
-                    </button>
-                  </Segment>
-                </Form>
+                  <Form size="large">
+                    <Segment stacked>
+                      {this.props.store.errors.loginMessage && (
+                        <h3 className="alert" role="alert">
+                          {this.props.store.errors.loginMessage}
+                        </h3>
+                      )}
+                      <Form.Input
+                        fluid
+                        // icon="user"
+                        // iconPosition="left"
+                        placeholder="username"
+                        type="text"
+                        name="username"
+                        required
+                        value={this.state.username}
+                        onChange={this.handleInputChangeFor("username")}
+                      />
+                      <Form.Input
+                        fluid
+                        // icon="lock"
+                        // iconPosition="left"
+                        placeholder="password"
+                        type="password"
+                        required
+                        value={this.state.password}
+                        onChange={this.handleInputChangeFor("password")}
+                      />
 
-                
-                <Message style={{ textAlign: "center" }}>
-                  new to us?{" "}
-                  <a style={{ color: "#e06da3" }} href="#/registration">
-                    sign Up
-                  </a>
-                </Message>
+                      <button
+                        onClick={(event) => this.login(event)}
+                        fluid
+                        size="large"
+                        type="submit"
+                        name="submit"
+                        style={buttonStyle}
+                        className="ui button"
+                        value="Log In"
+                      >
+                        login
+                      </button>
+                    </Segment>
+                  </Form>
+
+                  <Message style={{ textAlign: "center" }}>
+                    new to us?{" "}
+                    <a style={{ color: "#e06da3" }} href="#/registration">
+                      sign Up
+                    </a>
+                  </Message>
+                </div>
               </div>
             </div>
           </div>
-
-
-        </div>
-        <div className="photo-section">
+          <div className="photo-section">
             <img className="photo" src="/Assets/hotel-image.jpeg"></img>
           </div>
-          </div>
+        </div>
       </>
     );
   }
