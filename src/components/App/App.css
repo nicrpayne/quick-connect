@@ -70,7 +70,7 @@ Button
 } */
 
 /* This line makes the "Register" and "Login" buttons look like links */
-.btn_asLink {
+/* .btn_asLink {
   position: aboslute;
   height: 50px;
   width: auto;
@@ -82,13 +82,14 @@ Button
   font: inherit;
   color: #444;
   font-size: 23px;
-}
-
+  margin-top: 5rem;
+} */
+/* 
 .btn_asLink:hover {
   background-color: transparent;
-  /* border-color: #008183;
-  color: #008183; */
-}
+  border-color: #008183;
+  color: #008183;
+} */
 
 /* --------------------------------------------------------------------------------
 Alert
@@ -125,7 +126,6 @@ New Message
   align-items: center;
   align-content: center;
   flex-wrap: wrap;
-  z-index: -10;
   left: 3.5rem;
   position: absolute;
   top: 7rem;
@@ -222,10 +222,6 @@ New Message
   );
 }
 
-.ui.card:hover {
-  /* padding: 0; */
-  /* border: 2px solid #000; */
-}
 .ui.selection.dropdown {
 
   padding: 2px;

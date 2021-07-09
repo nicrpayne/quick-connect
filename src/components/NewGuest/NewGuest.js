@@ -148,9 +148,8 @@ class NewGuest extends Component {
                 >
                   Add
                 </Button>
-                {/* <NewGuestList
-                  newGuestList={this.props.store.allGuestsReducer}
-                /> */}
+                {/* <div>{JSON.stringify(this.props.store)}</div> */}
+
                 <div></div>
               </Form>
             </Segment>

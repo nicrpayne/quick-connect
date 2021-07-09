@@ -6,13 +6,11 @@ import Typewriter from "typewriter-effect";
 import moment from "moment";
 import Nav from "../Nav/Nav";
 import Header from "../Header/Header";
-import Footer from "../Footer/Footer"; 
-
+import Footer from "../Footer/Footer";
 
 import "semantic-ui-css/semantic.min.css";
 
 import "../App/App.css";
-
 
 class NewMessage extends Component {
   state = {
@@ -41,18 +39,16 @@ class NewMessage extends Component {
     });
   };
 
-
   handleClick = async (event) => {
     event.preventDefault();
     try {
-      
       await this.props.dispatch({
         type: "NEW_MESSAGE",
         payload: {
           message: this.newMessage(),
-          mobile: this.getMobileByGuestId(this.state.newMessage.guestId)}
-      }); 
-        // console.log('response', response)
+          mobile: this.getMobileByGuestId(this.state.newMessage.guestId),
+        },
+      });
     } catch {}
   };
 
@@ -71,9 +67,8 @@ class NewMessage extends Component {
     this.props.store.allGuestsReducer.map((guest) => {
       if (guest.id == id) {
         roomNumber = guest.room_number;
-
       }
-    }); 
+    });
     return roomNumber;
   }
 
@@ -83,10 +78,10 @@ class NewMessage extends Component {
       if (guest.id == id) {
         mobile = guest.mobile;
       }
-    }); console.log('mobile=', mobile);
+    });
+    console.log("mobile=", mobile);
     return mobile;
   }
-
 
   getCompanyById(id) {
     let companyName = "";
@@ -112,19 +107,21 @@ class NewMessage extends Component {
     return greeting;
   }
 
- newMessage(guestId, companyId, roomNumber) {
-    return `${this.getGreeting()} ${this.getGuestNameById(this.state.newMessage.guestId)}, and welcome to${this.getCompanyById(this.state.newMessage.companyId)}! Room number ${this.getRoomNumberByGuestId(this.state.newMessage.guestId)} is now ready you. Enjoy your stay, and let us know if you need anything.`};
-    
+  newMessage(guestId, companyId, roomNumber) {
+    return `${this.getGreeting()} ${this.getGuestNameById(
+      this.state.newMessage.guestId
+    )}, and welcome to${this.getCompanyById(
+      this.state.newMessage.companyId
+    )}! Room number ${this.getRoomNumberByGuestId(
+      this.state.newMessage.guestId
+    )} is now ready you. Enjoy your stay, and let us know if you need anything.`;
+  }
+
   render() {
     const newMessage = this.state.newMessage;
-    
-    console.log(this.state.newMessage)
-    console.log("test", this.newMessage())
-
 
     return (
       <>
-      
         <Header />
         <Nav />
 
@@ -179,7 +176,7 @@ class NewMessage extends Component {
                   >
                     {this.props.store.allGuestsReducer.map((guest) => (
                       <option key={guest.id} value={guest.id}>
-                        {guest.first_name} {guest.last_name} 
+                        {guest.first_name} {guest.last_name}
                       </option>
                     ))}
                     <option value="" disabled selected hidden>
@@ -220,20 +217,24 @@ class NewMessage extends Component {
             <div className="column">
               <div className="message-display">
                 <div className="message-text">
-                  <Typewriter 
-                  options={{
-                    autoStart: true,
-                    loop: true,
-                    delay: 30,
-                    strings: 
-                    [
-                      `${this.getGreeting()} <strong>${this.getGuestNameById(
-                        this.state.newMessage.guestId)}</strong>,
-                      and welcome to <strong>${this.getCompanyById(this.state.newMessage.companyId)}</strong>.
-                      Room number <strong>${this.getRoomNumberByGuestId(this.state.newMessage.companyId)}</strong> is now ready you.
-                      Enjoy your stay, and let us know if you need anything.`
-                    ]
-                  }} 
+                  <Typewriter
+                    options={{
+                      autoStart: true,
+                      loop: true,
+                      delay: 30,
+                      strings: [
+                        `${this.getGreeting()} <strong>${this.getGuestNameById(
+                          this.state.newMessage.guestId
+                        )}</strong>,
+                      and welcome to <strong>${this.getCompanyById(
+                        this.state.newMessage.companyId
+                      )}</strong>.
+                      Room number <strong>${this.getRoomNumberByGuestId(
+                        this.state.newMessage.companyId
+                      )}</strong> is now ready you.
+                      Enjoy your stay, and let us know if you need anything.`,
+                      ],
+                    }}
                   />
                 </div>
               </div>
@@ -245,11 +246,17 @@ class NewMessage extends Component {
               <button
                 id="open"
                 className="ui button"
-                disabled={!newMessage.guestId || !newMessage.companyId || !newMessage.templateId || this.state.newMessage.loading}
+                disabled={
+                  !newMessage.guestId ||
+                  !newMessage.companyId ||
+                  !newMessage.templateId ||
+                  this.state.newMessage.loading
+                }
                 onClick={this.handleClick}
               >
                 Send Text Message
               </button>
+              {JSON.stringify(this.props.store.messageReducer)}
             </div>
           </div>
         </div>

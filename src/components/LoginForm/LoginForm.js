@@ -37,7 +37,7 @@ class LoginForm extends Component {
       });
     } else {
       this.props.dispatch({ type: "LOGIN_INPUT_ERROR" });
-    }
+    } 
   }; // end login
 
   handleInputChangeFor = (propertyName) => (event) => {
@@ -47,7 +47,9 @@ class LoginForm extends Component {
   };
 
   render() {
+    
     return (
+      
       <>
         <div className="log-in-page">
           <div className="login-form-container">
@@ -73,8 +75,6 @@ class LoginForm extends Component {
                       )}
                       <Form.Input
                         fluid
-                        // icon="user"
-                        // iconPosition="left"
                         placeholder="username"
                         type="text"
                         name="username"
@@ -84,8 +84,6 @@ class LoginForm extends Component {
                       />
                       <Form.Input
                         fluid
-                        // icon="lock"
-                        // iconPosition="left"
                         placeholder="password"
                         type="password"
                         required
@@ -128,62 +126,3 @@ class LoginForm extends Component {
 }
 
 export default connect(mapStoreToProps)(LoginForm);
-
-// <Grid
-//   columns="two"
-//   divided
-//   textAlign="left"
-//   style={{ height: "100vh" }}
-//   verticalAlign="middle"
-// >
-//   <Grid.Column style={{ maxWidth: 450 }}>
-//     <Header as="h2" color="teal" textAlign="center">
-//       <Image src="/assets/WhiteBell.png" /> Welcome! Log in
-//     </Header>
-//     <Form size="large">
-//       <Segment stacked>
-//         {this.props.store.errors.loginMessage && (
-//           <h3 className="alert" role="alert">
-//             {this.props.store.errors.loginMessage}
-//           </h3>
-//         )}
-//         <Form.Input
-//           fluid
-//           icon="user"
-//           iconPosition="left"
-//           placeholder="username"
-//           type="text"
-//           name="username"
-//           required
-//           value={this.state.username}
-//           onChange={this.handleInputChangeFor("username")}
-//         />
-//         <Form.Input
-//           fluid
-//           icon="lock"
-//           iconPosition="left"
-//           placeholder="Password"
-//           type="password"
-//           required
-//           value={this.state.password}
-//           onChange={this.handleInputChangeFor("password")}
-//         />
-
-//         <Button
-//           onClick={(event) => this.login(event)}
-//           color="teal"
-//           fluid
-//           size="large"
-//           type="submit"
-//           name="submit"
-//           className="btn"
-//           value="Log In"
-//         >
-//           Login
-//         </Button>
-//       </Segment>
-//     </Form>
-//     <Message style={{ textAlign: "center" }}>
-//       New to us? <a href="#">Sign Up</a>
-//     </Message>
-//   </Grid.Column>

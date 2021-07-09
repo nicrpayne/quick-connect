@@ -5,7 +5,7 @@ import NewHotelList from "../NewHotelList/NewHotelList";
 import Nav from "../Nav/Nav";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
-import { Button, Form, Segment, Select } from "semantic-ui-react";
+import { Button, Form, Segment } from "semantic-ui-react";
 // import NewMessage from "../NewMessage/NewMessage";
 
 // Basic class component structure for React with default state
@@ -42,11 +42,11 @@ class NewHotel extends Component {
     try {
       await this.props.dispatch({
         type: "POST_NEW_HOTEL",
-        payload: this.state.newTemplate,
+        payload: this.state.newHotel,
       });
-      alert("New Template Added!");
+      alert("New Hotel Added!");
 
-      //this.props.history.push('/messageDisplayPage')
+      this.props.history.push('/home')
     } catch {}
   };
 
@@ -75,7 +75,7 @@ class NewHotel extends Component {
               <Form.Input
                 // className=""
                 type="text"
-                name="templateName"
+                name="company_name"
                 placeholder="Hotel Name"
                 // label="Hotel Name"
                 value={hotel.company_name}
@@ -86,7 +86,7 @@ class NewHotel extends Component {
               <Form.Input
                 // className=""
                 type="text"
-                name="body"
+                name="company_address"
                 placeholder="Hotel City"
                 // label="Hotel Address"
                 value={hotel.company_address}
@@ -97,7 +97,7 @@ class NewHotel extends Component {
               <Form.Input
                 // className=""
                 type="text"
-                name="body"
+                name="company_timezone"
                 placeholder="Timezone"
                 // label="Hotel Timezone"
                 value={hotel.company_timezone}
@@ -106,7 +106,7 @@ class NewHotel extends Component {
                 }
               />
               <Button
-              disabled={!hotel.company_name || !hotel.company_city|| !hotel.company_timezone }
+              disabled={!hotel.company_name || !hotel.company_address|| !hotel.company_timezone }
               className="hotel-button"
                 onClick={this.handleClick}
                 size={"large"}

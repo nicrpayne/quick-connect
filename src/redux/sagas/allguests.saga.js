@@ -1,5 +1,6 @@
 import { put, takeLatest } from 'redux-saga/effects';
 import axios from 'axios';
+// import { response } from 'express';
 
 
 function* getGuests() {
@@ -16,8 +17,10 @@ function* addGuest(action) {
     console.log('in addGuestsaga', action.payload)
     try {  
         yield axios.post('/api/allGuests/', action.payload)
+
+        // yield put ({type: 'SET_SUCCESS', payload: response.data})
     }   catch (error) {
-        console.log('Error in postEntry saga: ', error);
+        console.log('Error in postGuest saga: ', error);
     }
 }
 

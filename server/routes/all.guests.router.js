@@ -5,11 +5,12 @@ const router = express.Router();
 
 
  router.get('/', (req, res) => {
+    // console.log('BROOOO GUESTS', req.body);
   const queryText = `SELECT * FROM "guests"
                     JOIN "reservation" ON "guests".id = 
                     "reservation".guest_id 
                     ORDER BY "guests".id;`
-
+                    
   pool.query(queryText)
       .then(response => {
           res.send(response.rows)
@@ -23,8 +24,6 @@ const router = express.Router();
 
 router.post('/', async (req, res) => {
   const newGuest = req.body
-
-
   const connection = await pool.connect()
 
   try {
@@ -56,7 +55,6 @@ newGuest.company_id
 ];
 console.log('in guests Post', reservationQueryValues)
 await connection.query(sqlAddReservation, reservationQueryValues);
-
 
          await connection.query('COMMIT');
          res.sendStatus(200);

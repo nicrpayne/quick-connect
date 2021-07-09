@@ -64,6 +64,7 @@ class RegisterForm extends Component {
               {this.props.store.errors.registrationMessage}
             </h3>
           )}
+
           <div>
             <label htmlFor="username">
               Username:
@@ -92,7 +93,7 @@ class RegisterForm extends Component {
           </div>
           <div>
             <input
-              className="register-input"
+              // className="register-input"
               type="submit"
               name="submit"
               value="Register"
