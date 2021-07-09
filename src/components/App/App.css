@@ -105,14 +105,20 @@ Form Treatment
 -------------------------------------------------------------------------------- */
 
 .formPanel {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
   box-sizing: border-box;
   width: 400px;
   max-width: 100%;
   padding: 25px;
   margin: 0 auto 20px;
-  background-color: #efefef;
-  border-radius: 3px;
+  background-color: #193042;
+  border-radius: 10px;
   box-shadow: 0 1px 2px rgb(0, 0, 0, 0.4);
+  opacity: 0.7;
 }
 
 input {
@@ -367,3 +373,25 @@ New Guest
   margin-left: 6.5rem !important;
   margin-bottom: 15px !important;
 }
+
+
+/* --------------------------------------------------------------------------------
+New Guest
+-------------------------------------------------------------------------------- */
+.register-ui-grid {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  z-index: 0;
+  height: 100vh;
+  /* left: 3.5rem; */
+  /* position: absolute; */
+  /* top: 7rem; */
+  /* left: 12rem; */
+}
+
+
+
+
