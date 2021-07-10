@@ -7,8 +7,7 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import { Button, Form, Segment } from "semantic-ui-react";
 import { toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css'
-
+import "react-toastify/dist/ReactToastify.css";
 
 // Basic class component structure for React with default state
 // value setup. When making a new component be sure to replace
@@ -19,20 +18,16 @@ class NewHotel extends Component {
     newHotel: {
       company_name: "",
       company_city: "",
-      company_timezone: ""
-
+      company_timezone: "",
     },
   };
 
   async componentDidMount() {
     this.props.dispatch({
       type: "GET_HOTELS",
-      
     });
   }
 
-
-  
   handleInputChangeFor = (event, propertyName) => {
     this.setState({
       newHotel: {
@@ -50,11 +45,22 @@ class NewHotel extends Component {
         type: "POST_NEW_HOTEL",
         payload: this.state.newHotel,
       });
-      // alert("New Hotel Added!");
-
-      // this.props.history.push('/home')
+      this.notify();
+      this.setState({
+        newHuest: {
+          company_name: "",
+          company_city: "",
+          company_timezone: ""
+        },
+      });
+      setTimeout(() => {
+        this.props.history.push("/home");
+      }, 4500);
     } catch {}
   };
+  notify() {
+    return toast.success("new hotel added!");
+  }
 
   render() {
     let hotel = this.state.newHotel;
@@ -119,7 +125,7 @@ class NewHotel extends Component {
                     !hotel.company_timezone
                   }
                   className="hotel-button"
-                  loading={this.props.store.allHotelsReducer.loading}
+                  // loading={this.props.store.allHotelsReducer.loading}
                   onClick={this.handleClick}
                   size={"large"}
                   variant={"outlined"}

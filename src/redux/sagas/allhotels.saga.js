@@ -21,12 +21,9 @@ function* addHotel(action) {
         const response = yield axios.post('/api/allHotels/', action.payload)
         console.log("post hotel saga response:", response.data)
 
-        yield put({ type: 'SET_HOTEL_RESPONSE', payload: response.data})
+        // yield put({ type: 'SET_HOTEL_RESPONSE', payload: response.data})
 
-        setTimeout(() => { 
-        }, 3000)
-
-        yield put({ type: 'SET_LOADING_FALSE'})
+        // yield put({ type: 'SET_LOADING_FALSE'})
 
     }   catch (error) {
         console.log('Error in postHotel saga: ', error);

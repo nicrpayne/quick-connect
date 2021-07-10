@@ -31,7 +31,7 @@ class NewMessage extends Component {
  
 
   async componentDidMount() {
-    console.log("in component didmount new message");
+    // console.log("in component didmount new message");
     this.props.dispatch({ type: "GET_TEMPLATES_GUESTS_HOTELS" });
   }
 

@@ -56,7 +56,7 @@ class NewGuest extends Component {
         companyId: "",
       },
       })
-      setTimeout (() => {this.props.history.push('/home')}, 5000);
+      setTimeout (() => {this.props.history.push('/home')}, 4500);
       
     } catch {}
   };
