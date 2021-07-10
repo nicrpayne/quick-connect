@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import mapStoreToProps from "../../redux/mapStoreToProps";
 import NewGuestList from "../NewGuestList/NewGuestList";
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css'
 
 import Nav from "../Nav/Nav";
 import Header from "../Header/Header";
@@ -44,13 +46,23 @@ class NewGuest extends Component {
       await this.props.dispatch({
         type: "POST_NEW_GUEST",
         payload: this.state.newGuest,
-      });
-      // alert("New Guest Added!");
-
-      //this.props.history.push('/messageDisplayPage')
+      });this.notify();
+      this.setState({
+        newGuest: {
+        firstName: "",
+        lastName: "",
+        mobile: "",
+        email: "",
+        companyId: "",
+      },
+      })
+      setTimeout (() => {this.props.history.push('/home')}, 5000);
+      
     } catch {}
   };
-
+  notify() {
+    return toast.success('new guest added!');
+  };
   render() {
     let guest = this.state.newGuest;
     console.log("brooooo! guest variable:", guest);

@@ -122,7 +122,7 @@ class NewMessage extends Component {
     return greeting;
   }
 notify() {
-  return toast('text message sent!');
+  return toast.success('text message sent!');
 };
 
   newMessage(guestId, companyId, roomNumber) {

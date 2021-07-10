@@ -6,7 +6,9 @@ import Nav from "../Nav/Nav";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import { Button, Form, Segment, Select } from "semantic-ui-react";
-// import NewMessage from "../NewMessage/NewMessage";
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css'
+
 
 // Basic class component structure for React with default state
 // value setup. When making a new component be sure to replace
