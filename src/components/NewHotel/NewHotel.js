@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import mapStoreToProps from "../../redux/mapStoreToProps";
 import Nav from "../Nav/Nav";
 import Header from "../Header/Header";
-import Footer from "../Footer/Footer";
 import { Button, Form, Segment } from "semantic-ui-react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -122,7 +121,6 @@ class NewHotel extends Component {
             </Segment>
           </div>
         </div>
-        <Footer />
       </>
     );
   }

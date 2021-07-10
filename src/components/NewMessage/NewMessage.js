@@ -9,7 +9,6 @@ import "react-toastify/dist/ReactToastify.css";
 import moment from "moment";
 import Nav from "../Nav/Nav";
 import Header from "../Header/Header";
-import Footer from "../Footer/Footer";
 
 import "semantic-ui-css/semantic.min.css";
 
