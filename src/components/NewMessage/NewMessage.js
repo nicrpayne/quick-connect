@@ -3,9 +3,8 @@ import { connect } from "react-redux";
 import mapStoreToProps from "../../redux/mapStoreToProps";
 import Typewriter from "typewriter-effect";
 import { toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css'
-import phone from "phone";
-
+import "react-toastify/dist/ReactToastify.css";
+// import phone from "phone";
 
 import moment from "moment";
 import Nav from "../Nav/Nav";
@@ -16,7 +15,7 @@ import "semantic-ui-css/semantic.min.css";
 
 import "../App/App.css";
 
-toast.configure()
+toast.configure();
 class NewMessage extends Component {
   state = {
     newMessage: {
@@ -30,10 +29,7 @@ class NewMessage extends Component {
     currentTime: new Date().toLocaleString(),
   };
 
- 
-
   async componentDidMount() {
-    // console.log("in component didmount new message");
     this.props.dispatch({ type: "GET_TEMPLATES_GUESTS_HOTELS" });
   }
 
@@ -55,8 +51,9 @@ class NewMessage extends Component {
           message: this.newMessage(),
           mobile: this.getMobileByGuestId(this.state.newMessage.guestId),
         },
-      }); this.notify();
-      this.setState ({
+      });
+      this.notify();
+      this.setState({
         newMessage: {
           templateId: "",
           guestId: "",
@@ -65,7 +62,7 @@ class NewMessage extends Component {
           roomNumber: "",
           loading: false,
         },
-      }); 
+      });
     } catch {}
   };
 
@@ -96,7 +93,6 @@ class NewMessage extends Component {
         mobile = guest.mobile;
       }
     });
-    console.log("mobile=", mobile);
     return mobile;
   }
 
@@ -123,9 +119,9 @@ class NewMessage extends Component {
     }
     return greeting;
   }
-notify() {
-  return toast.success('text message sent!');
-};
+  notify() {
+    return toast.success("text message sent!");
+  }
 
   newMessage(guestId, companyId, roomNumber) {
     return `${this.getGreeting()} ${this.getGuestNameById(
@@ -137,17 +133,13 @@ notify() {
     )} is now ready you. Enjoy your stay, and let us know if you need anything.`;
   }
 
-
-
   render() {
     const newMessage = this.state.newMessage;
-  
+
     return (
       <>
-      
         <Header />
         <Nav />
-
         <div className="ui grid">
           <div className="row">
             <div className="ui fluid column">
@@ -276,17 +268,12 @@ notify() {
                   this.state.newMessage.loading
                 }
                 onClick={this.handleClick}
-                
               >
                 Send Text Message
               </button>
-              {/* {JSON.stringify(this.props.store.messageReducer)} */}
-              {/* {JSON.stringify(this.props.store.response)} */}
             </div>
           </div>
         </div>
-
-        <Footer />
       </>
     );
   }

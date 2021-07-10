@@ -1,19 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import mapStoreToProps from "../../redux/mapStoreToProps";
-import NewTemplateList from "../NewTemplateList/NewTemplateList";
 import Nav from "../Nav/Nav";
 import Header from "../Header/Header";
-import Footer from "../Footer/Footer";
-import { Button, Form, Segment, Select } from "semantic-ui-react";
-import { toast } from "react-toastify";
+import { Button, Form, Segment, } from "semantic-ui-react";
 import 'react-toastify/dist/ReactToastify.css'
-
-
-// Basic class component structure for React with default state
-// value setup. When making a new component be sure to replace
-// the component name TemplateClass with the name for the new
-// component.
 class NewTemplate extends Component {
   state = {
     newTemplate: {
@@ -36,7 +27,6 @@ class NewTemplate extends Component {
       },
     });
   };
-  // console.log(templateName, "made it to handle input change!");
 
   handleClick = async (event) => {
     event.preventDefault();
@@ -47,13 +37,12 @@ class NewTemplate extends Component {
       });
       alert("New Template Added!");
 
-      //this.props.history.push('/messageDisplayPage')
     } catch {}
   };
 
   render() {
     let template = this.state.newTemplate;
-    // console.log('brooooo!', template);
+
     return (
       <>
         <Header />
@@ -74,28 +63,21 @@ class NewTemplate extends Component {
             <Segment inverted>
               <Form inverted>
             <Form.Input
-              // className=""
               type="text"
               name="templateName"
               placeholder="New Template Name"
-              // label="Template Name"
               value={template.name}
               onChange={(event) => this.handleInputChangeFor(event, "name")}
-              // onChange={this.handleInputChangeFor("templateName")}
             />
             <Form.Input
-              // className=""
               type="text"
               name="body"
               placeholder="New Template Message"
-              // label="Template Body"
               value={template.body}
               onChange={(event) => this.handleInputChangeFor(event, "body")}
-              // onChange={this.handleInputChangeFor("templateName")}
             />
             
             <Button
-              // className=""
               onClick={this.handleClick}
               size={"large"}
               variant={"outlined"}
@@ -105,12 +87,8 @@ class NewTemplate extends Component {
             </Button>
             </Form>
             </Segment>
-            {/* <NewTemplateList newTemplateList={this.props.store.templates} />
-            {/* {JSON.stringify(this.props.store.templates)} */}
           </div> 
         </div>
-
-        <Footer />
       </>
     );
   }

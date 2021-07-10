@@ -7,7 +7,6 @@ function* getHotels() {
 
     yield put({ type: "SET_ALL_HOTELS", payload: response.data });
   } catch (error) {
-    console.log("Error in getHotels", error);
   }
 }
 
@@ -17,7 +16,6 @@ function* addHotel(action) {
 
     const response = yield axios.post("/api/allHotels/", action.payload);
   } catch (error) {
-    console.log("Error in postHotel saga: ", error);
   }
 }
 

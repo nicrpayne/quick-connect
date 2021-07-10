@@ -7,16 +7,13 @@ function* getGuests() {
         const response = yield axios.get('/api/allGuests/');
         yield put({ type: 'SET_ALL_GUESTS', payload: response.data });
     } catch (error) {
-        console.log('Error in getGuests', error);
     }
 }
 
 function* addGuest(action) {
-    console.log('in addGuestsaga', action.payload)
     try {  
         yield axios.post('/api/allGuests/', action.payload)
     }   catch (error) {
-        console.log('Error in postGuest saga: ', error);
     }
 }
 

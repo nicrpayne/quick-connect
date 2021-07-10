@@ -1,17 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import mapStoreToProps from "../../redux/mapStoreToProps";
-import NewGuestList from "../NewGuestList/NewGuestList";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import phone from "phone";
-
 import Nav from "../Nav/Nav";
 import Header from "../Header/Header";
-import Footer from "../Footer/Footer";
-import { Button, Form, Segment, Select } from "semantic-ui-react";
-
-import { input } from "semantic-ui-react";
+import { Button, Form, Segment } from "semantic-ui-react";
 
 class NewGuest extends Component {
   state = {
@@ -51,7 +46,6 @@ class NewGuest extends Component {
   validate() {
     const { mobile, allowLandline } = this.state;
     const result = phone(mobile, "", allowLandline);
-    console.log("BROOOOOO validate result!!", result[0]);
     if (result.length) {
       this.setState({
         result,
@@ -69,7 +63,6 @@ class NewGuest extends Component {
 
   handleClick = async (event) => {
     event.preventDefault();
-    // console.log('yo', this.state.newGuest)
     try {
       await this.props.dispatch({
         type: "POST_NEW_GUEST",
@@ -97,22 +90,12 @@ class NewGuest extends Component {
 
   render() {
     let guest = this.state.newGuest;
-    // console.log("brooooo! guest variable:", guest);
-    
 
     const showSuccessHelp = this.state.showSuccessHelp
     const showDangerHelp = this.state.showDangerHelp
     const phoneInput = this.state.newGuest.mobile
     const result = this.state.result
 
-    console.log("phoneInput!!!", phoneInput)
-    // const {
-    //   mobile,
-    //   allowLandline,
-    //   showSuccessHelp,
-    //   showDangerHelp,
-    //   result,
-    // } = this.state.newGuest;
 
     return (
       <>
@@ -135,22 +118,18 @@ class NewGuest extends Component {
               <Form inverted>
                 <Form.Group widths="equal">
                   <Form.Input
-                    // className=""
                     type="text"
                     name="guestFirstName"
                     placeholder="First Name"
-                    // label="Guest First Name"
                     value={guest.first_name}
                     onChange={(event) =>
                       this.handleInputChangeFor(event, "firstName")
                     }
                   />
                   <Form.Input
-                    // className=""
                     type="text"
                     name="guestLastName"
                     placeholder="Last name"
-                    // label="Guest Last Name"
                     value={guest.last_name}
                     onChange={(event) =>
                       this.handleInputChangeFor(event, "lastName")
@@ -164,7 +143,6 @@ class NewGuest extends Component {
                     type="text"
                     name="body"
                     placeholder="Mobile"
-                    // label="Guest Mobile"
                     value={guest.mobile}
                     onChange={(event) =>
                       this.handleInputChangeFor(event, "mobile")
@@ -172,30 +150,16 @@ class NewGuest extends Component {
                   />
                   
                   <Form.Input
-                    // className=""
                     type="text"
                     name="guestEmail"
                     placeholder="Email"
-                    // label="Guest Email"
                     value={guest.email}
                     onChange={(event) =>
                       this.handleInputChangeFor(event, "email")
                     }
                   />
                 </Form.Group>
-                {/* {showSuccessHelp && (
-                    <p className="help is-success">
-                      This phone number is valid
-                    </p>
-                  )}
-
-                  {showDangerHelp && (
-                    <p className="help is-danger">
-                      This phone number is invalid
-                    </p>
-                  )} */}
                   <p> *Please format mobile number with "+", country code, 10 digit number (+11234567890)</p>
-                  {/* {JSON.stringify(result[0])} */}
                 <select
                   className="guest-ui-dropdown-selection"
                   value={guest.companyId}
@@ -228,14 +192,11 @@ class NewGuest extends Component {
                 >
                   Add
                 </Button>
-                {/* <div>{JSON.stringify(this.props.store)}</div> */}
-
                 <div></div>
               </Form>
             </Segment>
           </div>
         </div>
-        <Footer />
       </>
     );
   }

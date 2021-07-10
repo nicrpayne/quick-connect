@@ -1,5 +1,4 @@
 const allTemplatesReducer = (state = [], action) => {
-  // console.log('in SET_TEMPLATES Reducer! Action.payload:', action.payload)  
   switch (action.type) {
       case 'SET_TEMPLATES':
         return action.payload;
@@ -8,7 +7,5 @@ const allTemplatesReducer = (state = [], action) => {
     };
   };   
   
-  // template will be on the redux state at:
-  // state.template
   export default allTemplatesReducer;
   

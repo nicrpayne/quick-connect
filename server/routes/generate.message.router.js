@@ -4,29 +4,17 @@ const pool = require("../modules/pool");
 const router = express.Router();
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
-const client = require('twilio')(accountSid, authToken);
+const client = require("twilio")(accountSid, authToken);
 
+router.post("/", (req, res) => {
 
-router.post('/', (req, res) => {
-    console.log(req.body)
-
-    client.messages
+  client.messages
     .create({
-        body: req.body.message,
-        to: (1+req.body.mobile),
-        from: "+16124284192",
+      body: req.body.message,
+      to: 1 + req.body.mobile,
+      from: "+16124284192",
     })
-    .then
-    (message => res.send(`The message to : ${message.to} was sent!`)
-    //   console.log("message body:", req.body)
-    )
-
-      
-
+    .then((message) => res.send(`The message to : ${message.to} was sent!`));
 });
 
 module.exports = router;
-
-
-
-

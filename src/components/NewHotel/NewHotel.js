@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import mapStoreToProps from "../../redux/mapStoreToProps";
-import NewHotelList from "../NewHotelList/NewHotelList";
 import Nav from "../Nav/Nav";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
@@ -9,10 +8,6 @@ import { Button, Form, Segment } from "semantic-ui-react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-// Basic class component structure for React with default state
-// value setup. When making a new component be sure to replace
-// the component name TemplateClass with the name for the new
-// component.
 class NewHotel extends Component {
   state = {
     newHotel: {
@@ -36,7 +31,6 @@ class NewHotel extends Component {
       },
     });
   };
-  // console.log(templateName, "made it to handle input change!");
 
   handleClick = async (event) => {
     event.preventDefault();
@@ -85,9 +79,6 @@ class NewHotel extends Component {
             <Segment inverted>
               <Form inverted>
                 <Form.Input
-                  // className=""
-                  // type="reset"
-                  // defaultValue="reset"
                   name="company_name"
                   placeholder="Hotel Name"
                   // label="Hotel Name"
@@ -97,22 +88,18 @@ class NewHotel extends Component {
                   }
                 />
                 <Form.Input
-                  // className=""
                   type="text"
                   name="company_address"
                   placeholder="Hotel City"
-                  // label="Hotel Address"
                   value={hotel.company_city}
                   onChange={(event) =>
                     this.handleInputChangeFor(event, "company_city")
                   }
                 />
                 <Form.Input
-                  // className=""
                   type="text"
                   name="company_timezone"
                   placeholder="Timezone"
-                  // label="Hotel Timezone"
                   value={hotel.company_timezone}
                   onChange={(event) =>
                     this.handleInputChangeFor(event, "company_timezone")
@@ -125,7 +112,6 @@ class NewHotel extends Component {
                     !hotel.company_timezone
                   }
                   className="hotel-button"
-                  // loading={this.props.store.allHotelsReducer.loading}
                   onClick={this.handleClick}
                   size={"large"}
                   variant={"outlined"}
@@ -134,7 +120,6 @@ class NewHotel extends Component {
                 </Button>
               </Form>
             </Segment>
-            {/* <div>{JSON.stringify(this.props.store.allHotelsReducer.loading)}</div> */}
           </div>
         </div>
         <Footer />

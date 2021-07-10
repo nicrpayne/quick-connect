@@ -13,7 +13,6 @@ const router = express.Router();
       .then(response => {
           res.send(response.rows)
       }).catch(error => {
-          console.log('error in contacts GET', error)
           res.sendStatus(500);
       })
 })
@@ -43,7 +42,6 @@ router.post('/', async (req, res) => {
     
            } catch (error) {
                await connection.query('ROLLBACK');
-               console.log(`Transaction Error - Rolling back new account`, error);
                res.sendStatus(500);
            } finally {
                connection.release()

@@ -5,14 +5,10 @@ import {
   Redirect,
   Switch,
 } from "react-router-dom";
-
 import { connect } from "react-redux";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
-
-
 import AboutPage from "../AboutPage/AboutPage";
-
 import LoginPage from "../LoginPage/LoginPage";
 import RegisterPage from "../RegisterPage/RegisterPage";
 import NewTemplate from "../NewTemplate/NewTemplate";
@@ -21,7 +17,6 @@ import NewGuest from "../NewGuest/NewGuest";
 import NewHotel from "../NewHotel/NewHotel";
 
 import './App.css';
-import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css'
 import "semantic-ui-css/semantic.min.css"
 

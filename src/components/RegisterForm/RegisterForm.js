@@ -29,7 +29,7 @@ class RegisterForm extends Component {
         password: this.state.password,
       },
     });
-  }; // end registerUser
+  }; 
 
   handleInputChangeFor = (propertyName) => (event) => {
     this.setState({
@@ -49,10 +49,6 @@ class RegisterForm extends Component {
       margin: "0",
       backgroundRepeat: "no-repeat",
       backgroundSize: "cover",
-      // position: "absolute",
-      // top: "-30px",
-      // left: "-30px",
-      // zIndex: "-1",
     };
 
     return (
@@ -93,7 +89,6 @@ class RegisterForm extends Component {
           </div>
           <div>
             <input
-              // className="register-input"
               type="submit"
               name="submit"
               value="Register"

@@ -1,6 +1,4 @@
 const messageReducer = (state = [], action) => {
-  
-  console.log("in message reducer!", action.payload)
   switch (action.type) {
 
     case 'MESSAGE_SUCCESS':

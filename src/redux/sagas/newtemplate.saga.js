@@ -5,7 +5,7 @@ import axios from 'axios';
 function* addTemplate(action) {
   try {
     yield axios.post('/api/newTemplate', action.payload);
-    // yield put({ type: 'NEW_TEMP_REDUCER', payload: response.data });
+
   } catch (error) {
     console.log('Error adding New Template:', error);
   }

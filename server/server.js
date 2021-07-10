@@ -6,12 +6,6 @@ const bodyParser = require('body-parser');
 const sessionMiddleware = require('./modules/session-middleware');
 const passport = require('./strategies/user.strategy');
 
-//Twilio
-// const accountSid = process.env.TWILIO_ACCOUNT_SID;
-// const authToken = process.env.TWILIO_AUTH_TOKEN;
-// const client = require('twilio')(accountSid, authToken);
-
-
 
 // Route includes
 const userRouter = require('./routes/user.router');
@@ -23,17 +17,19 @@ const allHotelsRouter = require('./routes/all.hotels.router');
 const generateMessageRouter = require('./routes/generate.message.router');
 
 
-
 // Body parser middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+
 // Passport Session Configuration //
 app.use(sessionMiddleware);
+
 
 // start up passport sessions
 app.use(passport.initialize());
 app.use(passport.session());
+
 
 /* Routes */
 app.use('/api/user', userRouter);
@@ -43,7 +39,6 @@ app.use('/api/selectedTemplate', selectedTemplateRouter);
 app.use('/api/allGuests/', allGuestsRouter);
 app.use('/api/allHotels/', allHotelsRouter);
 app.use('/api/message/', generateMessageRouter);
-
 
 
 // Serve static files

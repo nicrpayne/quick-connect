@@ -1,5 +1,4 @@
-const newTemplatesReducer = (state = {}, action) => {
-    // console.log('in NEW_TEMP_REDUCER', action.payload)  
+const newTemplatesReducer = (state = {}, action) => { 
     switch (action.type) {
         case 'NEW_TEMP_REDUCER':
           return action.payload;
@@ -7,7 +6,5 @@ const newTemplatesReducer = (state = {}, action) => {
           return state;
       };
     };   
-    
-    // template will be on the redux state at:
-    // state.template
+
     export default newTemplatesReducer;
