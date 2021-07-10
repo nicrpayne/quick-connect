@@ -50,12 +50,15 @@ CREATE TABLE "reservation"(
 	"guests_id" integer REFERENCES guests
 );
 
-INSERT INTO "reservation"("room_number", "start_time_stamp", "end_time_stamp")
-VALUES ('529', '1486654792', '1486852373'),
-('385', '1486612719', '1486694720'),
-('141', '1486520344', '1486769616'),
-('417', '14886614763', '1486832543'),
-('194', '1486605110', '1486785126'),
-('349', '1486660637', '1486788273');
+INSERT INTO "reservation"("room_number", "start_time_stamp", "end_time_stamp", "guest_id", "company_id")
+VALUES 	('529', '1486654792', '1486852373', '1', '5'),
+		('385', '1486612719', '1486694720', '2', '4'),
+		('141', '1486520344', '1486769616', '3', '3'),
+		('417', '14886614763', '1486832543', '4', '2'),
+		('194', '1486605110', '1486785126', '5', '1'),
+		('349', '1486660637', '1486788273', '6', '3');
 
-
+CREATE TABLE "templates"(
+	"template_id" serial Primary Key,
+	"template_body" VARCHAR (1000) NOT NULL
+);

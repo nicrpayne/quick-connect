@@ -18,9 +18,12 @@ const Nav = (props) => {
     loginLinkData.text = "Home";
   }
 
+
+
   return (
     <>
     <div className="inverted-vertical-container">
+
     <div className="ui inverted vertical menu"     
      >
       <div >

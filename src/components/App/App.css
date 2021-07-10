@@ -130,6 +130,7 @@ New Message
   position: absolute;
   top: 7rem;
   left: 12rem;
+  /* background-image: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1) 90%);  */
 }
 .ui-container{
   display: flex;
