@@ -7,7 +7,7 @@ Quick Connect is a web app created to help Hotels connect with customers in a pe
 
 To see the fully functional site, please visit:
 
-************ https://the-free-book-buggie.herokuapp.com/
+**herokulink**
 Before you get started, make sure you have the following software installed on your computer:
 
 ## Screenshots
@@ -61,13 +61,3 @@ To debug, you will need to run the client-side separately from the server. Start
 Then make sure `Launch Program` is selected from the dropdown, then click the green play arrow.
 
 ![VSCode Debug Bar](documentation/images/vscode-debug-bar.png)
-
-
-## Production Build
-
-Before pushing to Heroku, run `npm run build` in terminal. This will create a build folder that contains the code Heroku will be pointed at. You can test this build by typing `npm start`. Keep in mind that `npm start` will let you preview the production build but will **not** auto update.
-
-- Start postgres if not running already by using `brew services start postgresql`
-- Run `npm start`
-- Navigate to `localhost:5000`
-
