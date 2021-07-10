@@ -11,9 +11,9 @@ To see the fully functional site, please visit:
 Before you get started, make sure you have the following software installed on your computer:
 
 ## Screenshots
-![Alt text](/Assets/Screen-Shot-Login.png "Login")
+![](/public/Assets/Screen-Shot-Login.png "Login")
 
-![Alt text](/Assets/Screen-Shot-Home.png "Home")
+![](/public/Assets/Screen-Shot-Home.png "Home")
 
 ## Usage
 Login to begin (the default username and password for development is: username: admin password: 1234.
