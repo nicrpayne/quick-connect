@@ -21,6 +21,7 @@
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "pg": "^8.3.0",
+    "phone": "^2.4.22",
     "postcss": "8.2.10",
     "prop-types": "15.7.2",
     "react": "17.0.2",

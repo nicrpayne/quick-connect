@@ -4,6 +4,8 @@ import mapStoreToProps from "../../redux/mapStoreToProps";
 import Typewriter from "typewriter-effect";
 import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css'
+import phone from "phone";
+
 
 import moment from "moment";
 import Nav from "../Nav/Nav";
@@ -135,12 +137,11 @@ notify() {
     )} is now ready you. Enjoy your stay, and let us know if you need anything.`;
   }
 
+
+
   render() {
     const newMessage = this.state.newMessage;
-    // const notify = () => toast('Here is your toast.');
-    // const notify = () => {
-    //   toast('basic notification!')
-    // }
+  
     return (
       <>
       

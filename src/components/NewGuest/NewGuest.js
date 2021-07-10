@@ -3,7 +3,8 @@ import { connect } from "react-redux";
 import mapStoreToProps from "../../redux/mapStoreToProps";
 import NewGuestList from "../NewGuestList/NewGuestList";
 import { toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css'
+import "react-toastify/dist/ReactToastify.css";
+import phone from "phone";
 
 import Nav from "../Nav/Nav";
 import Header from "../Header/Header";
@@ -21,12 +22,20 @@ class NewGuest extends Component {
       email: "",
       companyId: "",
     },
+    allowLandLine: false,
+    showSuccessHelp: false,
+    showDangerHelp: false,
+    result: [],
+    mobile: ""
   };
+
+ 
 
   async componentDidMount() {
     this.props.dispatch({
       type: "GET_TEMPLATES_GUESTS_HOTELS",
     });
+    this.validate();
   }
 
   handleInputChangeFor = (event, propertyName) => {
@@ -36,8 +45,27 @@ class NewGuest extends Component {
         [propertyName]: event.target.value,
       },
     });
+    
   };
-  // console.log(guestName, "made it to handle input change!");
+
+  validate() {
+    const { mobile, allowLandline } = this.state;
+    const result = phone(mobile, "", allowLandline);
+    console.log("BROOOOOO validate result!!", result[0]);
+    if (result.length) {
+      this.setState({
+        result,
+        showDangerHelp: false,
+        showSuccessHelp: true,
+      });
+    } else {
+      this.setState({
+        result,
+        showDangerHelp: true,
+        showSuccessHelp: false,
+      });
+    }
+  }
 
   handleClick = async (event) => {
     event.preventDefault();
@@ -46,26 +74,46 @@ class NewGuest extends Component {
       await this.props.dispatch({
         type: "POST_NEW_GUEST",
         payload: this.state.newGuest,
-      });this.notify();
+      });
+      this.notify();
       this.setState({
         newGuest: {
-        firstName: "",
-        lastName: "",
-        mobile: "",
-        email: "",
-        companyId: "",
-      },
-      })
-      setTimeout (() => {this.props.history.push('/home')}, 4500);
-      
+          firstName: "",
+          lastName: "",
+          mobile: "",
+          email: "",
+          companyId: "",
+        },
+      });
+      setTimeout(() => {
+        this.props.history.push("/home");
+      }, 4500);
     } catch {}
   };
   notify() {
-    return toast.success('new guest added!');
-  };
+    return toast.success("new guest added!");
+  }
+
+
   render() {
     let guest = this.state.newGuest;
-    console.log("brooooo! guest variable:", guest);
+    // console.log("brooooo! guest variable:", guest);
+    
+
+    const showSuccessHelp = this.state.showSuccessHelp
+    const showDangerHelp = this.state.showDangerHelp
+    const phoneInput = this.state.newGuest.mobile
+    const result = this.state.result
+
+    console.log("phoneInput!!!", phoneInput)
+    // const {
+    //   mobile,
+    //   allowLandline,
+    //   showSuccessHelp,
+    //   showDangerHelp,
+    //   result,
+    // } = this.state.newGuest;
+
     return (
       <>
         <Header />
@@ -109,7 +157,10 @@ class NewGuest extends Component {
                     }
                   />
                   <Form.Input
-                    // className=""
+                    id="mobile"
+                    className={`input ${
+                      showSuccessHelp ? "is-success" : "is-danger"
+                    }`}
                     type="text"
                     name="body"
                     placeholder="Mobile"
@@ -119,6 +170,7 @@ class NewGuest extends Component {
                       this.handleInputChangeFor(event, "mobile")
                     }
                   />
+                  
                   <Form.Input
                     // className=""
                     type="text"
@@ -130,29 +182,45 @@ class NewGuest extends Component {
                       this.handleInputChangeFor(event, "email")
                     }
                   />
-                  </Form.Group>
+                </Form.Group>
+                {/* {showSuccessHelp && (
+                    <p className="help is-success">
+                      This phone number is valid
+                    </p>
+                  )}
 
-
-                  <select className="guest-ui-dropdown-selection"
-                    
-                    value={guest.companyId}
-                    onChange={(event) =>
-                      this.handleInputChangeFor(event, "companyId")
-                    }
-                  >
-                    {this.props.store.allHotelsReducer.map((company) => (
-                      <option key={company.id} value={company.id}>
-                        {company.company_name}, {company.id}
-                      </option>
-                    ))}
-                    <option value="" disabled selected hidden>
-                      Select Hotel
+                  {showDangerHelp && (
+                    <p className="help is-danger">
+                      This phone number is invalid
+                    </p>
+                  )} */}
+                  <p> *Please format mobile number with "+", country code, 10 digit number (+11234567890)</p>
+                  {/* {JSON.stringify(result[0])} */}
+                <select
+                  className="guest-ui-dropdown-selection"
+                  value={guest.companyId}
+                  onChange={(event) =>
+                    this.handleInputChangeFor(event, "companyId")
+                  }
+                >
+                  {this.props.store.allHotelsReducer.map((company) => (
+                    <option key={company.id} value={company.id}>
+                      {company.company_name}, {company.id}
                     </option>
-                  </select>
-                
-                
+                  ))}
+                  <option value="" disabled selected hidden>
+                    Select Hotel
+                  </option>
+                </select>
+
                 <Button
-                  disabled={!guest.firstName || !guest.lastName || !guest.mobile || !guest.email || !guest.companyId}
+                  disabled={
+                    !guest.firstName ||
+                    !guest.lastName ||
+                    !guest.mobile ||
+                    !guest.email ||
+                    !guest.companyId
+                  }
                   className="guest-button"
                   onClick={this.handleClick}
                   size={"large"}

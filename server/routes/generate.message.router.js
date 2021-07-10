@@ -13,7 +13,7 @@ router.post('/', (req, res) => {
     client.messages
     .create({
         body: req.body.message,
-        to: req.body.mobile,
+        to: (1+req.body.mobile),
         from: "+16124284192",
     })
     .then
