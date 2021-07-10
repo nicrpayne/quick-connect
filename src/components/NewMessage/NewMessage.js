@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import mapStoreToProps from "../../redux/mapStoreToProps";
 import Typewriter from "typewriter-effect";
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css'
 
 import moment from "moment";
 import Nav from "../Nav/Nav";
@@ -12,6 +14,7 @@ import "semantic-ui-css/semantic.min.css";
 
 import "../App/App.css";
 
+toast.configure()
 class NewMessage extends Component {
   state = {
     newMessage: {
@@ -24,6 +27,8 @@ class NewMessage extends Component {
     },
     currentTime: new Date().toLocaleString(),
   };
+
+ 
 
   async componentDidMount() {
     console.log("in component didmount new message");
@@ -48,7 +53,17 @@ class NewMessage extends Component {
           message: this.newMessage(),
           mobile: this.getMobileByGuestId(this.state.newMessage.guestId),
         },
-      });
+      }); this.notify();
+      this.setState ({
+        newMessage: {
+          templateId: "",
+          guestId: "",
+          mobile: "",
+          companyId: "",
+          roomNumber: "",
+          loading: false,
+        },
+      }); 
     } catch {}
   };
 
@@ -106,6 +121,9 @@ class NewMessage extends Component {
     }
     return greeting;
   }
+notify() {
+  return toast('text message sent!');
+};
 
   newMessage(guestId, companyId, roomNumber) {
     return `${this.getGreeting()} ${this.getGuestNameById(
@@ -119,9 +137,13 @@ class NewMessage extends Component {
 
   render() {
     const newMessage = this.state.newMessage;
-
+    // const notify = () => toast('Here is your toast.');
+    // const notify = () => {
+    //   toast('basic notification!')
+    // }
     return (
       <>
+      
         <Header />
         <Nav />
 
@@ -253,6 +275,7 @@ class NewMessage extends Component {
                   this.state.newMessage.loading
                 }
                 onClick={this.handleClick}
+                
               >
                 Send Text Message
               </button>

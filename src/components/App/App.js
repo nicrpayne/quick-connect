@@ -21,8 +21,10 @@ import NewGuest from "../NewGuest/NewGuest";
 import NewHotel from "../NewHotel/NewHotel";
 
 import './App.css';
-
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css'
 import "semantic-ui-css/semantic.min.css"
+
 
 class App extends Component {
   componentDidMount() {

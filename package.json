@@ -30,6 +30,7 @@
     "react-request": "^3.2.0",
     "react-router": "5.2.0",
     "react-router-dom": "5.2.0",
+    "react-toastify": "^7.0.4",
     "redux": "^4.0.1",
     "redux-logger": "^3.0.6",
     "redux-saga": "^1.0.2",

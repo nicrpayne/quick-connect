@@ -17,16 +17,20 @@ class NewHotel extends Component {
     newHotel: {
       company_name: "",
       company_city: "",
-      company_timezone: "",
+      company_timezone: ""
+
     },
   };
 
   async componentDidMount() {
     this.props.dispatch({
       type: "GET_HOTELS",
+      
     });
   }
 
+
+  
   handleInputChangeFor = (event, propertyName) => {
     this.setState({
       newHotel: {
@@ -44,15 +48,15 @@ class NewHotel extends Component {
         type: "POST_NEW_HOTEL",
         payload: this.state.newHotel,
       });
-      alert("New Hotel Added!");
+      // alert("New Hotel Added!");
 
-      this.props.history.push('/home')
+      // this.props.history.push('/home')
     } catch {}
   };
 
   render() {
     let hotel = this.state.newHotel;
-    // console.log('brooooo!', template);
+
     return (
       <>
         <Header />
@@ -72,50 +76,57 @@ class NewHotel extends Component {
           <div>
             <Segment inverted>
               <Form inverted>
-              <Form.Input
-                // className=""
-                type="text"
-                name="company_name"
-                placeholder="Hotel Name"
-                // label="Hotel Name"
-                value={hotel.company_name}
-                onChange={(event) =>
-                  this.handleInputChangeFor(event, "company_name")
-                }
-              />
-              <Form.Input
-                // className=""
-                type="text"
-                name="company_address"
-                placeholder="Hotel City"
-                // label="Hotel Address"
-                value={hotel.company_city}
-                onChange={(event) =>
-                  this.handleInputChangeFor(event, "company_city")
-                }
-              />
-              <Form.Input
-                // className=""
-                type="text"
-                name="company_timezone"
-                placeholder="Timezone"
-                // label="Hotel Timezone"
-                value={hotel.company_timezone}
-                onChange={(event) =>
-                  this.handleInputChangeFor(event, "company_timezone")
-                }
-              />
-              <Button
-              disabled={!hotel.company_name || !hotel.company_city|| !hotel.company_timezone }
-              className="hotel-button"
-                onClick={this.handleClick}
-                size={"large"}
-                variant={"outlined"}
-              >
-                Add
-              </Button>
+                <Form.Input
+                  // className=""
+                  // type="reset"
+                  // defaultValue="reset"
+                  name="company_name"
+                  placeholder="Hotel Name"
+                  // label="Hotel Name"
+                  value={hotel.company_name}
+                  onChange={(event) =>
+                    this.handleInputChangeFor(event, "company_name")
+                  }
+                />
+                <Form.Input
+                  // className=""
+                  type="text"
+                  name="company_address"
+                  placeholder="Hotel City"
+                  // label="Hotel Address"
+                  value={hotel.company_city}
+                  onChange={(event) =>
+                    this.handleInputChangeFor(event, "company_city")
+                  }
+                />
+                <Form.Input
+                  // className=""
+                  type="text"
+                  name="company_timezone"
+                  placeholder="Timezone"
+                  // label="Hotel Timezone"
+                  value={hotel.company_timezone}
+                  onChange={(event) =>
+                    this.handleInputChangeFor(event, "company_timezone")
+                  }
+                />
+                <Button
+                  disabled={
+                    !hotel.company_name ||
+                    !hotel.company_city ||
+                    !hotel.company_timezone
+                  }
+                  className="hotel-button"
+                  loading={this.props.store.allHotelsReducer.loading}
+                  onClick={this.handleClick}
+                  size={"large"}
+                  variant={"outlined"}
+                >
+                  Add
+                </Button>
               </Form>
             </Segment>
+            {/* <div>{JSON.stringify(this.props.store.allHotelsReducer.loading)}</div> */}
           </div>
         </div>
         <Footer />
