@@ -59,7 +59,7 @@ class LoginForm extends Component {
                   <header className="bell-container" as="h2" textAlign="center">
                     <Image
                       className="check-in-bell"
-                      src="/assets/WhiteBell.png"
+                      src="/Assets/WhiteBell.png"
                     />
                     <h1 style={{ color: "#c0165f" }} className="welcome-text">
                       welcome! check-in
