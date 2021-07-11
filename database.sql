@@ -12,13 +12,6 @@ CREATE TABLE "companies"(
 	"timezone" VARCHAR (1000)
 );
 
-INSERT INTO "companies"("company", "city", "timezone")
-VALUES ('Hotel California', 'Santa Barbara', 'US/Pacific'),
-('The Grand Budapest Hotel', 'Republic of Zubrowka', 'US/Central'),
-('The Heartbreak Hotel', 'Graceland', 'US/Central'),
-('The Prancing Pony', 'Bree', 'US/Central'),
-('The Fawlty Towers', 'Torquay', 'US/Eastern');
-
 CREATE TABLE "templates"(
 	"template_id" serial Primary Key,
 	"template_name" VARCHAR (1000) NOT NULL,
@@ -28,7 +21,9 @@ CREATE TABLE "templates"(
 CREATE TABLE "guests"(
 	"guest_id" serial PRIMARY KEY,
 	"first_name" VARCHAR (1000) NOT NULL,
-	"last_name" VARCHAR (1000) NOT NULL
+	"last_name" VARCHAR (1000) NOT NULL,
+	"mobile" VARCHAR (1000) NOT NULL,
+	"email" VARCHAR (1000)
 );
 
 CREATE TABLE "reservation"(
@@ -38,6 +33,19 @@ CREATE TABLE "reservation"(
 	"end_time_stamp" VARCHAR (1000)
 );
 
+INSERT INTO "user" ("username", "password", "admin")
+VALUES ('admin', '$2a$10$fld6zZiQxdgcbVIWKAzve.g9NEEfGWHaN7/LSbshYl9R3BH/0rSbS', TRUE);
+
+INSERT INTO "companies"("company", "city", "timezone")
+VALUES ('Hotel California', 'Santa Barbara', 'US/Pacific'),
+('The Grand Budapest Hotel', 'Republic of Zubrowka', 'US/Central'),
+('The Heartbreak Hotel', 'Graceland', 'US/Central'),
+('The Prancing Pony', 'Bree', 'US/Central'),
+('The Fawlty Towers', 'Torquay', 'US/Eastern');
+
+INSERT INTO "templates"("template_name", "template_body")
+VALUES ('Quick Connect default', 'This is a template');
+
 ALTER TABLE guests
 ADD COLUMN "reservation_id" integer REFERENCES reservation;
 
@@ -45,19 +53,13 @@ ALTER TABLE reservation
 ADD COLUMN "guest_id" integer REFERENCES guests,
 ADD COLUMN "company_id" integer REFERENCES companies;
 
-INSERT INTO "user" ("username", "password", "admin")
-VALUES ('admin', '$2a$10$fld6zZiQxdgcbVIWKAzve.g9NEEfGWHaN7/LSbshYl9R3BH/0rSbS', TRUE);
-
-INSERT INTO "templates"("template_name", "template_body")
-VALUES ('Quick Connect default', 'This is a template');
-
-INSERT INTO "guests"("first_name", "last_name")
-VALUES ('Candy', 'Pace'),
-('Morgan', 'Porter'),
-('Bridgett', 'Richard'),
-('Melissa', 'Preston'),
-('Latoya', 'Herrera'),
-('Hewitt', 'Hopper');
+INSERT INTO "guests"("first_name", "last_name", "mobile", "email")
+VALUES ('Candy', 'Pace', '+15555555555', 'candy@pace.com'),
+('Morgan', 'Porter', '+15555555555', 'morgan@porter.com'),
+('Bridgett', 'Richard', '+15555555555', 'bridgett@richard.com'),
+('Melissa', 'Preston', '+15555555555', 'melissa@preston.com'),
+('Latoya', 'Herrera', '+15555555555', 'latoya@herrera.com'),
+('Hewitt', 'Hopper', '+15555555555', 'hewitt@hopper.com');
 
 INSERT INTO "reservation"("room_number", "start_time_stamp", "end_time_stamp", "guest_id", "company_id")
 VALUES 	(529, 1486654792, 1486852373, 1, 5),
