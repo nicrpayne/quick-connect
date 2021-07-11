@@ -8,7 +8,7 @@ Quick Connect is a web app created to help Hotels connect with customers in a pe
 To see the fully functional site, please visit:
 
 ## Try it out here:
- https://quick-connect-app.herokuapp.com/
+ https://quick-connect-app.herokuapp.com/ [**7-11-21 deployment pending]
 
 
 Before you get started, make sure you have the following software installed on your computer:
