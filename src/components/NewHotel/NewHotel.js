@@ -48,7 +48,7 @@ class NewHotel extends Component {
       });
       setTimeout(() => {
         this.props.history.push("/home");
-      }, 4500);
+      }, 3500);
     } catch {}
   };
   notify() {
