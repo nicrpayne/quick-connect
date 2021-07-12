@@ -2,8 +2,7 @@
 .DS_Store
 .DS_STORE/
 
-# Build directories for Front-End Assets
-build/
+
 
 # Logs
 logs
@@ -55,9 +54,6 @@ typings/
 
 # Output of 'npm pack'
 *.tgz
-
-# Yarn Integrity file
-.yarn-integrity
 
 # dotenv environment variables file
 .env
